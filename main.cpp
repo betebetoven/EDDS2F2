@@ -4,6 +4,7 @@
 #include <thread>
 #include <string>
 #include <vector>
+#include "json/json.h"
 #include "./glove/json.hpp"
 #include "codigo/ListaSimple.cpp"
 
@@ -62,6 +63,7 @@ private:
 
 int main(int argc, char *argv[])
 {
+Json::Value prueba;
     Servidor cine;
 
     GloveHttpServer serv(8080, "", 2048);
