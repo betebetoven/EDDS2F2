@@ -242,7 +242,7 @@ void ArbolB<T>::Grafo() {
 
     //------->escribir archivo
     cout << dotFull << "\n";
-    ofstream file;
+    /*ofstream file;
     file.open("Pruebas.dot");
     file << dotFull;
     file.close();
@@ -251,7 +251,7 @@ void ArbolB<T>::Grafo() {
     system(("dot -Tpng Pruebas.dot -o  Pruebas.png"));
 
     //------>abrir archivo
-    system(("Pruebas.png"));
+    system(("Pruebas.png"));*/
 
 }
 template <typename T>
