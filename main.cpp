@@ -74,6 +74,16 @@ public:
         outdata.open("example.json");
         outdata << pedro;
          outdata.close();
+         ifstream file("example.json");//volve a cambair a f1_masiva
+    Json::Value actualJson;
+    Json::Reader reader;
+    reader.parse(file,actualJson);
+    for (Json::Value objeto : actualJson["usuarios"]) {
+        usuarios_glob.insert(objeto);
+        usuariosB_glob.insertar(objeto);
+        cout << objeto << endl;
+    }
+    usuariosB_glob.Grafo();
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
                  << jsonkv("Id_nuevo", request.special["Id"]) << " }";
@@ -86,16 +96,7 @@ private:
 
 int main(int argc, char *argv[])
 {
-     ifstream file("example.json");//volve a cambair a f1_masiva
-    Json::Value actualJson;
-    Json::Reader reader;
-    reader.parse(file,actualJson);
-    for (Json::Value objeto : actualJson["usuarios"]) {
-        usuarios_glob.insert(objeto);
-        usuariosB_glob.insertar(objeto);
-        cout << objeto << endl;
-    }
-    usuariosB_glob.Grafo();
+     
 
 
 
