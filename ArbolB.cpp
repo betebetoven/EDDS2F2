@@ -1,6 +1,6 @@
 #include "ArbolB.h"
 #include "json/json.h"
-#include <windows.h>
+//#include <windows.h>
 #include <fstream>
 #include <string>
 #include <sstream>
