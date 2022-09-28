@@ -8,7 +8,7 @@
 #include <vector>
 #include "./glove/json.hpp"
 #include "codigo/ListaSimple.cpp"
-
+//HOOLAAA SI FUNCIONA ESTA MAMADAAAAAAAAAAA
 int atoi(std::string s)
 {
     try
