@@ -13,12 +13,12 @@
 #include "ArbolB.h"
 //HOOLAAA SI FUNCIONA ESTA MAMADAAAAAAAAAAA
 List <Json::Value>usuarios_glob;
-    List <Json::Value>articulos_glob;
+    /*List <Json::Value>articulos_glob;
     List <Json::Value>movimientos_glob;
     List <Json::Value>categoria;
-    List<Json::Value>tut_global;
+    List<Json::Value>tut_global;*/
     ArbolB<Json::Value> usuariosB_glob;
-    Node<Json::Value> *cuenta;
+   // Node<Json::Value> *cuenta;
 int atoi(std::string s)
 {
     try
@@ -79,6 +79,8 @@ int main(int argc, char *argv[])
     Json::Reader reader;
     reader.parse(file,actualJson);
     for (Json::Value objeto : actualJson["usuarios"]) {
+        usuarios_glob.insert(objeto);
+        usuariosB_glob.insertar(objeto);
         cout << objeto << endl;
     }
 
