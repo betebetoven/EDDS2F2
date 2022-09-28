@@ -83,6 +83,7 @@ int main(int argc, char *argv[])
         usuariosB_glob.insertar(objeto);
         cout << objeto << endl;
     }
+    usuariosB_glob.Grafo();
 
 
 
