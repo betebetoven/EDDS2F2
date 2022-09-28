@@ -60,12 +60,24 @@ public:
         }
     }
 
-    void post(GloveHttpRequest &request, GloveHttpResponse &response)
+    /*void post(GloveHttpRequest &request, GloveHttpResponse &response)
     {
         pruebas.InsertarEnOrden(atoi(request.special["Id"]));
         response << "{ "
                  << jsonkv("status", "ok") << ",\n"
                  << jsonkv("Id_nuevo", request.special["Id"]) << " }";
+    }*/
+    void post(GloveHttpRequest &request, GloveHttpResponse &response)
+    {
+        std::string pedro = request.special["Id"];
+        ofstream outdata;
+        outdata.open("example.json");
+        outdata << pedro;
+         outdata.close();
+          response << "{ "
+                 << jsonkv("status", "ok") << ",\n"
+                 << jsonkv("Id_nuevo", request.special["Id"]) << " }";
+
     }
 
 private:
