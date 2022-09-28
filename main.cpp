@@ -9,6 +9,13 @@
 #include "./glove/json.hpp"
 #include "codigo/ListaSimple.cpp"
 //HOOLAAA SI FUNCIONA ESTA MAMADAAAAAAAAAAA
+List <Json::Value>usuarios_glob;
+    List <Json::Value>articulos_glob;
+    List <Json::Value>movimientos_glob;
+    List <Json::Value>categoria;
+    List<Json::Value>tut_global;
+    ArbolB<Json::Value> usuariosB_glob;
+    Node<Json::Value> *cuenta;
 int atoi(std::string s)
 {
     try
