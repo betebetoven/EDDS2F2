@@ -8,6 +8,9 @@
 #include <vector>
 #include "./glove/json.hpp"
 #include "codigo/ListaSimple.cpp"
+#include "List.h"
+#include "nodo.h"
+#include "ArbolB.h"
 //HOOLAAA SI FUNCIONA ESTA MAMADAAAAAAAAAAA
 List <Json::Value>usuarios_glob;
     List <Json::Value>articulos_glob;
