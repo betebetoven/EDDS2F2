@@ -1,10 +1,11 @@
 #include "./glove/glovehttpserver.hpp"
+#include "json/json.h"
 #include <iostream>
+#include<fstream>
 #include <chrono>
 #include <thread>
 #include <string>
 #include <vector>
-#include "json/json.h"
 #include "./glove/json.hpp"
 #include "codigo/ListaSimple.cpp"
 
@@ -63,7 +64,16 @@ private:
 
 int main(int argc, char *argv[])
 {
-Json::Value prueba;
+     ifstream file("example.json");//volve a cambair a f1_masiva
+    Json::Value actualJson;
+    Json::Reader reader;
+    reader.parse(file,actualJson);
+    for (Json::Value objeto : actualJson["usuarios"]) {
+        cout << objeto << endl;
+    }
+
+
+
     Servidor cine;
 
     GloveHttpServer serv(8080, "", 2048);
