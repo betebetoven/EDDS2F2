@@ -22,6 +22,6 @@ class List
     void remove(G x);
     void find(G x);
     void display();
-    int tamaño;
+    int tamano;
 };
 

@@ -10,7 +10,7 @@ using namespace std;
 template<typename G>
  List<G>::List()
 {
-    tamaño = 0;
+    tamano = 0;
     head = NULL;
     tail = NULL;
     j = "estoy vivo otra vez";
@@ -47,7 +47,7 @@ void List<G>::insert(G x)
             temp->Prev = ahora;
             temp-> next = NULL;
         }
-        tamaño= tamaño+1;
+        tamano= tamano+1;
 
           
     }
