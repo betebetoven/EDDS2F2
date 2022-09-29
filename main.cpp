@@ -336,7 +336,9 @@ void login_server(GloveHttpRequest &request, GloveHttpResponse& response)
   std::vector <std::string> out;
   split_str (pedro, delim, out); 
   std::string nombre = out[0];
+  std::cout << nombre << std::endl;
   std::string password = out[1];
+  std::cout << password << std::endl;
         cuenta = login(usuarios_glob,pedro,password);
         
           response << "{ "
