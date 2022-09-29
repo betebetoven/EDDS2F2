@@ -306,10 +306,15 @@ public:
 };
 void hello(GloveHttpRequest &request, GloveHttpResponse& response)
 {
-  std::cout << "TESTING"<<std::endl;
-  response << "This is the response\n";
-  response << "This is another tesxt" << std::endl;
-}
+  std::string pedro = request.special["Id"];
+        ofstream outdata;
+        outdata.open("example.json");
+        outdata << pedro;
+         outdata.close();
+        carga_usuario();
+          response << "{ "
+                 << jsonkv("status", "ok") << ",\n"
+                 << jsonkv("Id_nuevo", request.special["Id"]) << " }";
 class Servidor2
 {
 public:
@@ -346,11 +351,11 @@ int main(int argc, char *argv[])
     serv.compression("gzip, deflate");
     namespace ph = std::placeholders;
     serv.addRoute("/Lista/$Id", hello);
-    serv.addRest("/Lista/$Id", 1,
+    /*serv.addRest("/Lista/$Id", 1,
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
                  std::bind(&Servidor::post, &cine, ph::_1, ph::_2));
-    /*serv.addRest("/Login/$Id", 1,
+    serv.addRest("/Login/$Id", 1,
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor2::get, &cine, ph::_1, ph::_2),
                  std::bind(&Servidor2::post, &cine, ph::_1, ph::_2));*/
