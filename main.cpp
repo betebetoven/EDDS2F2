@@ -339,7 +339,7 @@ void login_server(GloveHttpRequest &request, GloveHttpResponse& response)
   std::cout << nombre << std::endl;
   std::string password = out[1];
   std::cout << password << std::endl;
-        cuenta = login(usuarios_glob,pedro,password);
+        cuenta = login(usuarios_glob,nombre,password);
         
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
