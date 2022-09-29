@@ -354,9 +354,8 @@ void cambiar_contrasena(GloveHttpRequest &request, GloveHttpResponse& response)
 void kill_switch(GloveHttpRequest &request, GloveHttpResponse& response)
 {
   eliminar_cuenta(cuenta);
-          response << "{ "
-              
-                 << jsonkv("CUENTA", "kpex" << " }";
+          response << "This is the response\n";
+  response << "CUENTA ELIMINADA VUELVA A INGRESAR" << std::endl;
 }
 
 
