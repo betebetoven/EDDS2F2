@@ -343,10 +343,10 @@ int main(int argc, char *argv[])
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
                  std::bind(&Servidor::post, &cine, ph::_1, ph::_2));
-    serv.addRest("/Login/$Id", 1,
+    /*serv.addRest("/Login/$Id", 1,
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor2::get, &cine, ph::_1, ph::_2),
-                 std::bind(&Servidor2::post, &cine, ph::_1, ph::_2));
+                 std::bind(&Servidor2::post, &cine, ph::_1, ph::_2));*/
 
 
 
