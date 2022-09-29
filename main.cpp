@@ -339,6 +339,7 @@ int main(int argc, char *argv[])
     GloveHttpServer serv(8080, "", 2048);
     serv.compression("gzip, deflate");
     namespace ph = std::placeholders;
+    serv.addRoute("/Lista/$Id", cine, 2, 1, { "GET", "POST" });
     serv.addRest("/Lista/$Id", 1,
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
