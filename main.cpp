@@ -356,7 +356,7 @@ void kill_switch(GloveHttpRequest &request, GloveHttpResponse& response)
   eliminar_cuenta(cuenta);
           response << "{ "
               
-                 << jsonkv("CUENTA", "CUENTA ELIMINADA POR FAVOR VUELVA A INGRESAR" << " }";
+                 << jsonkv("CUENTA", "CUENTA_ELIMINADA" << " }";
 }
 
 
