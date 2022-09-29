@@ -283,12 +283,12 @@ public:
     {
         response.contentType("text/json");
         if (request.special["Id"].empty())
-            response << pruebas.getDatos();
+            response << cuenta;
         else
         {
             response << "{ "
                      << jsonkv("status", "ok") << ",\n"
-                     << jsonkv("Id_buscado", pruebas.Buscar(atoi(request.special["Id"]))) << " }";
+                     
         }
     }
     void post(GloveHttpRequest &request, GloveHttpResponse &response)
