@@ -316,6 +316,16 @@ void hello(GloveHttpRequest &request, GloveHttpResponse& response)
                  << jsonkv("status", "ok") << ",\n"
                  << jsonkv("Id_nuevo", request.special["Id"]) << " }";
 }
+void login_server(GloveHttpRequest &request, GloveHttpResponse& response)
+{
+  std::string pedro = request.special["Id"];
+        cuenta = login(usuarios_glob,pedro,"jaja");
+        
+          response << "{ "
+                 << jsonkv("status", "ok") << ",\n"
+                 << jsonkv("CUENTA", cuenta->data.asString()) << " }";
+}
+
 class Servidor2
 {
 public:
@@ -352,6 +362,7 @@ int main(int argc, char *argv[])
     serv.compression("gzip, deflate");
     namespace ph = std::placeholders;
     serv.addRoute("/Lista/$Id", hello);
+    serv.addRoute("/Login/$Id", login_server);
     /*serv.addRest("/Lista/$Id", 1,
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
