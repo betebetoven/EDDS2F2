@@ -323,7 +323,9 @@ void login_server(GloveHttpRequest &request, GloveHttpResponse& response)
         
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
-                 << jsonkv("CUENTA", cuenta->data.asString()) << " }";
+                 << jsonkv("CUENTA", cuenta->data["nick"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["monedas"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["edad"].asString()) << " }";
 }
 
 class Servidor2
