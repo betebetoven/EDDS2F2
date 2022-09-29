@@ -304,6 +304,12 @@ public:
 
     }
 };
+void hello(GloveHttpRequest &request, GloveHttpResponse& response)
+{
+  std::cout << "TESTING"<<std::endl;
+  response << "This is the response\n";
+  response << "This is another tesxt" << std::endl;
+}
 class Servidor2
 {
 public:
@@ -339,7 +345,7 @@ int main(int argc, char *argv[])
     GloveHttpServer serv(8080, "", 2048);
     serv.compression("gzip, deflate");
     namespace ph = std::placeholders;
-    serv.addRoute("/Lista/$Id", cine, 2, 1, { "GET", "POST" });
+    serv.addRoute("/Lista/$Id", hello);
     serv.addRest("/Lista/$Id", 1,
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
