@@ -6,6 +6,8 @@
 #include <thread>
 #include <string>
 #include <vector>
+#include <vector>  
+#include <sstream> 
 #include "./glove/json.hpp"
 #include "codigo/ListaSimple.cpp"
 #include "List.h"
@@ -270,7 +272,18 @@ void mostrar_tutorial()
     
 }
 
-
+void split_str( std::string const &str, const char delim,  
+        std::vector <std::string> &out )  
+        {  
+            // create a stream from the string  
+            std::stringstream s(str);  
+              
+            std::string s2;  
+            while (std:: getline (s, s2, delim) )  
+            {  
+                out.push_back(s2); // store the string in s2  
+            }  
+        }  
 
 
 
@@ -319,7 +332,12 @@ void hello(GloveHttpRequest &request, GloveHttpResponse& response)
 void login_server(GloveHttpRequest &request, GloveHttpResponse& response)
 {
   std::string pedro = request.special["Id"];
-        cuenta = login(usuarios_glob,pedro,"jaja");
+  const char delim = ','; 
+  std::vector <std::string> out;
+  split_str (pedro, delim, out); 
+  std::string nombre = out[0];
+  std::string password = out[1];
+        cuenta = login(usuarios_glob,pedro,password);
         
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
@@ -357,6 +375,8 @@ void kill_switch(GloveHttpRequest &request, GloveHttpResponse& response)
           response << "This is the response\n";
   response << "CUENTA ELIMINADA VUELVA A INGRESAR" << std::endl;
 }
+
+
 
 
 
