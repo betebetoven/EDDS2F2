@@ -287,7 +287,7 @@ public:
         else
         {
             response << "{ "
-                     << jsonkv("status", "ok") << ",\n"
+                     << jsonkv("status", "ok") << ",\n";
                      
         }
     }
