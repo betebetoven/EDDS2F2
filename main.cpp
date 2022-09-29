@@ -322,7 +322,7 @@ public:
     void post(GloveHttpRequest &request, GloveHttpResponse &response)
     {
         std::string pedro = request.special["Id"];
-        cuenta = login(usuarios_glob,pedro,"jaja")
+        cuenta = login(usuarios_glob,pedro,"jaja");
         
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
