@@ -328,6 +328,40 @@ void login_server(GloveHttpRequest &request, GloveHttpResponse& response)
                  << jsonkv("CUENTA", cuenta->data["edad"].asString()) << " }";
 }
 
+
+void cambiar_nombre(GloveHttpRequest &request, GloveHttpResponse& response)
+{
+  std::string pedro = request.special["Id"];
+        cuenta->data["nick"]=pedro;
+          response << "{ "
+                 << jsonkv("datos actualizados", "ok") << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["nick"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["password"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["monedas"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["edad"].asString()) << " }";
+}
+void cambiar_contrasena(GloveHttpRequest &request, GloveHttpResponse& response)
+{
+  std::string pedro = request.special["Id"];
+        cuenta->data["password"]=pedro;
+          response << "{ "
+                 << jsonkv("datos actualizados", "ok") << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["nick"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["password"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["monedas"].asString()) << ",\n"
+                 << jsonkv("CUENTA", cuenta->data["edad"].asString()) << " }";
+}
+void kill_switch(GloveHttpRequest &request, GloveHttpResponse& response)
+{
+  eliminar_cuenta(cuenta);
+          response << "{ "
+              
+                 << jsonkv("CUENTA", "CUENTA ELIMINADA POR FAVOR VUELVA A INGRESAR" << " }";
+}
+
+
+
+
 class Servidor2
 {
 public:
@@ -365,6 +399,9 @@ int main(int argc, char *argv[])
     namespace ph = std::placeholders;
     serv.addRoute("/Lista/$Id", hello);
     serv.addRoute("/Login/$Id", login_server);
+    serv.addRoute("/editN/$Id", cambiar_nombre);
+    serv.addRoute("/editP/$Id", cambiar_contrasena);
+    serv.addRoute("/KS/$Id", kill_switch);
     /*serv.addRest("/Lista/$Id", 1,
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
