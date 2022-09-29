@@ -278,12 +278,6 @@ void mostrar_tutorial()
 class Servidor
 {
 public:
-    Servidor()
-    {
-        pruebas.InsertarEnOrden(100);
-        pruebas.InsertarEnOrden(300);
-        pruebas.InsertarEnOrden(200);
-    }
 
     void get(GloveHttpRequest &request, GloveHttpResponse &response)
     {
@@ -318,9 +312,6 @@ private:
 int main(int argc, char *argv[])
 {
      
-
-
-
     Servidor cine;
 
     GloveHttpServer serv(8080, "", 2048);
