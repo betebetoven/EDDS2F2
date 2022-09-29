@@ -37,7 +37,7 @@ static std::string jsonkv(std::string k, std::string v)
     return "\"" + k + "\": \"" + v + "\"";
 }
 
-Node<Json::Value> *login(List<Json::Value> usuarioh, string nombre, string contraseña)
+Node<Json::Value> *login(List<Json::Value> usuarioh, string nombre, string contrasena)
 {
      cout << "Estas dentro de la funcion de LOGIN :"<< endl;
     Node<Json::Value> *ahora;
@@ -46,7 +46,7 @@ Node<Json::Value> *login(List<Json::Value> usuarioh, string nombre, string contr
             for(ahora = usuarioh.head; ahora != NULL; ahora=ahora->next)
             {
                 cout << ahora->data << " \n";
-                if (ahora->data["nick"].asString() == nombre && ahora->data["password"].asString()== contraseña)
+                if (ahora->data["nick"].asString() == nombre && ahora->data["password"].asString()== contrasena)
                  {cout << "enconttro a betebetoven"<< endl;
                  return ahora;
                  break;
@@ -75,14 +75,14 @@ void eliminar_cuenta(Node<Json::Value> *cuenta_eliminar)
 
 }
 
-void añadir_usuario()
+void anadir_usuario()
 {   
     string nick;
     string password;
     string edad;
     cout <<"Ingrese UserName: \n"<< endl;
     cin >> nick;
-cout <<"Ingrese Contraseña: \n"<< endl;
+cout <<"Ingrese contrasena: \n"<< endl;
 cin >> password;
 cout <<"Ingrese Edad: \n"<< endl;
 cin >> edad;
@@ -250,7 +250,7 @@ Json::Value dequeue_tutorial()
 {
     Node<Json::Value> *n = tut_global.head;
     tut_global.head = tut_global.head->next;
-    tut_global.tamaño = tut_global.tamaño-1;
+    tut_global.tamano = tut_global.tamano-1;
     return n->data;
     
     
@@ -262,7 +262,7 @@ void mostrar_tutorial()
 {
     //lo raro de esta funcion es que solo se puede realizar una sola vez
     cout << "DEQUEUE DE TUTORIAL: "<<endl;
-    while (tut_global.tamaño>=1)
+    while (tut_global.tamano>=1)
     {
         cout << dequeue_tutorial()<<endl;
     }
