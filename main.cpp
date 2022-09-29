@@ -305,8 +305,7 @@ public:
 
     }
 
-private:
-    ListaSimple pruebas;
+
 };
 
 int main(int argc, char *argv[])
