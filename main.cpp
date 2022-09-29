@@ -315,6 +315,7 @@ void hello(GloveHttpRequest &request, GloveHttpResponse& response)
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
                  << jsonkv("Id_nuevo", request.special["Id"]) << " }";
+}
 class Servidor2
 {
 public:
