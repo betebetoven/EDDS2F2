@@ -278,7 +278,6 @@ void mostrar_tutorial()
 class Servidor
 {
 public:
-
     void get(GloveHttpRequest &request, GloveHttpResponse &response)
     {
         response.contentType("text/json");
@@ -304,8 +303,32 @@ public:
                  << jsonkv("Id_nuevo", request.special["Id"]) << " }";
 
     }
+};
+class Servidor2
+{
+public:
+    void get(GloveHttpRequest &request, GloveHttpResponse &response)
+    {
+        response.contentType("text/json");
+        if (request.special["Id"].empty())
+            response << cuenta->data.asString();
+        else
+        {
+            response << "{ "
+                     << jsonkv("status", "ok") << ",\n";
+                     
+        }
+    }
+    void post(GloveHttpRequest &request, GloveHttpResponse &response)
+    {
+        std::string pedro = request.special["Id"];
+        cuenta = login(usuarios_glob,pedro,"jaja")
+        
+          response << "{ "
+                 << jsonkv("status", "ok") << ",\n"
+                 << jsonkv("CUENTA", cuenta->data.asString()) << " }";
 
-
+    }
 };
 
 int main(int argc, char *argv[])
@@ -320,6 +343,14 @@ int main(int argc, char *argv[])
                  GloveHttpServer::jsonApiErrorCall,
                  std::bind(&Servidor::get, &cine, ph::_1, ph::_2),
                  std::bind(&Servidor::post, &cine, ph::_1, ph::_2));
+    serv.addRest("/Login/$Id", 1,
+                 GloveHttpServer::jsonApiErrorCall,
+                 std::bind(&Servidor2::get, &cine, ph::_1, ph::_2),
+                 std::bind(&Servidor2::post, &cine, ph::_1, ph::_2));
+
+
+
+
     std::cout << "Servidor en Ejecucion" << std::endl;
     while (1)
     {
