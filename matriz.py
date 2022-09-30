@@ -1,3 +1,4 @@
+from tkinter.messagebox import NO
 from nodo import nodo
 
 
@@ -34,6 +35,48 @@ class matriz:
     def creatodo(self):
         self.recursivx(self.raiz,0,self.dx)
         self.recursivy(self.raiz,0,self.dy)
+
+    def ingresar(self,x,y,barco):
+        nuevo_nodo = nodo(barco,x,y)
+        ahora = self.raiz
+        while(ahora.c.x != x):
+            ahora = ahora.derecha
+        if(ahora.abajo == None):
+            ahora.abajo = nuevo_nodo
+            ahora.abajo.arriba = ahora
+        else:
+            while(not(y<ahora.c.y and y>ahora.arriba.c.y)):
+                ahora = ahora.abajo
+            aptaux = ahora
+            ahora.arriba.abajo = nuevo_nodo
+            ahora.arriba.abajo.arriba = ahora.arriba
+            ahora.arriba.abajo.abajo = aptaux
+            ahora.arriba.abajo.abajo.arriba = ahora.arriba.abajo
+        #ahora toca en el eje y
+        ahora = self.raiz
+        while(ahora.c.x != x):
+            ahora = ahora.derecha
+        if(ahora.derecha == None):
+            ahora.derecha = nuevo_nodo
+            ahora.derecha.izquierda = ahora
+        else:
+            while(not(y<ahora.c.y and y>ahora.izquierda.c.y)):
+                ahora = ahora.derecha
+            aptaux = ahora
+            ahora.izquierda.derecha = nuevo_nodo
+            ahora.izquierda.derecha.izquierda = ahora.izquierda
+            ahora.izquierda.derecha.derecha = aptaux
+            ahora.izquierda.derecha.derecha.izquierda = ahora.izquierda.derecha
+
+
+            
+
+
+
+    def ingresarvertical():
+
+
+    def ingresarhorzontal():
 
  
         
