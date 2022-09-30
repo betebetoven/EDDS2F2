@@ -1,3 +1,4 @@
+from pkgutil import ImpImporter
 from tkinter.messagebox import NO
 from nodo import nodo
 
@@ -19,6 +20,7 @@ class matriz:
             return
         else:
             rooot.derecha = nodo("ejex",cont,-1)
+            rooot.derecha.izquierda = rooot.derecha
             cont = cont+1
             print(str(rooot))
             self.recursivx(rooot.derecha,cont,meta)
@@ -29,6 +31,7 @@ class matriz:
             return
         else:
             rooot.abajo = nodo("ejey",-1,cont)
+            rooot.abajo.arriba = rooot.abajo
             cont = cont +1
             print(str(rooot))
             self.recursivy(rooot.abajo,cont,meta )
@@ -38,11 +41,11 @@ class matriz:
 
     def ingresar(self,x,y,barco):
         #primero en el eje y ubicandons en el eje x
-        nuevo_nodo = nodo(barco,x,y)
+        nuevo_nodo = nodo(self,barco,x,y)
         ahora = self.raiz
         while(ahora.c.x != x):
             ahora = ahora.derecha
-        if(ahora.abajo == None):
+        if(ahora.abajo == None and ahora!= self.raiz):
             ahora.abajo = nuevo_nodo
             ahora.abajo.arriba = ahora
         else:
@@ -57,7 +60,7 @@ class matriz:
         ahora = self.raiz
         while(ahora.c.x != x):
             ahora = ahora.derecha
-        if(ahora.derecha == None):
+        if(ahora.derecha == None  and ahora!= self.raiz):
             ahora.derecha = nuevo_nodo
             ahora.derecha.izquierda = ahora
         else:
@@ -72,12 +75,22 @@ class matriz:
 
             
 
+    def impder(self, n):
+        while(n != None):
+            print(n)
+            n = n.derercha
+
+    def imprime(self, n):
+        while(n!=None):
+            self.impder(n)
+            n = n.abajo
+    def muestra(self):
+        self.imprime(self.raiz)
+        
+    ##def ingresarvertical():
 
 
-    def ingresarvertical():
-
-
-    def ingresarhorzontal():
+    #def ingresarhorzontal():
 
  
         

@@ -40,7 +40,9 @@ if __name__ == '__main__':
     #editP("mama")
    # KS("yes")
     #login("colosho","colosho")
-    m = matriz(10)
+    m = matriz(4)
+    m.ingresar(1,1,"buque")
+    m.muestra()
    
    
     
