@@ -37,6 +37,7 @@ class matriz:
         self.recursivy(self.raiz,0,self.dy)
 
     def ingresar(self,x,y,barco):
+        #primero en el eje y ubicandons en el eje x
         nuevo_nodo = nodo(barco,x,y)
         ahora = self.raiz
         while(ahora.c.x != x):
@@ -52,7 +53,7 @@ class matriz:
             ahora.arriba.abajo.arriba = ahora.arriba
             ahora.arriba.abajo.abajo = aptaux
             ahora.arriba.abajo.abajo.arriba = ahora.arriba.abajo
-        #ahora toca en el eje y
+        #ahora toca en el eje x ubicandonos en el eje y
         ahora = self.raiz
         while(ahora.c.x != x):
             ahora = ahora.derecha
