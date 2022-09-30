@@ -2,6 +2,8 @@ import requests##pip3 install request
 import json
 from tkinter.filedialog import askopenfilename
 
+from matriz import matriz
+
 
 
 base_url = "http://3.88.228.81:8080/"
@@ -29,13 +31,21 @@ def KS(nombre):#EL PARAMETRO DE ENTRADA LO DEJAMOS NADA MAS PARA CONFIRMACION
     data = res.text#convertimos la respuesta en dict
     print(data)
 
+           
 
 if __name__ == '__main__':
-    carga_masiva(entrada())
-    login("betebetoven","jaja")
-    editN("beto")
-    editP("mama")
-    KS("yes")
-    login("colosho","colosho")
+    #carga_masiva(entrada())
+    #login("betebetoven","jaja")
+    #editN("beto")
+    #editP("mama")
+   # KS("yes")
+    #login("colosho","colosho")
+    m = matriz(10)
+   
+   
+    
+    
+
+
     
    
