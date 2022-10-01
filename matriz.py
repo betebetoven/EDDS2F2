@@ -188,7 +188,21 @@ class matriz:
             print("lo hizo izquierda")
         else:
             self.llenadoautom(random.randint(0,self.dx-1),random.randint(0,self.dy-1),b)
-            
+    def llenadomanual(self,x,y,b):    
+        for n in self.ocupados:
+            if(n.x == x and n.y == y):
+                print("ESTA CASILLA YA ESTA OCUPADA")
+                return
+        if self.var(x,y,b):
+            print("lo hizo arriba")
+        elif self.vab(x,y,b):
+            print("lo hizo abajo")
+        elif self.vder(x,y,b):
+            print("lo hizo derecha")
+        elif self.viz(x,y,b):
+            print("lo hizo izquierda")
+        else:
+            print("IMPOSIBLE COLOCAR EN ESTA CASILLA")
 
 
         

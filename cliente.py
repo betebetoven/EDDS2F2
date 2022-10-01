@@ -53,6 +53,8 @@ if __name__ == '__main__':
     m.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
     m.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
     m.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
+    m.llenadomanual(0,0,"pt")
+
     """m.ingresar(0,0,"b")
     m.ingresar(1,1,"b")
     m.ingresar(2,1,"b")
@@ -63,7 +65,11 @@ if __name__ == '__main__':
     for n in m.ocupados:
         print(str(n))
     m.grapvzix()
-
+    m.llenadomanual(0,0,"pt")
+    m.llenadomanual(4,2,"pt")
+    for n in m.ocupados:
+        print(str(n))
+    m.grapvzix()
 
 
 
