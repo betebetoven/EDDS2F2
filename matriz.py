@@ -2,6 +2,7 @@ from ast import Return
 from pkgutil import ImpImporter
 from tkinter.messagebox import NO
 from nodo import nodo
+import random 
 class par:
     x = 0
     y=0
@@ -16,6 +17,14 @@ class matriz:
     dx = 0
     dy = 0
     ocupados = []
+    espacios = {
+        "pt":4,
+        "sub":3,
+        "dt":2,
+        "b":1
+    }
+
+
    
     def __init__(self,t ):
         self.dx = t
@@ -53,7 +62,7 @@ class matriz:
         for n in self.ocupados:
             if(n.x == x and n.y == y):
                 return False
-        if(x>self.dx or y > self.dy):
+        if(x>=self.dx or y >= self.dy or x<0 or y < 0):
             return False
         nuevo_nodo = nodo(barco,x,y)
         ahora = self.raiz
@@ -121,6 +130,54 @@ class matriz:
         return bandera
 
 
+    def var(self,x,y,B):
+        p = range(y,y+self.espacios[B])
+        for ny in p:
+            if(not(self.ingresar(x,ny,B))):
+                for eny in p:
+                    self.eliminar(x,eny)
+                return False
+        return True
+    def vab(self,x,y,B):
+        p = range(y+1-self.espacios[B],y+1)
+        for ny in p:
+            if(not(self.ingresar(x,ny,B))):
+                for eny in p:
+                    self.eliminar(x,eny)
+                return False
+        return True
+    def vder(self,x,y,B):
+        p = range(x,x+self.espacios[B])
+        for ny in p:
+            if(not(self.ingresar(ny,y,B))):
+                for eny in p:
+                    self.eliminar(eny,y)
+                return False
+        return True
+    def viz(self,x,y,B):
+        p = range(x+1-self.espacios[B],x+1)
+        for ny in p:
+            if(not(self.ingresar(ny,y,B))):
+                for eny in p:
+                    self.eliminar(eny,y)
+                return False
+        return True
+
+
+
+
+    def llenadoautom(self,x,y,b):
+        if self.var(x,y,b):
+            print("lo hizo arriba")
+        elif self.vab(x,y,b):
+            print("lo hizo abajo")
+        elif self.vder(x,y,b):
+            print("lo hizo abajo")
+        elif self.viz(x,y,b):
+            print("lo hizo abajo")
+        else:
+            self.llenadoautom(random.randint(0,self.dx-1),random.randint(0,self.dy-1),b)
+            
 
 
         

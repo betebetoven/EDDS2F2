@@ -3,7 +3,7 @@ from traceback import print_tb
 import requests##pip3 install request
 import json
 from tkinter.filedialog import askopenfilename
-
+import random
 from matriz import matriz
 
 
@@ -42,23 +42,11 @@ if __name__ == '__main__':
     #editP("mama")
    # KS("yes")
     #login("colosho","colosho")
-    m = matriz(4)
-    print(m.ingresar(1,1,"kkita"))
-    print(m.ingresar(0,1,"buque"))
-    print(m.ingresar(0,0,"beso"))
-    print(m.ingresar(0,3,"antesfinal"))
-    print(m.ingresar(1,3,"antesfinal"))
-    print(m.ingresar(2,3,"antesfinal"))
-    print(m.ingresar(3,3,"final"))
-    print(m.ingresar(10,10,"nodeberia"))
-
-    m.muestra()
-    m.muestrac()
-    for n in m.ocupados:
-        print(str(n))
-    m.eliminar(2,3)
-    print(m.ingresar(2,3,"antesfinal"))
-    print(m.eliminar(10,10))
+    m = matriz(10)
+    m.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")
+    m.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")
+    m.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")
+    m.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")
     m.muestra()
     m.muestrac()
     for n in m.ocupados:
