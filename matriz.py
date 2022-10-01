@@ -53,6 +53,8 @@ class matriz:
         for n in self.ocupados:
             if(n.x == x and n.y == y):
                 return False
+        if(x>self.dx or y > self.dy):
+            return False
         nuevo_nodo = nodo(barco,x,y)
         ahora = self.raiz
         while(ahora.c.x != x):
@@ -93,7 +95,9 @@ class matriz:
                 self.ocupados.append(par(x,y))
                 return True
             ahora = ahora.derecha
-    def eliminar(self,x,y):#SOLO SE UTILIZAN DOS CASOS EN LA ELIMINACION YA QUE DE FIJO 
+    def eliminar(self,x,y):
+        if(x>self.dx or y> self.dy):
+            return False                #SOLO SE UTILIZAN DOS CASOS EN LA ELIMINACION YA QUE DE FIJO 
         bandera = False    #SIEMPRE VA A TENER NODO A LA IZQUIERDA Y ARRIBA, POR LO QEU PUEDE FACTORIZARSE
         for n in self.ocupados:#A UN CASO GENERAL
             if(n.x == x and n.y == y):

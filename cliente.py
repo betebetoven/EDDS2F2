@@ -50,12 +50,15 @@ if __name__ == '__main__':
     print(m.ingresar(1,3,"antesfinal"))
     print(m.ingresar(2,3,"antesfinal"))
     print(m.ingresar(3,3,"final"))
+    print(m.ingresar(10,10,"nodeberia"))
+
     m.muestra()
     m.muestrac()
     for n in m.ocupados:
         print(str(n))
     m.eliminar(2,3)
     print(m.ingresar(2,3,"antesfinal"))
+    print(m.eliminar(10,10))
     m.muestra()
     m.muestrac()
     for n in m.ocupados:
