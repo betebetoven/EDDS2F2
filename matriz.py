@@ -134,15 +134,17 @@ class matriz:
         p = range(y,y+self.espacios[B])
         for ny in p:
             if(not(self.ingresar(x,ny,B))):
-                for eny in p:
-                    self.eliminar(x,eny)
+                p2 = range(y,ny-1)
+                for eny in p2:
+                    self.eliminar(x,eny)#ESTA CONFUNCIENDO EL FALSE DE SALIDA PQ TAMBIEN BORRA EL NODO QUE YA SE ENCONTRABA AHI
                 return False
         return True
     def vab(self,x,y,B):
         p = range(y+1-self.espacios[B],y+1)
         for ny in p:
             if(not(self.ingresar(x,ny,B))):
-                for eny in p:
+                p2 = range(y+1-self.espacios[B],ny-1)
+                for eny in p2:
                     self.eliminar(x,eny)
                 return False
         return True
@@ -150,7 +152,8 @@ class matriz:
         p = range(x,x+self.espacios[B])
         for ny in p:
             if(not(self.ingresar(ny,y,B))):
-                for eny in p:
+                p2 = range(x,ny-1)
+                for eny in p2:
                     self.eliminar(eny,y)
                 return False
         return True
@@ -158,7 +161,8 @@ class matriz:
         p = range(x+1-self.espacios[B],x+1)
         for ny in p:
             if(not(self.ingresar(ny,y,B))):
-                for eny in p:
+                p2 = range(x+1-self.espacios[B],ny-1)
+                for eny in p2:
                     self.eliminar(eny,y)
                 return False
         return True
@@ -172,9 +176,9 @@ class matriz:
         elif self.vab(x,y,b):
             print("lo hizo abajo")
         elif self.vder(x,y,b):
-            print("lo hizo abajo")
+            print("lo hizo derecha")
         elif self.viz(x,y,b):
-            print("lo hizo abajo")
+            print("lo hizo izquierda")
         else:
             self.llenadoautom(random.randint(0,self.dx-1),random.randint(0,self.dy-1),b)
             
