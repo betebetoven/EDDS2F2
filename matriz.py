@@ -1,5 +1,4 @@
-from ast import Return
-from pkgutil import ImpImporter
+
 from tkinter.messagebox import NO
 from nodo import nodo
 import random 
@@ -31,6 +30,8 @@ class matriz:
     def __init__(self,t ):
         self.dx = t
         self.dy = t
+        self.raiz = nodo("root", -1,-1)
+        self.ocupados = []
         self.creatodo()
         
 
@@ -251,6 +252,10 @@ class matriz:
                 color = "blue"
             elif n.barco == "b":
                 color = "pink"
+            elif n.barco == "golpe":
+                color = "green"
+            elif n.barco == "missed":
+                color = "red"
             
             
             self.general+="\n"+str(id(n))+ "[label=\"" + str(n)+"\","+"fillcolor = \""+color+"\"]"
@@ -289,7 +294,7 @@ class matriz:
         self.rank()
         self.general+="\n}"
         pyperclip.copy(self.general)
-        #print(self.general)
+        print(self.general)
     def basico_automatico(self):
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"sub")
@@ -313,8 +318,7 @@ class matriz:
             print(int(meta))
             for n in range(int(meta)):
                 self.basico_automatico()
-
-
+    
         
 
     ##def ingresarvertical():

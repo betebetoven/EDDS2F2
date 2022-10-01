@@ -33,7 +33,16 @@ def KS(nombre):#EL PARAMETRO DE ENTRADA LO DEJAMOS NADA MAS PARA CONFIRMACION
     data = res.text#convertimos la respuesta en dict
     print(data)
 
-           
+def dispara(mo,mh,x,y):
+    if(mo.eliminar(x,y)):
+        mh.ingresar(x,y,"golpe")
+        print("LE DISTE------------------------")
+    else:
+        mh.ingresar(x,y,"missed")
+        print("FALLASTE------------------------")
+    
+   
+
 
 if __name__ == '__main__':
     #carga_masiva(entrada())
@@ -44,11 +53,31 @@ if __name__ == '__main__':
     #login("colosho","colosho")
     m = matriz(24)
     m.para_compu()
-    m.muestra()
-    m.muestrac()
-    for n in m.ocupados:
-        print(str(n))
+    m2 = matriz(24)
+    
+    dispara(m,m2,0,2)
+    dispara(m,m2,1,2)
+    dispara(m,m2,2,2)
+    dispara(m,m2,3,2)
+    dispara(m,m2,4,2)
+    dispara(m,m2,5,2)
+    dispara(m,m2,6,2)
+    dispara(m,m2,7,2)
+    dispara(m,m2,8,2)
+    dispara(m,m2,9,2)
+    dispara(m,m2,10,2)
+    
     m.grapvzix()
+    m2.grapvzix()
+    
+    for n in m2.ocupados:
+        print(str(n))
+   
+
+
+
+    #dispara(m,disparos,4,2)
+  
    
 
 
