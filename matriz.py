@@ -3,6 +3,7 @@ from pkgutil import ImpImporter
 from tkinter.messagebox import NO
 from nodo import nodo
 import random 
+import pyperclip
 class par:
     x = 0
     y=0
@@ -17,6 +18,7 @@ class matriz:
     dx = 0
     dy = 0
     ocupados = []
+    general = "digraph G\n"+"{label=\"expresion regular\"\n"+"        node[shape = circle]\n"+"        node[style = filled]\n"+"        node[fillcolor = \"#EEEEE\"]\n"+"        node[color = \"#EEEEE\"]\n"+"        node[color = \"#31CEF0\"]\n"+"        edge [style=invis]\n"
     espacios = {
         "pt":4,
         "sub":3,
@@ -73,7 +75,7 @@ class matriz:
         
         while(ahora != None):
             
-            if(ahora.abajo == None and ahora.c.y < y):
+            if(ahora.abajo == None and ahora.c.y < y):  
                 ahora.abajo = nuevo_nodo
                 ahora.abajo.arriba = ahora
                 
@@ -172,6 +174,10 @@ class matriz:
 
 
     def llenadoautom(self,x,y,b):
+        for n in self.ocupados:
+            if(n.x == x and n.y == y):
+                self.llenadoautom(random.randint(0,self.dx-1),random.randint(0,self.dy-1),b)
+                return
         if self.var(x,y,b):
             print("lo hizo arriba")
         elif self.vab(x,y,b):
@@ -186,19 +192,60 @@ class matriz:
 
 
         
+    def conexionesa(self):
+        n = self.raiz
+        while n!= None:
+            p=n
+            while p.abajo != None:
+                self.general+="\n"+str(id(p))+"->"+str(id(p.abajo))+ "[dir = both];"
+                p=p.abajo
+            n=n.derecha
+    def conexionesd(self):
+        n = self.raiz
+        while n!= None:
+            p=n
+            while p.derecha != None:
+                if( (p.barco!= "ejex" and p.derecha.barco != "ejex") or (p.barco!= "root" and p.derecha.barco != "ejex")):
+                    self.general+="\n"+str(id(p))+"->"+str(id(p.derecha))+ "[constraint=false,dir = both];"
+                else:
+                    self.general+="\n"+str(id(p))+"->"+str(id(p.derecha))+ "[dir = both];"
 
-
-
-
+                p=p.derecha
+            n=n.abajo
+    def rank(self):
+        
+        n = self.raiz
+        while n!=None:
+            p=n
+            self.general+="\n {rank=same; "
+            while p!=None:
+                self.general+=str(id(p))+";"
+                p=p.derecha
+            n=n.abajo
+            self.general+="}"
+        
             
 
     def impder(self, n):
         while(n != None):
+            color = "white"
+            if n.barco == "pt":
+                color = "gray"
+            elif n.barco == "sub":
+                color = "red"
+            elif n.barco == "dt":
+                color = "blue"
+            elif n.barco == "b":
+                color = "pink"
+            
+            
+            self.general+="\n"+str(id(n))+ "[label=\"" + str(n)+"\","+"fillcolor = \""+color+"\"]"
             print(str(n),end = ' ')
             n = n.derecha
 
     def imprime(self, n):
         while(n!=None):
+            
             print("FILA: ",end = ' ')
             self.impder(n)
             print("\n")
@@ -220,7 +267,17 @@ class matriz:
         print("----------------------------------------------")
         self.imprimec(self.raiz)
         print("----------------------------------------------")
-    
+    def grapvzix(self):
+        self.general = general = "digraph G\n"+"{label=\"expresion regular\"\n"+"        node[shape = square]\n"+"        node[style = filled]\n"+"        node[fillcolor = \"#EEEEE\"]\n"+"        node[color = \"#EEEEE\"]\n"+"        node[color = \"#31CEF0\"]\n"
+        self.imprime(self.raiz)
+        self.conexionesa()
+        self.conexionesd()
+        self.rank()
+        self.general+="\n}"
+        pyperclip.copy(self.general)
+        #print(self.general)
+        
+
     ##def ingresarvertical():
 
 

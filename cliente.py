@@ -53,11 +53,16 @@ if __name__ == '__main__':
     m.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
     m.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
     m.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
-    
+    """m.ingresar(0,0,"b")
+    m.ingresar(1,1,"b")
+    m.ingresar(2,1,"b")
+    m.ingresar(0,1,"b")
+    m.eliminar(0,1)"""
     m.muestra()
     m.muestrac()
     for n in m.ocupados:
         print(str(n))
+    m.grapvzix()
 
 
 
