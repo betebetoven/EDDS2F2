@@ -5,4 +5,4 @@ class coordenadas:
             self.x = x
             self.y = y
     def __str__ (self):
-            return 'x=' + str(self.x) + ' ,y=' + str(self.y) + ')'
+            return 'x:' + str(self.x) + ',y:' + str(self.y)

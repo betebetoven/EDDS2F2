@@ -1,3 +1,5 @@
+from time import process_time_ns
+from traceback import print_tb
 import requests##pip3 install request
 import json
 from tkinter.filedialog import askopenfilename
@@ -40,10 +42,36 @@ if __name__ == '__main__':
     #editP("mama")
    # KS("yes")
     #login("colosho","colosho")
-    m = matriz(4)
-    m.ingresar(1,1,"buque")
-    m.muestra()
+    m = matriz(11)
+    m.ingresar(1,1,"kkita")
+    m.ingresar(0,1,"buque")
+    m.ingresar(0,0,"beso")
+    m.ingresar(0,3,"antesfinal")
+    m.ingresar(1,3,"antesfinal")
+    m.ingresar(2,3,"antesfinal")
+    m.ingresar(3,3,"final")
+    m.ingresar(10,1,"hoysi")
+    m.ingresar(1,0,"hoysi")
+    m.ingresar(10,0,"hoysi")
    
+    print(str(m.raiz.derecha.abajo))
+    print(str(m.raiz.abajo.derecha))
+    print(id(m.raiz.derecha.abajo)==id(m.raiz.abajo.derecha))
+    print(str(m.raiz.derecha.derecha.abajo))
+    print(str(m.raiz.abajo.abajo.derecha.derecha))
+    print(id(m.raiz.derecha.derecha.abajo)==id(m.raiz.abajo.abajo.derecha.derecha))
+    print(str(m.raiz.derecha.abajo.abajo))
+    print(str(m.raiz.abajo.abajo.derecha))
+    print(id(m.raiz.derecha.abajo.abajo)==id(m.raiz.abajo.abajo.derecha))
+    print(str(m.raiz.derecha.derecha.derecha.derecha.abajo))
+    print(str(m.raiz.abajo.abajo.abajo.abajo.derecha))
+    print(id(m.raiz.derecha.derecha.derecha.derecha.abajo)==id(m.raiz.abajo.abajo.abajo.abajo.derecha))
+
+    m.muestra()
+
+
+
+  
    
     
     

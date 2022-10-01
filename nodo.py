@@ -12,4 +12,4 @@ class nodo:
         self.barco = barc
         self.c = coordenadas(x,y)
     def __str__ (self):
-        return 'coordenadas: ' + str(self.c) + ' ,barco: ' + self.barco + ')'
+        return '{c:[' + str(self.c) + '],b:' + self.barco+'}'

@@ -20,7 +20,7 @@ class matriz:
             return
         else:
             rooot.derecha = nodo("ejex",cont,-1)
-            rooot.derecha.izquierda = rooot.derecha
+            rooot.derecha.izquierda = rooot
             cont = cont+1
             print(str(rooot))
             self.recursivx(rooot.derecha,cont,meta)
@@ -31,7 +31,7 @@ class matriz:
             return
         else:
             rooot.abajo = nodo("ejey",-1,cont)
-            rooot.abajo.arriba = rooot.abajo
+            rooot.abajo.arriba = rooot
             cont = cont +1
             print(str(rooot))
             self.recursivy(rooot.abajo,cont,meta )
@@ -39,50 +39,59 @@ class matriz:
         self.recursivx(self.raiz,0,self.dx)
         self.recursivy(self.raiz,0,self.dy)
 
+    
     def ingresar(self,x,y,barco):
-        #primero en el eje y ubicandons en el eje x
-        nuevo_nodo = nodo(self,barco,x,y)
+        nuevo_nodo = nodo(barco,x,y)
         ahora = self.raiz
         while(ahora.c.x != x):
+            print("ingreso2"+str(ahora))
             ahora = ahora.derecha
-        if(ahora.abajo == None and ahora!= self.raiz):
-            ahora.abajo = nuevo_nodo
-            ahora.abajo.arriba = ahora
-        else:
-            while(not(y<ahora.c.y and y>ahora.arriba.c.y)):
-                ahora = ahora.abajo
-            aptaux = ahora
-            ahora.arriba.abajo = nuevo_nodo
-            ahora.arriba.abajo.arriba = ahora.arriba
-            ahora.arriba.abajo.abajo = aptaux
-            ahora.arriba.abajo.abajo.arriba = ahora.arriba.abajo
-        #ahora toca en el eje x ubicandonos en el eje y
+        print("se coloca y avanza"+str(ahora))
+        while(ahora != None):
+            print("ahora vale"+str(ahora))
+            if(ahora.abajo == None and ahora.c.y < y):
+                ahora.abajo = nuevo_nodo
+                ahora.abajo.arriba = ahora
+                print("si lo ingreso")
+            elif(ahora.abajo!= None and ahora.abajo.c.y >y and ahora.c.y < y):
+                aux = ahora.abajo
+                ahora.abajo = nuevo_nodo
+                ahora.abajo.arriba = ahora
+                ahora.abajo.abajo = aux
+                ahora.abajo.abajo.arriba = ahora.abajo
+            ahora = ahora.abajo
         ahora = self.raiz
-        while(ahora.c.x != x):
+        while(ahora.c.y != y):
+            print("ingreso2"+str(ahora))
+            ahora = ahora.abajo
+        print("se coloca y avanza"+str(ahora))
+        while(ahora != None):
+            if(ahora.derecha == None and ahora.c.x < x):
+                ahora.derecha = nuevo_nodo
+                ahora.derecha.izquierda = ahora
+            elif(ahora.derecha!= None and ahora.derecha.c.x >x and ahora.c.x < x):
+                aux = ahora.derecha
+                ahora.derecha = nuevo_nodo
+                ahora.derecha.izquierda = ahora
+                ahora.derecha.derecha = aux
+                ahora.derecha.derecha.izquierda = ahora.derecha
             ahora = ahora.derecha
-        if(ahora.derecha == None  and ahora!= self.raiz):
-            ahora.derecha = nuevo_nodo
-            ahora.derecha.izquierda = ahora
-        else:
-            while(not(y<ahora.c.y and y>ahora.izquierda.c.y)):
-                ahora = ahora.derecha
-            aptaux = ahora
-            ahora.izquierda.derecha = nuevo_nodo
-            ahora.izquierda.derecha.izquierda = ahora.izquierda
-            ahora.izquierda.derecha.derecha = aptaux
-            ahora.izquierda.derecha.derecha.izquierda = ahora.izquierda.derecha
+
+
 
 
             
 
     def impder(self, n):
         while(n != None):
-            print(n)
-            n = n.derercha
+            print(str(n),end = ' ')
+            n = n.derecha
 
     def imprime(self, n):
         while(n!=None):
+            print("FILA: ",end = ' ')
             self.impder(n)
+            print("\n")
             n = n.abajo
     def muestra(self):
         self.imprime(self.raiz)
