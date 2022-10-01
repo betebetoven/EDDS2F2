@@ -43,16 +43,20 @@ if __name__ == '__main__':
    # KS("yes")
     #login("colosho","colosho")
     m = matriz(11)
-    m.ingresar(1,1,"kkita")
-    m.ingresar(0,1,"buque")
-    m.ingresar(0,0,"beso")
-    m.ingresar(0,3,"antesfinal")
-    m.ingresar(1,3,"antesfinal")
-    m.ingresar(2,3,"antesfinal")
-    m.ingresar(3,3,"final")
-    m.ingresar(10,1,"hoysi")
-    m.ingresar(1,0,"hoysi")
-    m.ingresar(10,0,"hoysi")
+    print(m.ingresar(1,1,"kkita"))
+    print(m.ingresar(0,1,"buque"))
+    print(m.ingresar(0,0,"beso"))
+    print(m.ingresar(0,3,"antesfinal"))
+    print(m.ingresar(1,3,"antesfinal"))
+    print(m.ingresar(2,3,"antesfinal"))
+    print(m.ingresar(3,3,"final"))
+    print(m.ingresar(10,1,"hoysi"))
+    print(m.ingresar(1,0,"hoysi"))
+    print(m.ingresar(10,0,"hoysi"))
+    print(m.ingresar(10,0,"hoysi2"))
+    print(m.ingresar(10,10,"final"))
+    print(m.ingresar(0,10,"final"))
+    print(m.ingresar(10,0,"final"))
    
     print(str(m.raiz.derecha.abajo))
     print(str(m.raiz.abajo.derecha))
@@ -66,8 +70,22 @@ if __name__ == '__main__':
     print(str(m.raiz.derecha.derecha.derecha.derecha.abajo))
     print(str(m.raiz.abajo.abajo.abajo.abajo.derecha))
     print(id(m.raiz.derecha.derecha.derecha.derecha.abajo)==id(m.raiz.abajo.abajo.abajo.abajo.derecha))
-
+    for n in m.ocupados:
+        print(str(n))
     m.muestra()
+    m.muestrac()
+    m.eliminar(0,0)
+    m.eliminar(10,10)
+    m.eliminar(0,10)
+    m.eliminar(10,0)
+    m.eliminar(5,5)
+    m.muestra()
+    m.muestrac()
+
+    for n in m.ocupados:
+        print(str(n))
+
+
 
 
 
