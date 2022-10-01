@@ -1,3 +1,4 @@
+from ast import Return
 from pkgutil import ImpImporter
 from tkinter.messagebox import NO
 from nodo import nodo
@@ -92,9 +93,9 @@ class matriz:
                 self.ocupados.append(par(x,y))
                 return True
             ahora = ahora.derecha
-    def eliminar(self,x,y):
-        bandera = False
-        for n in self.ocupados:
+    def eliminar(self,x,y):#SOLO SE UTILIZAN DOS CASOS EN LA ELIMINACION YA QUE DE FIJO 
+        bandera = False    #SIEMPRE VA A TENER NODO A LA IZQUIERDA Y ARRIBA, POR LO QEU PUEDE FACTORIZARSE
+        for n in self.ocupados:#A UN CASO GENERAL
             if(n.x == x and n.y == y):
                 bandera = True
         if bandera == True:
@@ -113,6 +114,7 @@ class matriz:
             for n in self.ocupados:
                 if(n.x == x and n.y == y):
                     self.ocupados.remove(n)
+        return bandera
 
 
 
