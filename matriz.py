@@ -290,6 +290,31 @@ class matriz:
         self.general+="\n}"
         pyperclip.copy(self.general)
         #print(self.general)
+    def basico_automatico(self):
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"sub")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"sub")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"dt")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"dt")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"dt")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
+        self.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
+    def para_compu(self):
+        n = self.dx
+        if n == 10:
+            self.basico_automatico()
+        elif n>10 and n<=20:
+            for n in range(2):
+                self.basico_automatico()
+        elif n > 20:
+            meta = ((n-1)/10)+1
+            print(int(meta))
+            for n in range(int(meta)):
+                self.basico_automatico()
+
+
         
 
     ##def ingresarvertical():
