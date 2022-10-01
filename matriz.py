@@ -65,6 +65,7 @@ class matriz:
         if(x>=self.dx or y >= self.dy or x<0 or y < 0):
             return False
         nuevo_nodo = nodo(barco,x,y)
+        print("ingresando: "+str(nuevo_nodo))
         ahora = self.raiz
         while(ahora.c.x != x):
             
