@@ -1,5 +1,4 @@
-from time import process_time_ns
-from traceback import print_tb
+
 import requests##pip3 install request
 import json
 from tkinter.filedialog import askopenfilename
@@ -53,6 +52,11 @@ if __name__ == '__main__':
     #login("colosho","colosho")
     m = matriz(24)
     m.para_compu()
+
+    if m.llenadomanual(23,23,"pt"):
+        print("SI LO PUDO INGRESAR MANUAL_______________________________________________")
+    else:
+        print("NO LO PUDO INGRESAR MANUAL_______________________________________________")
     m2 = matriz(24)
     
     dispara(m,m2,0,2)
@@ -73,6 +77,8 @@ if __name__ == '__main__':
     for n in m2.ocupados:
         print(str(n))
    
+    
+
 
 
 

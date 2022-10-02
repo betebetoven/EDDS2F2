@@ -193,17 +193,22 @@ class matriz:
         for n in self.ocupados:
             if(n.x == x and n.y == y):
                 print("ESTA CASILLA YA ESTA OCUPADA")
-                return
+                return False
         if self.var(x,y,b):
             print("lo hizo arriba")
+            return True
         elif self.vab(x,y,b):
             print("lo hizo abajo")
+            return True
         elif self.vder(x,y,b):
             print("lo hizo derecha")
+            return True
         elif self.viz(x,y,b):
             print("lo hizo izquierda")
+            return True
         else:
             print("IMPOSIBLE COLOCAR EN ESTA CASILLA")
+            return False
 
 
         
@@ -306,6 +311,8 @@ class matriz:
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"b")
+
+
     def para_compu(self):
         n = self.dx
         if n == 10:
