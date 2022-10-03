@@ -4,12 +4,43 @@
 
 from tkinter import *
 from tkinter.ttk import Combobox
+import requests##pip3 install request
+import json
+from tkinter.filedialog import askopenfilename
+import random
+from matriz import matriz
 
 from PIL import ImageTk,Image
 
 tablero_jugador_global = None
+tablero_computadora_global = None
+tablero_disparos_computadora_global = None
+tablero_disparos_jugador_global = None
 
-
+base_url = "http://3.88.228.81:8080/"
+def entrada():
+    f = open(askopenfilename(), "r")
+    return f.read()
+def carga_masiva(entrada):
+    res = requests.post(f'{base_url}/Lista/{entrada}')
+    data = res.text#convertimos la respuesta en dict
+    print(data)
+def login(usuario, contraseña):
+    res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
+    data = res.text#convertimos la respuesta en dict
+    print(data)
+def editN(nombre):
+    res = requests.post(f'{base_url}/editN/{nombre}')
+    data = res.text#convertimos la respuesta en dict
+    print(data)
+def editP(nombre):
+    res = requests.post(f'{base_url}/editP/{nombre}')
+    data = res.text#convertimos la respuesta en dict
+    print(data)
+def KS(nombre):#EL PARAMETRO DE ENTRADA LO DEJAMOS NADA MAS PARA CONFIRMACION
+    res = requests.post(f'{base_url}/KS/{nombre}')
+    data = res.text#convertimos la respuesta en dict
+    print(data)
 
 root = Tk()
 root.title('Fase 2')
@@ -73,6 +104,7 @@ def logo():
     d = Label(top,text="password").pack()
     pas = Entry(top,textvariable=password).pack()
     def ingr():
+        login(username.get(),password.get())
         print(f'usuario:{username.get()} y contraseña: {password.get()}')
         jugar()
     inge = Button(top,text="INGRESAR",command=ingr).pack()
@@ -176,21 +208,25 @@ def editar_informacion():
     dl = Label(top,text="cambiar contraseña:").pack()
     dx = Entry(top,textvariable=ddx).pack()
     def ingr():
+        editN(dimension.get())
         print(f'cambio de nomre:{dimension.get()} ')
     def ingr2():
+        editP(ddx.get())
         print(f' cambio de contraseña: {ddx.get()}')
     def ingr3():
+        KS("si")
         print(f'elimino cuenta, regresar a login')
     inge = Button(top,text="editar nombre",command=ingr).pack()
     ingee = Button(top,text="editar contraseña",command=ingr2).pack()
     ingeee = Button(top,text="eliminar cuenta",command=ingr3).pack()
     
-
+def cm():
+    carga_masiva(entrada())
 
 
    
 logi = Button(root,text="login",command=logo).pack()
-cm = Button(root,text="CARGA MASIVA").pack()
+cmm = Button(root,text="CARGA MASIVA",command=cm).pack()
 
 #btn = Button(root,text="ver su tablero y mis disparos",command=ver).pack()
 
