@@ -32,18 +32,22 @@ def carga_masiva(entrada):
 def login(usuario, contraseña):
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
     data = res.text#convertimos la respuesta en dict
+    messagebox.showinfo("LOGIN",data)
     print(data)
 def editN(nombre):
     res = requests.post(f'{base_url}/editN/{nombre}')
     data = res.text#convertimos la respuesta en dict
+    messagebox.showinfo("CAMBIO DE NOMBRE",data)
     print(data)
 def editP(nombre):
     res = requests.post(f'{base_url}/editP/{nombre}')
     data = res.text#convertimos la respuesta en dict
+    messagebox.showinfo("CAMBIO DE CONTRASEÑA",data)
     print(data)
 def KS(nombre):#EL PARAMETRO DE ENTRADA LO DEJAMOS NADA MAS PARA CONFIRMACION
     res = requests.post(f'{base_url}/KS/{nombre}')
     data = res.text#convertimos la respuesta en dict
+    messagebox.showinfo("ELIMINACION",data)
     print(data)
 
 root = Tk()

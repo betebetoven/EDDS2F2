@@ -304,7 +304,7 @@ class matriz:
         f.write(self.general)
         f.close()
         os.system(f'dot -Tpng {a}.dot -o {a}.png')
-        print(self.general)
+        #print(self.general)
     def basico_automatico(self):
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"sub")
