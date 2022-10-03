@@ -3,6 +3,7 @@ from tkinter.messagebox import NO
 from nodo import nodo
 import random 
 import pyperclip
+import os
 class par:
     x = 0
     y=0
@@ -291,7 +292,7 @@ class matriz:
         print("----------------------------------------------")
         self.imprimec(self.raiz)
         print("----------------------------------------------")
-    def grapvzix(self):
+    def grapvzix(self,a):
         self.general = general = "digraph G\n"+"{label=\"expresion regular\"\n"+"        node[shape = square]\n"+"        node[style = filled]\n"+"        node[fillcolor = \"#EEEEE\"]\n"+"        node[color = \"#EEEEE\"]\n"+"        node[color = \"#31CEF0\"]\n"
         self.imprime(self.raiz)
         self.conexionesa()
@@ -299,6 +300,10 @@ class matriz:
         self.rank()
         self.general+="\n}"
         pyperclip.copy(self.general)
+        f = open(f'{a}.dot', "w")
+        f.write(self.general)
+        f.close()
+        os.system(f'dot -Tpng {a}.dot -o {a}.png')
         print(self.general)
     def basico_automatico(self):
         self.llenadoautom(random.randint(0,9),random.randint(0,9),"pt")

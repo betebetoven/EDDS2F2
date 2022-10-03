@@ -71,8 +71,8 @@ if __name__ == '__main__':
     dispara(m,m2,9,2)
     dispara(m,m2,10,2)
     
-    m.grapvzix()
-    m2.grapvzix()
+    m.grapvzix("compu")
+    m2.grapvzix("disp_jug")
     
     for n in m2.ocupados:
         print(str(n))
