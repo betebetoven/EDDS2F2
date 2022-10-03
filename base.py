@@ -2,13 +2,17 @@
 
 
 
+
 from tkinter import *
+import tkinter
+from tkinter import messagebox
 from tkinter.ttk import Combobox
 import requests##pip3 install request
 import json
 from tkinter.filedialog import askopenfilename
 import random
 from matriz import matriz
+
 
 from PIL import ImageTk,Image
 
@@ -143,7 +147,27 @@ def jugar():
     cbb.pack()
     def ingr():
         print(f'dimension:{dimension.get()} ')
+        global tablero_computadora_global
+        global tablero_disparos_computadora_global
+        global tablero_jugador_global
+        global tablero_disparos_jugador_global
+        tablero_computadora_global = matriz(int(dimension.get()))
+        tablero_computadora_global.para_compu()
+        tablero_disparos_computadora_global = matriz(int(dimension.get()))
+        tablero_jugador_global = matriz(int(dimension.get()))
+        tablero_disparos_jugador_global = matriz(int(dimension.get()))
+
     def ingr2():
+        global tablero_computadora_global
+        global tablero_disparos_computadora_global
+        global tablero_jugador_global
+        global tablero_disparos_jugador_global
+        if tablero_jugador_global.llenadomanual(int(ddx.get()),int(ddy.get()),selected_month.get()):
+            messagebox.showinfo("INGRESO","INGRESAD CORRECTAMENTE")
+            print("SI LO PUDO INGRESAR MANUAL_______________________________________________")
+        else:
+            messagebox.showerror("ERROR","CASILLA OCUPADA O NO HAY ESPACIOS CERCA")
+            print("NO LO PUDO INGRESAR MANUAL_______________________________________________")
         print(f' coordenadas: {ddx.get()},{ddy.get()}  barco:{selected_month.get()}')
     def ingr3():
         print(f'VAMO A JUGA')
@@ -151,39 +175,76 @@ def jugar():
     ingee = Button(top,text="AGREGAR BARCO",command=ingr2).pack()
     ingeee = Button(top,text="JUGAR",command=jugar_si).pack()
     edit = Button(top,text="editar informacion",command=editar_informacion).pack()
-def jugar_si():
+
+def dispara(mo,mh,x,y):
+    if(mo.eliminar(x,y)):
+        mh.ingresar(x,y,"golpe")
+        messagebox.showinfo("DISPARO","LE DISTE")
+        print("LE DISTE------------------------")
+    else:
+        mh.ingresar(x,y,"missed")
+        messagebox.showerror("DISPARO","FALLASTE")
+        print("FALLASTE------------------------")
     
+
+
+def jugar_si():
+    global tablero_computadora_global
+    global tablero_disparos_computadora_global
+    global tablero_jugador_global
+    global tablero_disparos_jugador_global
     global dx
     global dy
     global ddx
     global ddy
-    
-    
     global pas
     global inge
     global ingee
     global ingeee
     global cbb
     global ing
-    
+    global fire
+    global ataque_de_racimo
+    tablero_computadora_global.grapvzix("compu")
+    tablero_disparos_jugador_global.grapvzix("disp_jug")
+    tablero_jugador_global.grapvzix("mitablero")
+    tablero_disparos_computadora_global.grapvzix("disp_compu")
     top = Toplevel()
-    
     ddx = StringVar(top)
     ddy = StringVar(top)#convertir los strings a ints
-    
-    
     dime = Label(top,text="DISPARA:").pack()
     dl = Label(top,text="x:").pack()
     dx = Entry(top,textvariable=ddx).pack()
     dll = Label(top,text="y:").pack( )
     dy = Entry(top,textvariable=ddy).pack()
     def ingr():
-        print(f' DISPARO: {ddx.get()},{ddy.get()}  barco:{selected_month.get()}')
-    def ingr2():
-        print(f' coordenadas: {ddx.get()},{ddy.get()}  barco:{selected_month.get()}')
+        #dispara usuario
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
+        #dispara a computadora
+        dispara(tablero_jugador_global,tablero_disparos_computadora_global,random.randint(0,9),random.randint(0,9))
+        tablero_computadora_global.grapvzix("compu")
+        tablero_disparos_jugador_global.grapvzix("disp_jug")
+        tablero_jugador_global.grapvzix("mitablero")
+        tablero_disparos_computadora_global.grapvzix("disp_compu")
+        print(f' DISPARO: {ddx.get()},{ddy.get()}')
     def ingr3():
-        print(f'VMUSTRA MI TABLERO Y MIS DISPAROS')
-    
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,0,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,1,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,2,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,3,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,4,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,5,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,6,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,7,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,8,2)
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,9,2)
+        tablero_computadora_global.grapvzix("compu")
+        tablero_disparos_jugador_global.grapvzix("disp_jug")
+        tablero_jugador_global.grapvzix("mitablero")
+        tablero_disparos_computadora_global.grapvzix("disp_compu")
+        print(f'ataque de racismo')
+    fire = Button(top,text="DISPARA",command=ingr).pack()
+    ataque_de_racimo = Button(top,text="ATAQUE DE RACIMO",command=ingr3).pack()
     ingee = Button(top,text="ver __SU__ tablero y MIS disparos",command=ver).pack()
     ingeee = Button(top,text="ver __MI__ tablero y MIS disparos",command=ver2).pack()
     inge = Button(top,text="ver __SU__ tablero y SUS disparos",command=ver3).pack()
@@ -222,6 +283,8 @@ def editar_informacion():
     
 def cm():
     carga_masiva(entrada())
+
+
 
 
    
