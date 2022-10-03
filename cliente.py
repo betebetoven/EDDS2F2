@@ -50,14 +50,17 @@ if __name__ == '__main__':
     #editP("mama")
    # KS("yes")
     #login("colosho","colosho")
-    m = matriz(24)
+    m = matriz(24)#DE LA COMPU
     m.para_compu()
 
     if m.llenadomanual(23,23,"pt"):
         print("SI LO PUDO INGRESAR MANUAL_______________________________________________")
     else:
         print("NO LO PUDO INGRESAR MANUAL_______________________________________________")
-    m2 = matriz(24)
+    m2 = matriz(24)#MIS DISPAROS
+    m3 = matriz(24)#MI TABLERO
+    m4 = matriz(24)#DISPAROS DE LA COMPU
+
     
     dispara(m,m2,0,2)
     dispara(m,m2,1,2)
@@ -73,6 +76,8 @@ if __name__ == '__main__':
     
     m.grapvzix("compu")
     m2.grapvzix("disp_jug")
+    m3.grapvzix("mitablero")
+    m4.grapvzix("disp_compu")
     
     for n in m2.ocupados:
         print(str(n))
