@@ -325,8 +325,10 @@ void hello(GloveHttpRequest &request, GloveHttpResponse& response)
         outdata << pedro;
          outdata.close();
         carga_usuario();
+        std::string salida = usuariosB_glob.Grafo();
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
+                 << jsonkv("GRAPHVIZB", salida) << ",\n"
                  << jsonkv("Id_nuevo", request.special["Id"]) << " }";
 }
 void login_server(GloveHttpRequest &request, GloveHttpResponse& response)

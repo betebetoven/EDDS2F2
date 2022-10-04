@@ -226,7 +226,7 @@ int ArbolB<T>::contador(NodoB<T>* primero) {
 
 //================================Grafo solo del arbol b=====================
 template <typename T>
-void ArbolB<T>::Grafo() {
+string ArbolB<T>::Grafo() {
     string dotFull = "";
     //escribir dot
 
@@ -252,6 +252,7 @@ void ArbolB<T>::Grafo() {
 
     //------>abrir archivo
     system(("Pruebas.png"));*/
+    return dotFull
 
 }
 template <typename T>

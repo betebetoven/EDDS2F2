@@ -23,7 +23,7 @@ public:
     pair<NodoB<T>*, bool>  insertarEnRama(NodoB<T>* primero, NodoB<T>* nuevo);
     bool esHoja(NodoB<T>* primero);
     int contador(NodoB<T>* primero);
-    void Grafo();
+    string Grafo();
     string GrafoArbolAbb(NodoB<T>*rama);
     string GrafoRamas(NodoB<T>*rama);
     string GrafoConexionRamas(NodoB<T>*rama);
