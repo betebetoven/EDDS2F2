@@ -252,7 +252,7 @@ string ArbolB<T>::Grafo() {
 
     //------>abrir archivo
     system(("Pruebas.png"));*/
-    return dotFull
+    return dotFull;
 
 }
 template <typename T>
