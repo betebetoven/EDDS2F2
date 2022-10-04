@@ -21,20 +21,24 @@ tablero_jugador_global = None
 tablero_computadora_global = None
 tablero_disparos_computadora_global = None
 tablero_disparos_jugador_global = None
-
+direccion = "one"
 base_url = "http://3.88.228.81:8080/"
 def entrada():
-    f = open(askopenfilename(), "r")
+    global direccion
+    direccion = askopenfilename()
+    f = open(direccion, "r")
     return f.read()
 def carga_masiva(entrada):
     res = requests.post(f'{base_url}/Lista/{entrada}')
     data = res.text#convertimos la respuesta en dict
-    #gra = json.loads(f'{str(data)}')
-    #f = open(f'arbolb.dot', "w")
-    #f.write(gra)
-    #f.close()
-    #os.system(f'dot -Tpng arbolb.dot -o arbolb.png')
-    #ver5()gra["GRAPHVIZB"]
+    
+    f = open(f'arbolb.dot', "w")
+    f.write(data)
+    f.close()
+    os.system(f'dot -Tpng arbolb.dot -o arbolb.png')
+
+
+    ver5()
     print(data)
 def login(usuario, contraseña):
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
@@ -107,7 +111,7 @@ def ver5():#VER MI TABLERO Y SUS DISPAROS
     global compu
     top = Toplevel()
     f = Label(top,text="ARBOL B").pack()
-    compu = ImageTk.PhotoImage(Image.open('arbolb.png').resize((700,700)))
+    compu = ImageTk.PhotoImage(Image.open('arbolb.png').resize((1200,700)))
     my_label = Label(top, image=compu).pack()
 #ACA VA VER MI ABLERO Y SUS DISPAROS, ES LO MISMOS SOLO CAMBIA EL NOMBRE DE LA FOTO
 def logo():
@@ -144,6 +148,7 @@ def jugar():
     global cbb
     global selected_month
     global edit
+    global vt
     top = Toplevel()
     dimension = StringVar(top)
     ddx = StringVar(top)
@@ -191,6 +196,7 @@ def jugar():
     ingee = Button(top,text="AGREGAR BARCO",command=ingr2).pack()
     ingeee = Button(top,text="JUGAR",command=jugar_si).pack()
     edit = Button(top,text="editar informacion",command=editar_informacion).pack()
+    vt = Button(top,text="VER TIENDA",command=ver6).pack()
 
 def dispara(mo,mh,x,y):
     if(mo.eliminar(x,y)):
@@ -301,6 +307,26 @@ def cm():
     carga_masiva(entrada())
 
 
+
+def ver6():#VER MI TABLERO Y SUS DISPAROS
+    top = Toplevel()
+    f = Label(top,text="TIENDA").pack()
+    global direccion
+    f = open(direccion, "r")
+    stienda =  json.loads(f.read())["articulos"]
+    for c in stienda :
+        print(c["id"])
+        f = Label(top,text=c["id"]).pack()
+        print(c["categoria"])
+        f = Label(top,text=c["categoria"]).pack()
+        print(c["precio"])
+        f = Label(top,text=c["precio"]).pack()
+        print(c["nombre"])
+        f = Label(top,text=c["nombre"]).pack()
+        mnb = Button(top,text="COMPRAR").pack()
+    sb = Scrollbar(top)
+    sb.config(command = top.yview )
+    sb.pack(side = LEFT, fill = RIGHT)
 
 
    
