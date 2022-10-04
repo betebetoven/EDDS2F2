@@ -11,6 +11,7 @@ import requests##pip3 install request
 import json
 from tkinter.filedialog import askopenfilename
 import random
+import os
 from matriz import matriz
 
 
@@ -28,6 +29,12 @@ def entrada():
 def carga_masiva(entrada):
     res = requests.post(f'{base_url}/Lista/{entrada}')
     data = res.text#convertimos la respuesta en dict
+    #gra = json.loads(f'{str(data)}')
+    #f = open(f'arbolb.dot', "w")
+    #f.write(gra)
+    #f.close()
+    #os.system(f'dot -Tpng arbolb.dot -o arbolb.png')
+    #ver5()gra["GRAPHVIZB"]
     print(data)
 def login(usuario, contraseña):
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
@@ -96,7 +103,12 @@ def ver4():#VER MI TABLERO Y SUS DISPAROS
     f = Label(top,text="TABLERO disparos").pack(side = LEFT, fill = Y)
     disp_jug = ImageTk.PhotoImage(Image.open('disp_compu.png').resize((400,400)))
     my_label2 = Label(top, image=disp_jug).pack(side = LEFT, fill = Y)
-    
+def ver5():#VER MI TABLERO Y SUS DISPAROS
+    global compu
+    top = Toplevel()
+    f = Label(top,text="ARBOL B").pack()
+    compu = ImageTk.PhotoImage(Image.open('arbolb.png').resize((700,700)))
+    my_label = Label(top, image=compu).pack()
 #ACA VA VER MI ABLERO Y SUS DISPAROS, ES LO MISMOS SOLO CAMBIA EL NOMBRE DE LA FOTO
 def logo():
     global username
