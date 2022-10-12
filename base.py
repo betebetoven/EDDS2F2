@@ -149,6 +149,7 @@ def jugar():
     global selected_month
     global edit
     global vt
+    global g2
     top = Toplevel()
     dimension = StringVar(top)
     ddx = StringVar(top)
@@ -176,6 +177,7 @@ def jugar():
         tablero_computadora_global.para_compu()
         tablero_disparos_computadora_global = matriz(int(dimension.get()))
         tablero_jugador_global = matriz(int(dimension.get()))
+        tablero_jugador_global.para_compu()#ESTO SOLO ES PARA AUTOMATIAR, CAMBIAR LAS MIERDAS DESPUES
         tablero_disparos_jugador_global = matriz(int(dimension.get()))
 
     def ingr2():
@@ -197,6 +199,7 @@ def jugar():
     ingeee = Button(top,text="JUGAR",command=jugar_si).pack()
     edit = Button(top,text="editar informacion",command=editar_informacion).pack()
     vt = Button(top,text="VER TIENDA",command=ver6).pack()
+    g2 = Button(top,text="JUGAR DOS JUGADORES",command=jug2).pack()
 
 def dispara(mo,mh,x,y):
     if(mo.eliminar(x,y)):
@@ -305,6 +308,65 @@ def editar_informacion():
     
 def cm():
     carga_masiva(entrada())
+
+def jug2():
+    global tablero_computadora_global
+    global tablero_disparos_computadora_global
+    global tablero_jugador_global
+    global tablero_disparos_jugador_global
+    global dx
+    global dy
+    global ddx
+    global ddy
+    global pas
+    global inge
+    global ingee
+    global ingeee
+    global cbb
+    global ing
+    global fire
+    global fire2
+    global ataque_de_racimo
+    tablero_computadora_global.grapvzix("compu")
+    tablero_disparos_jugador_global.grapvzix("disp_jug")
+    tablero_jugador_global.grapvzix("mitablero")
+    tablero_disparos_computadora_global.grapvzix("disp_compu")
+    top = Toplevel()
+    ddx = StringVar(top)
+    ddy = StringVar(top)#convertir los strings a ints
+    dime = Label(top,text="DISPARA:").pack()
+    dl = Label(top,text="x:").pack()
+    dx = Entry(top,textvariable=ddx).pack()
+    dll = Label(top,text="y:").pack( )
+    dy = Entry(top,textvariable=ddy).pack()
+    def ingr():
+        #dispara usuario
+        dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
+        #dispara a computadora
+        #dispara(tablero_jugador_global,tablero_disparos_computadora_global,random.randint(0,9),random.randint(0,9))
+        tablero_computadora_global.grapvzix("compu")
+        tablero_disparos_jugador_global.grapvzix("disp_jug")
+        tablero_jugador_global.grapvzix("mitablero")
+        tablero_disparos_computadora_global.grapvzix("disp_compu")
+        print(f' DISPARO: {ddx.get()},{ddy.get()}')
+    def ingr2():
+        #dispara usuario
+        #dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
+        #dispara a computadora
+        dispara(tablero_jugador_global,tablero_disparos_computadora_global,int(ddx.get()),int(ddy.get()))
+        tablero_computadora_global.grapvzix("compu")
+        tablero_disparos_jugador_global.grapvzix("disp_jug")
+        tablero_jugador_global.grapvzix("mitablero")
+        tablero_disparos_computadora_global.grapvzix("disp_compu")
+        print(f' DISPARO: {ddx.get()},{ddy.get()}')
+
+    
+    fire = Button(top,text="DISPARA Jugador 1",command=ingr).pack()
+    fire2 = Button(top,text="DISPARA Jugador 2",command=ingr2).pack()
+    #ingee = Button(top,text="ver jugador 2 y disparos jugador 1",command=ver).pack()
+    ingeee = Button(top,text="ver tablero jugador 1 y disparos jugador 1",command=ver2).pack()
+    inge = Button(top,text="ver tablero jugador 2 y disparos jugador 2",command=ver3).pack()
+    #ing = Button(top,text="ver tablero jugador 1 y disparos jugador 2",command=ver4).pack()
 
 
 
