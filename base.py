@@ -13,6 +13,7 @@ from tkinter.filedialog import askopenfilename
 import random
 import os
 from matriz import matriz
+from matriz import par
 
 
 from PIL import ImageTk,Image
@@ -179,6 +180,12 @@ def jugar():
         tablero_jugador_global = matriz(int(dimension.get()))
         tablero_jugador_global.para_compu()#ESTO SOLO ES PARA AUTOMATIAR, CAMBIAR LAS MIERDAS DESPUES
         tablero_disparos_jugador_global = matriz(int(dimension.get()))
+        jesus = ""
+        for n in tablero_jugador_global.inv:
+            jesus+= "\n"+str(n["nombre"])+" :"
+            for j in n["listacor"]:
+                jesus+= "\n"+str(j)
+        messagebox.showinfo("1: ", jesus)
 
     def ingr2():
         global tablero_computadora_global
@@ -201,10 +208,30 @@ def jugar():
     vt = Button(top,text="VER TIENDA",command=ver6).pack()
     g2 = Button(top,text="JUGAR DOS JUGADORES",command=jug2).pack()
 
+def contains(x,y,parv):
+    cont = 0
+    for n in parv:
+        if n.x == x and n.y == y:
+            parv.pop(cont)
+            return True
+        cont = cont+1
+    return False
+
+
 def dispara(mo,mh,x,y):
     if(mo.eliminar(x,y)):
         mh.ingresar(x,y,"golpe")
         messagebox.showinfo("DISPARO","LE DISTE")
+        for n in mo.inv:
+            if contains(x,y,n["listacor"]) :
+                messagebox.showinfo("DISPARO",f'LE DISTE A UN {str(n["nombre"])}')
+                if len(n["listacor"]) == 0:
+                    messagebox.showinfo("HUNDISTE",f'HUNDISTE A UN {str(n["nombre"])}')
+                    mo.inv.remove(n)
+                    messagebox.showinfo("info",f'HUNDISTE A UN {str(mo.inv)}')
+
+
+
         print("LE DISTE------------------------")
     else:
         mh.ingresar(x,y,"missed")

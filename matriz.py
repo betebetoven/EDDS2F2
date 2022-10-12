@@ -18,6 +18,7 @@ class matriz:
     dx = 0
     dy = 0
     ocupados = []
+    inv = []
     general = "digraph G\n"+"{label=\"expresion regular\"\n"+"        node[shape = circle]\n"+"        node[style = filled]\n"+"        node[fillcolor = \"#EEEEE\"]\n"+"        node[color = \"#EEEEE\"]\n"+"        node[color = \"#31CEF0\"]\n"+"        edge [style=invis]\n"
     espacios = {
         "pt":4,
@@ -33,6 +34,7 @@ class matriz:
         self.dy = t
         self.raiz = nodo("root", -1,-1)
         self.ocupados = []
+        self.inv = []
         self.creatodo()
         
 
@@ -137,39 +139,61 @@ class matriz:
 
     def var(self,x,y,B):
         p = range(y,y+self.espacios[B])
+        dictsitrue = {"nombre": B,
+                        "listacor":[]}
         for ny in p:
             if(not(self.ingresar(x,ny,B))):
                 p2 = range(y,ny)
                 for eny in p2:
                     self.eliminar(x,eny)#ESTA CONFUNCIENDO EL FALSE DE SALIDA PQ TAMBIEN BORRA EL NODO QUE YA SE ENCONTRABA AHI
                 return False
+            dictsitrue["listacor"].append(par(x,ny))
+        self.inv.append(dictsitrue)
         return True
+
+
+
     def vab(self,x,y,B):
         p = range(y+1-self.espacios[B],y+1)
+        dictsitrue = {"nombre": B,
+                        "listacor":[]}
         for ny in p:
             if(not(self.ingresar(x,ny,B))):
                 p2 = range(y+1-self.espacios[B],ny)
                 for eny in p2:
                     self.eliminar(x,eny)
                 return False
+            dictsitrue["listacor"].append(par(x,ny))
+        self.inv.append(dictsitrue)
         return True
+
+
     def vder(self,x,y,B):
         p = range(x,x+self.espacios[B])
+        dictsitrue = {"nombre": B,
+                        "listacor":[]}
         for ny in p:
             if(not(self.ingresar(ny,y,B))):
                 p2 = range(x,ny)
                 for eny in p2:
                     self.eliminar(eny,y)
                 return False
+            dictsitrue["listacor"].append(par(ny,y))
+        self.inv.append(dictsitrue)
         return True
+
     def viz(self,x,y,B):
         p = range(x+1-self.espacios[B],x+1)
+        dictsitrue = {"nombre": B,
+                        "listacor":[]}
         for ny in p:
             if(not(self.ingresar(ny,y,B))):
                 p2 = range(x+1-self.espacios[B],ny)
                 for eny in p2:
                     self.eliminar(eny,y)
                 return False
+            dictsitrue["listacor"].append(par(ny,y))
+        self.inv.append(dictsitrue)
         return True
 
 
