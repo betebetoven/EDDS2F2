@@ -219,8 +219,10 @@ def contains(x,y,parv):
 
 
 def dispara(mo,mh,x,y):
+    mh.grafo.agrega(x,y)
     if(mo.eliminar(x,y)):
         mh.ingresar(x,y,"golpe")
+        
         messagebox.showinfo("DISPARO","LE DISTE")
         for n in mo.inv:
             if contains(x,y,n["listacor"]) :
@@ -367,7 +369,7 @@ def jug2():
     dll = Label(top,text="y:").pack( )
     dy = Entry(top,textvariable=ddy).pack()
     def ingr():
-        #dispara usuario
+        #dispara jugador 1
         dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
         #dispara a computadora
         #dispara(tablero_jugador_global,tablero_disparos_computadora_global,random.randint(0,9),random.randint(0,9))
@@ -375,9 +377,10 @@ def jug2():
         tablero_disparos_jugador_global.grapvzix("disp_jug")
         tablero_jugador_global.grapvzix("mitablero")
         tablero_disparos_computadora_global.grapvzix("disp_compu")
+        tablero_disparos_jugador_global.grafo.graphvix('grafo')
         print(f' DISPARO: {ddx.get()},{ddy.get()}')
     def ingr2():
-        #dispara usuario
+        #dispara jugador 2
         #dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
         #dispara a computadora
         dispara(tablero_jugador_global,tablero_disparos_computadora_global,int(ddx.get()),int(ddy.get()))
@@ -385,6 +388,7 @@ def jug2():
         tablero_disparos_jugador_global.grapvzix("disp_jug")
         tablero_jugador_global.grapvzix("mitablero")
         tablero_disparos_computadora_global.grapvzix("disp_compu")
+        tablero_disparos_computadora_global.grafo.graphvix('grafo2')
         print(f' DISPARO: {ddx.get()},{ddy.get()}')
 
     

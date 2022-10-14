@@ -1,0 +1,21 @@
+digraph G
+{label="expresion regular"
+        node[shape = square]
+        node[style = filled]
+        node[fillcolor = "#EEEEE"]
+        node[color = "#EEEEE"]
+        node[color = "#31CEF0"]
+
+0->3
+1->1
+1->8
+2->7
+3->5
+4->3
+4->8
+6->1
+6->5
+7->2
+7->9
+9->2
+9->6}

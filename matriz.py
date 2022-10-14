@@ -1,5 +1,6 @@
 
 from tkinter.messagebox import NO
+from LL import listaenlazada
 from nodo import nodo
 import random 
 import pyperclip
@@ -36,28 +37,29 @@ class matriz:
         self.ocupados = []
         self.inv = []
         self.creatodo()
+        self.grafo = listaenlazada()
         
 
     def recursivx(self,rooot, cont, meta):
         if cont == meta:
-            print(str(rooot))
+            #print(str(rooot))
             return
         else:
             rooot.derecha = nodo("ejex",cont,-1)
             rooot.derecha.izquierda = rooot
             cont = cont+1
-            print(str(rooot))
+            #print(str(rooot))
             self.recursivx(rooot.derecha,cont,meta)
     
     def recursivy(self,rooot, cont, meta):
         if cont == meta:
-            print(str(rooot))
+            #print(str(rooot))
             return
         else:
             rooot.abajo = nodo("ejey",-1,cont)
             rooot.abajo.arriba = rooot
             cont = cont +1
-            print(str(rooot))
+            #print(str(rooot))
             self.recursivy(rooot.abajo,cont,meta )
     def creatodo(self):
         self.recursivx(self.raiz,0,self.dx)
@@ -71,7 +73,7 @@ class matriz:
         if(x>=self.dx or y >= self.dy or x<0 or y < 0):
             return False
         nuevo_nodo = nodo(barco,x,y)
-        print("ingresando: "+str(nuevo_nodo))
+        #print("ingresando: "+str(nuevo_nodo))
         ahora = self.raiz
         while(ahora.c.x != x):
             
@@ -289,28 +291,28 @@ class matriz:
             
             
             self.general+="\n"+str(id(n))+ "[label=\"" + str(n)+"\","+"fillcolor = \""+color+"\"]"
-            print(str(n),end = ' ')
+            #print(str(n),end = ' ')
             n = n.derecha
 
     def imprime(self, n):
         while(n!=None):
             
-            print("FILA: ",end = ' ')
+            #print("FILA: ",end = ' ')
             self.impder(n)
-            print("\n")
+            #print("\n")
             n = n.abajo
     def muestra(self):
         self.imprime(self.raiz)
 
     def impderc(self, n):
         while(n != None):
-            print('['+ str(n.c)+']',end = ' ')
+            #print('['+ str(n.c)+']',end = ' ')
             n = n.derecha
     def imprimec(self, n):
         while(n!=None):
-            print("FILA: ",end = ' ')
+            #print("FILA: ",end = ' ')
             self.impderc(n)
-            print("\n")
+            #print("\n")
             n = n.abajo
     def muestrac(self):
         print("----------------------------------------------")
@@ -351,7 +353,7 @@ class matriz:
                 self.basico_automatico()
         elif n > 20:
             meta = ((n-1)/10)+1
-            print(int(meta))
+            #print(int(meta))
             for n in range(int(meta)):
                 self.basico_automatico()
     

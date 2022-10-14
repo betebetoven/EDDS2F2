@@ -11,7 +11,8 @@ class nodito:
         self.Der = None
     def __str__(self) :
         jesus = ""
-        jesus+= f'{str(id(self))} [label=\"{str(self.value)}\",fillcolor =\"pink\"]'
+        jesus+= f'\n{str(id(self))} [label=\"{str(self.value)}\",fillcolor =\"pink\"]'
+        return jesus
     def agragaderecha(self,nuevoval):
         aux = self
         while aux.Der != None:
