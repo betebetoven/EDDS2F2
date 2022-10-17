@@ -1,17 +1,19 @@
 import hashlib
 from sha256 import shasha
 from nodoLL import nodito
+import os
 
 # Hash pairs of items recursively until a single value is obtained
 class MLKjunior():
-    def __init__(self) -> None:
-        
+    def __init__(self):
+        self.merkleroot = None
         self.pedro = shasha()
         self.general = "digraph G\n"+"{label=\"EL ARROBA EXPRESA CUANDO SE ITERA CONSIGOMISMO\"\n"+"        node[shape = hexagon]\n"+"        node[style = filled]\n"+"        node[fillcolor = \"#EEEEE\"]\n"+"        node[color = \"#EEEEE\"]\n"+"        node[color = \"#31CEF0\"]\n"+"        rankdir=BT;\n"
     def merkle(self,hashList):
         
         if len(hashList) == 1:
             pe = nodito(hashList[0])
+            self.merkleroot = pe
             return  pe
         newHashList = []
         # Process pairs. For odd length, the last is skipped
@@ -35,6 +37,14 @@ class MLKjunior():
         b1 = b
         h = self.pedro.generate_hash(str(a1)+str(b1)).hex()
         return h
+    def graphvix(self):
+        self.general+=f'\n\"{self.merkleroot.value[0:7]}\"[fillcolor="pink"] \n{"}"}'
+        f = open(f'merkle.dot', "w")
+        f.write(mk.general)
+        f.close()
+        os.system(f'dot -Tpng merkle.dot -o merkle.png')
+
+
 
 # https://blockexplorer.com/rawblock/0000000000000000e067a478024addfecdc93628978aa52d91fabd4292982a50
 txHashes = [
@@ -141,6 +151,7 @@ txHashes = [
 t = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n"]
 
 mk = MLKjunior()
-nodo = mk.merkle(txHashes)
-mk.general+=f'\n\"{mk.merkle(txHashes).value[0:7]}\"[fillcolor="pink"] \n{"}"}'
-print(mk.general)
+nodo = mk.merkle(t)
+mk.graphvix()
+
+print(nodo)
