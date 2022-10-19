@@ -6,4 +6,8 @@ digraph G
         node[color = "#EEEEE"]
         node[color = "#31CEF0"]
 
-0->0}
+0->0
+0->1
+0->2
+0->3
+0->4}

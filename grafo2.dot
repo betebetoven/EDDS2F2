@@ -1,0 +1,21 @@
+digraph G
+{label="expresion regular"
+        node[shape = square]
+        node[style = filled]
+        node[fillcolor = "#EEEEE"]
+        node[color = "#EEEEE"]
+        node[color = "#31CEF0"]
+
+2027290121248 [label="0",fillcolor ="pink"]
+2027290121584 [label="0",fillcolor ="pink"]
+2027290011312 [label="1",fillcolor ="pink"]
+2027290011648 [label="2",fillcolor ="pink"]
+2027290009632 [label="3",fillcolor ="pink"]
+2027290009968 [label="4",fillcolor ="pink"]
+2027290121248-> 2027290121584
+2027290121584-> 2027290011312
+2027290011312-> 2027290011648
+2027290011648-> 2027290009632
+2027290009632-> 2027290009968
+ {rank=same; 2027290121248;2027290121584;2027290011312;2027290011648;2027290009632;2027290009968;}
+ }
