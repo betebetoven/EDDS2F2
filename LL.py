@@ -18,6 +18,17 @@ class listaenlazada:
         if self.contains(x,y):
             print("si lo agrego")
             return True
+    def agrega_simple(self,x):
+        if self.head == None:
+            self.head = nodito(x)
+            self.tamaño = 1
+            return True
+        k = self.head
+        while k.Next != None:
+            k = k.Next
+        self.tamaño = self.tamaño +1
+        k.Next = nodito(x)
+        
 
 
 

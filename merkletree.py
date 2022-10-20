@@ -18,9 +18,9 @@ class MLKjunior():
         newHashList = []
         # Process pairs. For odd length, the last is skipped
         for i in range(0, len(hashList)-1, 2):
-            print(i)
-            print(i+1)
-            print("__")
+            #print(i)
+            #print(i+1)
+            #print("__")
             newHashList.append(self.hash2(hashList[i], hashList[i+1]))
             self.general+=f'\n\"{str(hashList[i])[0:7]}\" -> \"{str(newHashList[-1])[0:7]}\"'
             self.general+=f'\n\"{str(hashList[i+1])[0:7]}\" -> \"{str(newHashList[-1])[0:7]}\"'
@@ -45,7 +45,7 @@ class MLKjunior():
         os.system(f'dot -Tpng merkle.dot -o merkle.png')
 
 
-
+"""
 # https://blockexplorer.com/rawblock/0000000000000000e067a478024addfecdc93628978aa52d91fabd4292982a50
 txHashes = [
   "00baf6626abc2df808da36a518c69f09b0d2ed0a79421ccfde4f559d2e42128b",
@@ -154,4 +154,4 @@ mk = MLKjunior()
 nodo = mk.merkle(t)
 mk.graphvix()
 
-print(nodo)
+print(nodo)"""
