@@ -427,7 +427,7 @@ logi = Button(root,text="login",command=logo).pack()
 cmm = Button(root,text="CARGA MASIVA",command=cm).pack()
 
 #btn = Button(root,text="ver su tablero y mis disparos",command=ver).pack()
-
+#COMIENZA TRABAJO DEL BLOCKCHAIN
 
 
 
