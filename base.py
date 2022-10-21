@@ -2,7 +2,7 @@
 
 
 
-
+import threading as th
 from tkinter import *
 import tkinter
 from tkinter import messagebox
@@ -14,6 +14,7 @@ import random
 import os
 from matriz import matriz
 from matriz import par
+import time
 
 
 from PIL import ImageTk,Image
@@ -24,6 +25,12 @@ tablero_disparos_computadora_global = None
 tablero_disparos_jugador_global = None
 direccion = "one"
 base_url = "http://3.88.228.81:8080/"
+
+
+
+
+
+
 def entrada():
     global direccion
     direccion = askopenfilename()
@@ -45,6 +52,7 @@ def login(usuario, contraseña):
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
     data = res.text#convertimos la respuesta en dict
     messagebox.showinfo("LOGIN",data)
+    
     print(data)
 def editN(nombre):
     res = requests.post(f'{base_url}/editN/{nombre}')
@@ -433,4 +441,35 @@ cmm = Button(root,text="CARGA MASIVA",command=cm).pack()
 
 
 
+
+def display(msg):  
+    print(msg + ' ' + time.strftime('%H:%M:%S'))  
+  
+##Basic timer  
+def run_once():  
+    display('run_once:')  
+    t=th.Timer(600,display,['Timeout:'])  
+    t.start()#Here run is called  
+run_once()  
+##Runs immediately and once  
+print('Waiting.....')  
+  
+##Lets make our timer run in intervals  
+##Put it into a class  
+class RepeatTimer(th.Timer):  
+    def run(self):  
+        while not self.finished.wait(self.interval):  
+            self.function(*self.args,**self.kwargs)  
+            print(' ')  
+##We are now creating a thread timer and controling it  
+timer = RepeatTimer(5,display,['Repeating'])  
+timer.start() #recalling run  
+print('Threading started')  
 mainloop()
+time.sleep(10)#It gets suspended for the given number of seconds  
+print('Threading finishing')  
+timer.cancel()
+
+
+
+

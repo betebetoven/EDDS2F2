@@ -6,8 +6,8 @@ digraph G
         node[color = "#EEEEE"]
         node[color = "#31CEF0"]
 
-2029351078160 [label="0",fillcolor ="pink"]
-2029350669664 [label="0",fillcolor ="pink"]
-2029351078160-> 2029350669664
- {rank=same; 2029351078160;2029350669664;}
+2386077941184 [label="0",fillcolor ="pink"]
+2386077289968 [label="2",fillcolor ="pink"]
+2386077941184-> 2386077289968
+ {rank=same; 2386077941184;2386077289968;}
  }
