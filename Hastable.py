@@ -1,4 +1,5 @@
 
+from tkinter import messagebox
 from nodoLL import nodito
 import numpy as np
 class jacinto():
@@ -35,12 +36,14 @@ class jacinto():
         k = self.head
         for n in range(posicion):
             k = k.Next
-        if k.value != None:
+        print(f'ESTE ES EL VALOR QUE SE ENCUENTRA DENTRO{k}')
+        if k.value == "":
             k.value = value
             self.ocupacion = self.ocupacion +1
         else:
             #aca va la resolucion de colision
-            pass
+            print("HUBO OCOLISIOIN")
+            #pass
 
 
     
@@ -57,4 +60,5 @@ pedro = jacinto()
 print(f'tabla 1{pedro}')
 pedro.agregar(2,'betebetoven')
 pedro.agregar(2,'aba')
+pedro.agregar(2,'cerro')
 print(f'tabla 2{pedro}')
