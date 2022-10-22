@@ -8,8 +8,13 @@ class jacinto():
         self.last = None
         self.tamaño = 13
         self.ocupacion = 0
+        self.porcentaje_de_ocupacion = 0
         for n in range(self.tamaño):
             self.inicia_tamaño()
+
+    def definir_porcentaje_ocupacion(self):
+        self.porcentaje_de_ocupacion = self.ocupacion/self.tamaño
+        return self.porcentaje_de_ocupacion    
 
     def inicia_tamaño(self):
         if self.head == None:
