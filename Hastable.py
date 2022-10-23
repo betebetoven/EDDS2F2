@@ -65,6 +65,22 @@ class jacinto():
             #aca va la resolucion de colision
             
             #pass
+    def retamaño(self):
+        while self.definir_porcentaje_ocupacion()*100 > 20.00:
+            self.agrega_vacios()
+            print(f'PORCENTAJE DE OCUPACION____{str(self.definir_porcentaje_ocupacion()*100)}...%')
+        print("retamaño:")
+        print(str(self))
+    def agrega_vacios(self):
+        k = self.head
+            
+        while k.Next != self.head:
+                #print(f'acaentra{k}')
+            k = k.Next  
+        k.Next = nodito('')
+        self.last = k.Next
+        self.last.Next = self.head
+        self.tamaño = self.tamaño+1
     def haseho2(self,numero):
         nuevo_index = ((numero % 3)+1)*self.colisiones
         return nuevo_index
@@ -91,6 +107,7 @@ class jacinto():
             
             if self.definir_porcentaje_ocupacion()*100 > 80.0:
                 print("YA SUPERO EL PORCENTAJE DE OCUPACION, DEBE AGRANDAR>>>>>>>>>>")
+                self.retamaño()
             print(f' ')
             print("________________________")
         else:
