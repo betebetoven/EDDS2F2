@@ -80,20 +80,24 @@ class jacinto():
         for n in range(index):
             k = k.Next
         if k.value == "":
-            print(f'------------------------')
+            #print(f'------------------------')
             print(f' ')
-            print(f'[{value}] SE VA A POSICION___{index}')
+            print(f'[{value}] SE VA A POSICION___{index} que es la posicion {index % self.tamaño}')
             k.value = value
             self.ocupacion = self.ocupacion +1
             print(f'PORCENTAJE DE OCUPACION____{str(self.definir_porcentaje_ocupacion()*100)}...%')
             print(f'NUMERO DE COLISIONES____{str(self.colisiones)}')
+            
+            
+            if self.definir_porcentaje_ocupacion()*100 > 80.0:
+                print("YA SUPERO EL PORCENTAJE DE OCUPACION, DEBE AGRANDAR>>>>>>>>>>")
             print(f' ')
             print("________________________")
         else:
-            print(f'[{value}] SE HUBIERA IDO A POSICION___{index}')
+            print(f'[{value}] SE HUBIERA IDO A POSICION___{index} que es la posicion {index % self.tamaño}')
             self.colisiones = self.colisiones + 1
             nuevo_index = self.haseho2(index)
-            self.agregar(value, nuevo_index)
+            self.agregar(value, nuevo_index+index)
             
         
             #aca va la resolucion de colision
