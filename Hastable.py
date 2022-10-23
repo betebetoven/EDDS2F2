@@ -1,7 +1,7 @@
 
-from tkinter import messagebox
+
 from nodoLL import nodito
-import numpy as np
+
 class jacinto():
     def __init__(self):
         self.head = None
@@ -33,16 +33,17 @@ class jacinto():
             self.last.Next = self.head
     def hasheo(self, cadena):
         general = sum(bytearray(cadena,encoding='utf-8'))
-        print(f'NUMEROHASH_____{general}')
+        #print(f'NUMEROHASH_____{general}')
         return general
     def agregar(self, id,value):
         posicion = self.hasheo(str(id)+str(value)) % self.tamaño
-        print(f'SE VA A POSICION___{posicion}')
+       
         k = self.head
         for n in range(posicion):
             k = k.Next
-        print(f'ESTE ES EL VALOR QUE SE ENCUENTRA DENTRO{k}')
+        
         if k.value == "":
+            print(f'SE VA A POSICION___{posicion}')
             k.value = value
             self.ocupacion = self.ocupacion +1
         else:
@@ -59,7 +60,7 @@ class jacinto():
             f.value = value
             self.ocupacion = self.ocupacion+1
             
-
+        print(f'PORCENTAJE DE OCUPACION____{str(self.definir_porcentaje_ocupacion()*100)}')
             #aca va la resolucion de colision
             
             #pass
