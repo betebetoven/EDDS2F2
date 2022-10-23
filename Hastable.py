@@ -46,8 +46,22 @@ class jacinto():
             k.value = value
             self.ocupacion = self.ocupacion +1
         else:
-            #aca va la resolucion de colision
             print("HUBO OCOLISIOIN")
+            f = k
+            while f.value != "":
+                
+                posicion = posicion + 1
+                
+                f = f.Next
+                if f == self.head:
+                    posicion = 0
+            print(f'SE VA A POSICION___{posicion}')
+            f.value = value
+            self.ocupacion = self.ocupacion+1
+            
+
+            #aca va la resolucion de colision
+            
             #pass
 
 
@@ -63,7 +77,17 @@ class jacinto():
         
 pedro = jacinto()
 print(f'tabla 1{pedro}')
-pedro.agregar(2,'betebetoven')
-pedro.agregar(2,'aba')
-pedro.agregar(2,'cerro')
+pedro.agregar(2,'a')
+pedro.agregar(2,'b')
+pedro.agregar(2,'c')
+pedro.agregar(2,'d')
+pedro.agregar(2,'e')
+pedro.agregar(2,'f')
+pedro.agregar(2,'g')
+pedro.agregar(2,'h')
+pedro.agregar(2,'i')
+pedro.agregar(2,'j')
+pedro.agregar(2,'k')
+pedro.agregar(2,'l')
+pedro.agregar(2,'m')
 print(f'tabla 2{pedro}')
