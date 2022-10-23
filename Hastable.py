@@ -22,6 +22,7 @@ class jacinto():
             self.last = self.head
             self.head.Next = self.last
             self.last.Next = self.head
+            self.colisiones = 0
         else:
             k = self.head
             
@@ -35,7 +36,7 @@ class jacinto():
         general = sum(bytearray(cadena,encoding='utf-8'))
         #print(f'NUMEROHASH_____{general}')
         return general
-    def agregar(self, id,value):
+    def agregar1(self, id,value):
         posicion = self.hasheo(str(id)+str(value)) % self.tamaño
        
         k = self.head
@@ -64,8 +65,40 @@ class jacinto():
             #aca va la resolucion de colision
             
             #pass
+    def haseho2(self,numero):
+        nuevo_index = ((numero % 3)+1)*self.colisiones
+        return nuevo_index
+
+    def agrega_inicial(self,id,value):
+        posicion = self.hasheo(str(id)+str(value)) % self.tamaño
+        self.agregar(value,posicion)
 
 
+
+    def agregar(self,value,index):
+        k = self.head
+        for n in range(index):
+            k = k.Next
+        if k.value == "":
+            print(f'------------------------')
+            print(f' ')
+            print(f'[{value}] SE VA A POSICION___{index}')
+            k.value = value
+            self.ocupacion = self.ocupacion +1
+            print(f'PORCENTAJE DE OCUPACION____{str(self.definir_porcentaje_ocupacion()*100)}...%')
+            print(f'NUMERO DE COLISIONES____{str(self.colisiones)}')
+            print(f' ')
+            print("________________________")
+        else:
+            print(f'[{value}] SE HUBIERA IDO A POSICION___{index}')
+            self.colisiones = self.colisiones + 1
+            nuevo_index = self.haseho2(index)
+            self.agregar(value, nuevo_index)
+            
+        
+            #aca va la resolucion de colision
+            
+            #pass
     
     def __str__(self) -> str:
         general = "TABLA HASH--------"
@@ -78,17 +111,18 @@ class jacinto():
         
 pedro = jacinto()
 print(f'tabla 1{pedro}')
-pedro.agregar(2,'a')
-pedro.agregar(2,'b')
-pedro.agregar(2,'c')
-pedro.agregar(2,'d')
-pedro.agregar(2,'e')
-pedro.agregar(2,'f')
-pedro.agregar(2,'g')
-pedro.agregar(2,'h')
-pedro.agregar(2,'i')
-pedro.agregar(2,'j')
-pedro.agregar(2,'k')
-pedro.agregar(2,'l')
-pedro.agregar(2,'m')
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'d')
+pedro.agrega_inicial(2,'e')
+pedro.agrega_inicial(2,'f')
+pedro.agrega_inicial(2,'g')
+pedro.agrega_inicial(2,'h')
+pedro.agrega_inicial(2,'i')
+pedro.agrega_inicial(2,'j')
+pedro.agrega_inicial(2,'k')
+pedro.agrega_inicial(2,'l')
+pedro.agrega_inicial(2,'m')
+
 print(f'tabla 2{pedro}')
