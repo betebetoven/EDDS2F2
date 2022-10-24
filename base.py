@@ -36,6 +36,7 @@ base_url = "http://3.88.228.81:8080/"
 
 
 BLOCKCHAIN_GLOBAL = blockchain()
+HASHTABLE_GLOBAL = jacinto()
 
 
 
@@ -419,24 +420,42 @@ def jug2():
 
 
 def ver6():#VER MI TABLERO Y SUS DISPAROS
+    hashtable_auxiliar = jacinto()
     top = Toplevel()
     f = Label(top,text="TIENDA").pack()
     global direccion
     f = open(direccion, "r")
     stienda =  json.loads(f.read())["articulos"]
     for c in stienda :
+        
         print(c["id"])
-        f = Label(top,text=c["id"]).pack()
         print(c["categoria"])
-        f = Label(top,text=c["categoria"]).pack()
         print(c["precio"])
-        f = Label(top,text=c["precio"]).pack()
         print(c["nombre"])
-        f = Label(top,text=c["nombre"]).pack()
-        mnb = Button(top,text="COMPRAR").pack()
-    sb = Scrollbar(top)
-    sb.config(command = top.yview )
-    sb.pack(side = LEFT, fill = RIGHT)
+    
+    malboro = Button(top,text="COMPRAR",command=agregaahashauxiliar).pack()
+    #sb = Scrollbar(top)
+
+
+    
+
+    for c in stienda :
+        
+        print(c["id"])
+        f0 = Label(top,text=c["id"]).pack()
+        print(c["categoria"])
+        f2 = Label(top,text=c["categoria"]).pack()
+        print(c["precio"])
+        f3 = Label(top,text=c["precio"]).pack()
+        print(c["nombre"])
+        f00 = Label(top,text=c["nombre"]).pack()
+        def agregaahashauxiliar():
+         
+            hashtable_auxiliar.agrega_inicial(2,skin(f00.cget("text"),f3.cget("text")))
+        mnb = Button(top,text="COMPRAR",command=agregaahashauxiliar).pack()
+    #sb = Scrollbar(top)
+    #sb.config(command = top.yview )
+    #sb.pack(side = LEFT, fill = RIGHT)
 
 
    
