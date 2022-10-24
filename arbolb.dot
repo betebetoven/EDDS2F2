@@ -1,98 +1,74 @@
 digraph G {
 node[shape=record]
 		//Agregar Nodos Rama
-R0x7f43ac02e530[label="<C1>|-1409096400 
- yhealks5|<C2>|-1409066000 
- fmahere|<C3>|-1409035600 
+R0x7fc8d002eed0[label="<C1>|-805114160 
+ yhealks5|<C2>|-805083760 
+ fmahere|<C3>|-805053360 
  NIETZSCHE|<C4>"];
-R0x7f43ac02def0[label="<C1>|-1409098000 
- colosho|<C2>|-1409097200 
+R0x7fc8d002e890[label="<C1>|-805115760 
+ colosho|<C2>|-805114960 
  dgatheridge2|<C3>"];
-R0x7f43ac0639c0[label="-1408878144 
- ALLBENIZ|-1408877344 
- GOETHE"];
-R0x7f43ac026830[label="-1409128400 
- sdobble0|-1409127600 
- shattersley1"];
-R0x7f43ac028a90[label="-1409119600 
- braggatt3|-1409118800 
- ramdohr4"];
-R0x7f43ac0355b0[label="<C1>|-1409067600 
- fdrayson8|<C2>|-1409066800 
- alearmouthb|<C3>"];
-R0x7f43ac02acf0[label="-1409110800 
- mparvin6|-1409110000 
- dsuckling7"];
-R0x7f43ac02cf50[label="-1409102000 
- ssummerson9|-1409101200 
- ddowsinga"];
-R0x7f43ac030150[label="-1409089200 
- kwoodstockc|-1409088400 
- hajeand"];
-R0x7f43ac03cc70[label="<C1>|-1409037200 
- ALLBENIZ|<C2>|-1409036400 
- PLATON|<C3>"];
-R0x7f43ac0323b0[label="-1409080400 
- cmcturkf|-1409079600 
- tommanneyg"];
-R0x7f43ac034610[label="-1409071600 
- GOETHE|-1409070800 
- ARISTOTELES"];
-R0x7f43ac037810[label="-1409058800 
- BEAUVUOIR|-1409058000 
- MAYER"];
-R0x7f43ac03d5d0[label="<C1>|-1409034800 
- KUNDERA|<C2>|-1409034000 
- DIDEROT|<C3>"];
-R0x7f43ac00bf80[label="-1409237120 
- betebetoven|-1409236320 
+R0x7fc8d0024f70[label="-805154960 
+ betebetoven|-805154160 
  sofiaruano"];
-R0x7f43ac03bcd0[label="-1409041200 
- BAUDELAIRE|-1409040400 
+R0x7fc8d00271d0[label="-805146160 
+ sdobble0|-805145360 
+ shattersley1"];
+R0x7fc8d0029430[label="-805137360 
+ braggatt3|-805136560 
+ ramdohr4"];
+R0x7fc8d0035f50[label="<C1>|-805085360 
+ fdrayson8|<C2>|-805084560 
+ alearmouthb|<C3>"];
+R0x7fc8d002b690[label="-805128560 
+ mparvin6|-805127760 
+ dsuckling7"];
+R0x7fc8d002d8f0[label="-805119760 
+ ssummerson9|-805118960 
+ ddowsinga"];
+R0x7fc8d0030af0[label="-805106960 
+ kwoodstockc|-805106160 
+ hajeand"];
+R0x7fc8d003d610[label="<C1>|-805054960 
+ ALLBENIZ|<C2>|-805054160 
+ PLATON|<C3>"];
+R0x7fc8d0032d50[label="-805098160 
+ cmcturkf|-805097360 
+ tommanneyg"];
+R0x7fc8d0034fb0[label="-805089360 
+ GOETHE|-805088560 
+ ARISTOTELES"];
+R0x7fc8d00381b0[label="-805076560 
+ BEAUVUOIR|-805075760 
+ MAYER"];
+R0x7fc8d003df70[label="<C1>|-805052560 
+ KUNDERA|<C2>|-805051760 
+ DIDEROT|<C3>"];
+R0x7fc8d003a410[label="-805067760 
+ HEGEL|-805066960 
+ FRANKIE"];
+R0x7fc8d003c670[label="-805058960 
+ BAUDELAIRE|-805058160 
  MONTESQUI"];
-R0x7f43ac03c630[label="-1409038800 
- VOLTAIRE|-1409038000 
- CAMUS|-1409033104 
- bga|-1409019936 
- betebetoven|-1409018336 
- sofiaruano|-1408977888 
- ddowsinga|-1408976288 
- alearmouthb|-1408974688 
- kwoodstockc|-1408973088 
- hajeand|-1408969888 
- cmcturkf|-1408968288 
- tommanneyg|-1408966688 
- ALLBENIZ|-1408965088 
- GOETHE|-1408963488 
- ARISTOTELES|-1408961888 
- PLATON|-1408960288 
- BEAUVUOIR|-1408958688 
- MAYER|-1408955488 
- HEGEL|-1408953888 
- FRANKIE|-1408950688 
- BAUDELAIRE|-1408949088 
- MONTESQUI|-1408935232 
- sdobble0|-1408933632 
- shattersley1|-1408932032 
- dgatheridge2|-1408930432 
- braggatt3|-1408928832 
- ramdohr4|-1408890112 
- colosho"];
+R0x7fc8d003cfd0[label="-805056560 
+ VOLTAIRE|-805055760 
+ CAMUS|-805050864 
+ bga"];
 		//Agregar conexiones
-R0x7f43ac02e530:C1->R0x7f43ac02def0;
-R0x7f43ac02def0:C1->R0x7f43ac0639c0;
-R0x7f43ac02def0:C2->R0x7f43ac026830;
-R0x7f43ac02def0:C3->R0x7f43ac028a90;
-R0x7f43ac02e530:C2->R0x7f43ac0355b0;
-R0x7f43ac0355b0:C1->R0x7f43ac02acf0;
-R0x7f43ac0355b0:C2->R0x7f43ac02cf50;
-R0x7f43ac0355b0:C3->R0x7f43ac030150;
-R0x7f43ac02e530:C3->R0x7f43ac03cc70;
-R0x7f43ac03cc70:C1->R0x7f43ac0323b0;
-R0x7f43ac03cc70:C2->R0x7f43ac034610;
-R0x7f43ac03cc70:C3->R0x7f43ac037810;
-R0x7f43ac02e530:C4->R0x7f43ac03d5d0;
-R0x7f43ac03d5d0:C1->R0x7f43ac00bf80;
-R0x7f43ac03d5d0:C2->R0x7f43ac03bcd0;
-R0x7f43ac03d5d0:C3->R0x7f43ac03c630;
+R0x7fc8d002eed0:C1->R0x7fc8d002e890;
+R0x7fc8d002e890:C1->R0x7fc8d0024f70;
+R0x7fc8d002e890:C2->R0x7fc8d00271d0;
+R0x7fc8d002e890:C3->R0x7fc8d0029430;
+R0x7fc8d002eed0:C2->R0x7fc8d0035f50;
+R0x7fc8d0035f50:C1->R0x7fc8d002b690;
+R0x7fc8d0035f50:C2->R0x7fc8d002d8f0;
+R0x7fc8d0035f50:C3->R0x7fc8d0030af0;
+R0x7fc8d002eed0:C3->R0x7fc8d003d610;
+R0x7fc8d003d610:C1->R0x7fc8d0032d50;
+R0x7fc8d003d610:C2->R0x7fc8d0034fb0;
+R0x7fc8d003d610:C3->R0x7fc8d00381b0;
+R0x7fc8d002eed0:C4->R0x7fc8d003df70;
+R0x7fc8d003df70:C1->R0x7fc8d003a410;
+R0x7fc8d003df70:C2->R0x7fc8d003c670;
+R0x7fc8d003df70:C3->R0x7fc8d003cfd0;
 }

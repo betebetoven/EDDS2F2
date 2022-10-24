@@ -37,6 +37,7 @@ base_url = "http://3.88.228.81:8080/"
 
 BLOCKCHAIN_GLOBAL = blockchain()
 HASHTABLE_GLOBAL = jacinto()
+FROM_GLOBAL = ""
 
 
 
@@ -420,26 +421,71 @@ def jug2():
 
 
 def ver6():#VER MI TABLERO Y SUS DISPAROS
+    global varints
+    global checkbutons
+    global skis
+    global precios
+    global HASHTABLE_GLOBAL
     hashtable_auxiliar = jacinto()
     top = Toplevel()
     f = Label(top,text="TIENDA").pack()
     global direccion
     f = open(direccion, "r")
     stienda =  json.loads(f.read())["articulos"]
+    total = 0
+    f0 = Label(top,text=f'EL TOTAL ES: {total}').pack()
+    HASHTABLE_GLOBAL = jacinto()
+    varints = []
+    checkbutons =[]
+    skis = []
+    precios = []
+    def agregahash():
+
+        pass
+    def comprar():
+        pass
+    def vertotal():
+        
+        for n in range(len(varints)):
+            if (varints[n].get() == 1):
+                HASHTABLE_GLOBAL.agrega_inicial(2,skis[n])
+        settotal()
+        HASHTABLE_GLOBAL.prettytable_llenos(2)
+        HASHTABLE_GLOBAL.reinicio()
+        #HASHTABLE_GLOBAL = new_has
+        
+        
+        
+
+    def settotal():
+        #global f0
+        total = HASHTABLE_GLOBAL.total()
+        #f0.config(text=f'EL TOTAL ES: {total}')
+        messagebox.showinfo("TOTAL",f'SU TOTAL ES DE: {total}')
+    
+
     for c in stienda :
         
         print(c["id"])
         print(c["categoria"])
         print(c["precio"])
         print(c["nombre"])
-    
-    malboro = Button(top,text="COMPRAR",command=agregaahashauxiliar).pack()
+        new = IntVar()
+        varints.append(new)
+        skis.append(skin(c["nombre"],int(c["precio"])))
+        precios.append(int(c["precio"]))
+        checkbutons.append(Checkbutton(top, text=f'{c["id"]}\n{c["categoria"]}\n{c["precio"]}\n{c["nombre"]}',variable=new, onvalue=1, offvalue=0, command=agregahash))
+
+    for n in checkbutons:
+        n.pack()
+    vtot = Button(top,text="VER TOTAL",command=vertotal).pack()
+    malboro = Button(top,text="COMPRAR",command=comprar).pack()
     #sb = Scrollbar(top)
 
 
     
 
-    for c in stienda :
+    """for c in stienda :
         
         print(c["id"])
         f0 = Label(top,text=c["id"]).pack()
@@ -452,7 +498,7 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
         def agregaahashauxiliar():
          
             hashtable_auxiliar.agrega_inicial(2,skin(f00.cget("text"),f3.cget("text")))
-        mnb = Button(top,text="COMPRAR",command=agregaahashauxiliar).pack()
+        mnb = Button(top,text="COMPRAR",command=agregaahashauxiliar).pack()"""
     #sb = Scrollbar(top)
     #sb.config(command = top.yview )
     #sb.pack(side = LEFT, fill = RIGHT)
