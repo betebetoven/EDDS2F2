@@ -2,6 +2,7 @@
 
 
 
+
 import threading as th
 from tkinter import *
 import tkinter
@@ -15,6 +16,13 @@ import os
 from matriz import matriz
 from matriz import par
 import time
+from bloqueBC import bloque
+from BlockChain import blockchain
+from merkletree import MLKjunior
+from Hastable import jacinto
+from sha256 import shasha
+from skin import skin
+from adress import direccion
 
 
 from PIL import ImageTk,Image
@@ -27,6 +35,7 @@ direccion = "one"
 base_url = "http://3.88.228.81:8080/"
 
 
+BLOCKCHAIN_GLOBAL = blockchain()
 
 
 

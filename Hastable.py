@@ -160,6 +160,15 @@ class jacinto():
                 #print(k.value.__class__)
             k = k.Next
         return total
+    def toArray(self):
+        x = []
+        k = self.head
+        for n in range(self.tamaño):
+            if k.value != "":
+                x.append(k.value)
+            k = k.Next
+        return x
+
 """     
 pedro = jacinto()
 #print(f'tabla 1{pedro}')
