@@ -138,10 +138,10 @@ class jacinto():
         x.field_names = ["index", "id", "value"]
         k = self.head
         for n in range(self.tamaño):
-            x.add_row([n,id ,k.value])
+            x.add_row([n,id ,str(k.value)])
             k = k.Next
         print(x)
-        
+"""     
 pedro = jacinto()
 #print(f'tabla 1{pedro}')
 pedro.prettytable(2)
@@ -202,3 +202,4 @@ print(pedro.ocupacion)
 
 #print(f'tabla 2{pedro}')
 pedro.prettytable(2)
+"""
