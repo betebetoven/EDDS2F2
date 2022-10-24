@@ -1,6 +1,8 @@
 
 
 from nodoLL import nodito
+from prettytable import PrettyTable
+
 
 class jacinto():
     def __init__(self):
@@ -70,7 +72,8 @@ class jacinto():
             self.agrega_vacios()
             print(f'PORCENTAJE DE OCUPACION____{str(self.definir_porcentaje_ocupacion()*100)}...%')
         print("retamaño:")
-        print(str(self))
+        #print(str(self))
+        #self.prettytable(2)
     def agrega_vacios(self):
         k = self.head
             
@@ -87,11 +90,11 @@ class jacinto():
 
     def agrega_inicial(self,id,value):
         posicion = self.hasheo(str(id)+str(value)) % self.tamaño
-        self.agregar(value,posicion)
+        self.agregar(id,value,posicion)
 
 
 
-    def agregar(self,value,index):
+    def agregar(self,id,value,index):
         k = self.head
         for n in range(index):
             k = k.Next
@@ -113,8 +116,8 @@ class jacinto():
         else:
             print(f'[{value}] SE HUBIERA IDO A POSICION___{index} que es la posicion {index % self.tamaño}')
             self.colisiones = self.colisiones + 1
-            nuevo_index = self.haseho2(index)
-            self.agregar(value, nuevo_index+index)
+            nuevo_index = self.haseho2(self.hasheo(str(id)+str(value)))
+            self.agregar(id,value, nuevo_index+index)
             
         
             #aca va la resolucion de colision
@@ -129,21 +132,73 @@ class jacinto():
             k = k.Next
         general+=f'\n{self.last}'
         return general
+    
+    def prettytable(self,id):
+        x = PrettyTable()
+        x.field_names = ["index", "id", "value"]
+        k = self.head
+        for n in range(self.tamaño):
+            x.add_row([n,id ,k.value])
+            k = k.Next
+        print(x)
         
 pedro = jacinto()
-print(f'tabla 1{pedro}')
+#print(f'tabla 1{pedro}')
+pedro.prettytable(2)
 pedro.agrega_inicial(2,'a')
-pedro.agrega_inicial(2,'a')
-pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'b')
+pedro.agrega_inicial(2,'c')
 pedro.agrega_inicial(2,'d')
 pedro.agrega_inicial(2,'e')
 pedro.agrega_inicial(2,'f')
 pedro.agrega_inicial(2,'g')
 pedro.agrega_inicial(2,'h')
 pedro.agrega_inicial(2,'i')
-pedro.agrega_inicial(2,'j')
-pedro.agrega_inicial(2,'k')
-pedro.agrega_inicial(2,'l')
-pedro.agrega_inicial(2,'m')
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'a')
 
-print(f'tabla 2{pedro}')
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'b')
+pedro.agrega_inicial(2,'c')
+pedro.agrega_inicial(2,'d')
+pedro.agrega_inicial(2,'e')
+pedro.agrega_inicial(2,'f')
+pedro.agrega_inicial(2,'g')
+pedro.agrega_inicial(2,'h')
+pedro.agrega_inicial(2,'i')
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'a')
+
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'b')
+pedro.agrega_inicial(2,'c')
+pedro.agrega_inicial(2,'d')
+pedro.agrega_inicial(2,'e')
+pedro.agrega_inicial(2,'f')
+pedro.agrega_inicial(2,'g')
+pedro.agrega_inicial(2,'h')
+pedro.agrega_inicial(2,'i')
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'a')
+
+pedro.agrega_inicial(2,'a')
+pedro.agrega_inicial(2,'b')
+pedro.agrega_inicial(2,'c')
+pedro.agrega_inicial(2,'d')
+pedro.agrega_inicial(2,'e')
+pedro.agrega_inicial(2,'f')
+pedro.agrega_inicial(2,'g')
+pedro.agrega_inicial(2,'h')
+pedro.agrega_inicial(2,'i')
+pedro.agrega_inicial(2,'i')
+pedro.agrega_inicial(2,'i')
+#pedro.agrega_inicial(2,'i')
+
+
+
+print(pedro.tamaño)
+print(pedro.ocupacion)
+
+
+#print(f'tabla 2{pedro}')
+pedro.prettytable(2)
