@@ -103,6 +103,7 @@ class jacinto():
             print(f' ')
             print(f'[{value}] SE VA A POSICION___{index} que es la posicion {index % self.tamaño}')
             k.value = value
+            print(k.value.__class__)
             self.ocupacion = self.ocupacion +1
             print(f'PORCENTAJE DE OCUPACION____{str(self.definir_porcentaje_ocupacion()*100)}...%')
             print(f'NUMERO DE COLISIONES____{str(self.colisiones)}')
@@ -150,6 +151,15 @@ class jacinto():
                 x.add_row([n,id ,str(k.value)])
             k = k.Next
         print(x)
+    def total(self):
+        k = self.head
+        total = 0
+        for n in range(self.tamaño):
+            if k.value != "":
+                total = total+k.value.precio
+                #print(k.value.__class__)
+            k = k.Next
+        return total
 """     
 pedro = jacinto()
 #print(f'tabla 1{pedro}')
