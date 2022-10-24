@@ -24,3 +24,5 @@ pedro.agrega_inicial(2,skin("blancamagy2",2))
 print(pedro.ocupacion)
 print(pedro.tamaño)
 pedro.prettytable(2)
+pedro.prettytable_llenos(2)
+

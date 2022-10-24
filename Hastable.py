@@ -141,6 +141,15 @@ class jacinto():
             x.add_row([n,id ,str(k.value)])
             k = k.Next
         print(x)
+    def prettytable_llenos(self,id):
+        x = PrettyTable()
+        x.field_names = ["index", "id", "value"]
+        k = self.head
+        for n in range(self.tamaño):
+            if k.value != "":
+                x.add_row([n,id ,str(k.value)])
+            k = k.Next
+        print(x)
 """     
 pedro = jacinto()
 #print(f'tabla 1{pedro}')
