@@ -29,7 +29,7 @@ class blockchain:
         
 
 
-
+"""
 prueba = listaenlazada()
 prueba.agrega_simple("compra")
 prueba.agrega_simple("compra2")
@@ -46,7 +46,7 @@ blo = blockchain()
 
 blo.agrega_alv(prueba,nodo2)
 blo.agrega_alv(prueba,nodo2)
-
+"""
         
             
 

@@ -42,15 +42,15 @@ class bloque:
             return []
         k = self.transactions.head
         while k!= None:
-            print(k.value)
-            general.append(k.value)
+            #print(k.value)
+            general.append(k.value.todict())
             k = k.Next
         return general
         
-    def make_json(self):
-        estring = str(self)
-        json_object = json.dumps(estring, indent = 4) 
-        print(json_object)
+    #def make_json(self):
+        #estring = str(self)
+        #json_object = json.dumps(estring, indent = 4) 
+        #print(json_object)
 
         
 

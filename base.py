@@ -47,6 +47,7 @@ HASHTABLE_GLOBAL = jacinto()
 ID_USUARIO_GLOBAL = 0
 ADDRESS_USUARIO_GLOBAL = direccion_from()
 TRANSACCIONES_GLOBALES=listaenlazada()
+MERKLE_ROOT_GLOBAL =   None
 FROM_GLOBAL = ""
 
 
@@ -55,13 +56,15 @@ def construye_MLK():
     #ACA HACE ARREGLODEEHASHING
     global TRANSACCIONES_GLOBALES
     global MLKJUNIOR_GLOBAL
+    global MERKLE_ROOT_GLOBAL
     hasharray=[]
     k = TRANSACCIONES_GLOBALES.head
     while k != None:
         hasharray.append(k.value.sha())
         k =k.Next
-    MLKJUNIOR_GLOBAL.merkle(hasharray)
+    MERKLE_ROOT_GLOBAL =  MLKJUNIOR_GLOBAL.merkle(hasharray)
     MLKJUNIOR_GLOBAL.graphvix()
+
 
 
 def entrada():
@@ -658,12 +661,19 @@ cmm = Button(root,text="CARGA MASIVA",command=cm).pack()
 
 
 def display(msg):  
-    print(msg + ' ' + time.strftime('%H:%M:%S'))  
+    global BLOCKCHAIN_GLOBAL
+    global TRANSACCIONES_GLOBALES
+    global MERKLE_ROOT_GLOBAL
+    print(msg + ' ' + time.strftime('%H:%M:%S')) 
+    BLOCKCHAIN_GLOBAL.agrega_alv(TRANSACCIONES_GLOBALES,MERKLE_ROOT_GLOBAL) 
+    
     
   
 ##Basic timer  
+
 def run_once():  
-    display('run_once:')  
+    #global BLOCKCHAIN_GLOBAL
+    #display('run_once:')  
     t=th.Timer(600,display,['Timeout:'])  
     t.start()#Here run is called  
 run_once()  
@@ -678,7 +688,7 @@ class RepeatTimer(th.Timer):
             self.function(*self.args,**self.kwargs)  
             print(' ')  
 ##We are now creating a thread timer and controling it  
-timer = RepeatTimer(30,display,['Repeating'])  
+timer = RepeatTimer(40,display,['Repeating'])  
 timer.start() #recalling run  
 print('Threading started')  
 mainloop()
