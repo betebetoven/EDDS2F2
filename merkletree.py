@@ -40,9 +40,10 @@ class MLKjunior():
     def graphvix(self):
         self.general+=f'\n\"{self.merkleroot.value[0:7]}\"[fillcolor="pink"] \n{"}"}'
         f = open(f'merkle.dot', "w")
-        f.write(mk.general)
+        f.write(self.general)
         f.close()
         os.system(f'dot -Tpng merkle.dot -o merkle.png')
+        self.general = "digraph G\n"+"{label=\"EL ARROBA EXPRESA CUANDO SE ITERA CONSIGOMISMO\"\n"+"        node[shape = hexagon]\n"+"        node[style = filled]\n"+"        node[fillcolor = \"#EEEEE\"]\n"+"        node[color = \"#EEEEE\"]\n"+"        node[color = \"#31CEF0\"]\n"+"        rankdir=BT;\n"
 
 
 """

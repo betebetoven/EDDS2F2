@@ -42,6 +42,7 @@ base_url = "http://3.88.228.81:8080/"
 
 
 BLOCKCHAIN_GLOBAL = blockchain()
+MLKJUNIOR_GLOBAL  = MLKjunior()
 HASHTABLE_GLOBAL = jacinto()
 ID_USUARIO_GLOBAL = 0
 ADDRESS_USUARIO_GLOBAL = direccion_from()
@@ -49,6 +50,18 @@ TRANSACCIONES_GLOBALES=listaenlazada()
 FROM_GLOBAL = ""
 
 
+
+def construye_MLK():
+    #ACA HACE ARREGLODEEHASHING
+    global TRANSACCIONES_GLOBALES
+    global MLKJUNIOR_GLOBAL
+    hasharray=[]
+    k = TRANSACCIONES_GLOBALES.head
+    while k != None:
+        hasharray.append(k.value.sha())
+        k =k.Next
+    MLKJUNIOR_GLOBAL.merkle(hasharray)
+    MLKJUNIOR_GLOBAL.graphvix()
 
 
 def entrada():
@@ -510,6 +523,7 @@ def carrito():
             if bandera == True:
                 TRANSACCIONES_GLOBALES.agrega_simple(trans(str(ADDRESS_USUARIO_GLOBAL.dir),HASHTABLE_GLOBAL.toArray(),HASHTABLE_GLOBAL.total()))
                 TRANSACCIONES_GLOBALES.showsimple()
+                construye_MLK()
 
 
         malboro = Button(top,text="verificar compra",command=verificar).pack()
@@ -645,6 +659,7 @@ cmm = Button(root,text="CARGA MASIVA",command=cm).pack()
 
 def display(msg):  
     print(msg + ' ' + time.strftime('%H:%M:%S'))  
+    
   
 ##Basic timer  
 def run_once():  
@@ -663,7 +678,7 @@ class RepeatTimer(th.Timer):
             self.function(*self.args,**self.kwargs)  
             print(' ')  
 ##We are now creating a thread timer and controling it  
-timer = RepeatTimer(5,display,['Repeating'])  
+timer = RepeatTimer(30,display,['Repeating'])  
 timer.start() #recalling run  
 print('Threading started')  
 mainloop()

@@ -43,7 +43,7 @@ class bloque:
         k = self.transactions.head
         while k!= None:
             print(k.value)
-            general.append(str(k.value))
+            general.append(k.value)
             k = k.Next
         return general
         
