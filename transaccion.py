@@ -12,7 +12,7 @@ class trans:
             skinis+=str(n)
 
         sha = pedro.generate_hash(f'{str(self.From)}{str(skinis)}').hex()
-        return sha
+        return str(sha)
     def todict(self):
         new_arr = []
         for n in self.Array_skins:
