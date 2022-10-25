@@ -437,10 +437,26 @@ def carrito():
     checkbutons_carrito= []
     
     top = Toplevel()
+    top.geometry("500x400")
+    mainframe = Frame(top)
+    mainframe.pack(fill=BOTH,expand=1)
+    my_canvas = Canvas(mainframe)
+    my_canvas.pack(side=LEFT,fill=BOTH,expand=1)
+    my_scrollbar = ttk.Scrollbar(mainframe,orient=VERTICAL,command=my_canvas.yview)
+    my_scrollbar.pack(side=RIGHT, fill=Y)
+    my_canvas.configure(yscrollcommand=my_scrollbar.set)
+    my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
+    second_frame = Frame(my_canvas)
+    my_canvas.create_window((0,0),window=second_frame,anchor="nw")
+
+
+
+
+
     #frame = VerticalScrolledFrame(top)
     #frame.pack()
-    f = Label(top,text="CARRITO").pack()
-    fr = Label(top,text=f'total: {HASHTABLE_GLOBAL.total()}').pack()
+    f = Label(second_frame,text="CARRITO").pack()
+    fr = Label(second_frame,text=f'total: {HASHTABLE_GLOBAL.total()}').pack()
     cosas_array = HASHTABLE_GLOBAL.toArray()
     HASHTABLE_GLOBAL.prettytable_llenos(2)
     for n in HASHTABLE_GLOBAL.toArray():
@@ -448,7 +464,7 @@ def carrito():
     for n in cosas_array:
         new = IntVar()
         varints_carrito.append(new)
-        checkbutons_carrito.append(Checkbutton(top, text=f'{n.nombre}\n{n.precio}',variable=new, onvalue=1, offvalue=0, command=justpas))
+        checkbutons_carrito.append(Checkbutton(second_frame, text=f'{n.nombre}\n{n.precio}',variable=new, onvalue=1, offvalue=0, command=justpas))
     for n in checkbutons_carrito:
         n.pack()
     def eliminar_del_carrito():
@@ -460,14 +476,14 @@ def carrito():
                 varints_carrito.remove(varints_carrito[n])
                 checkbutons_carrito.remove(checkbutons_carrito[n])
                 HASHTABLE_GLOBAL.prettytable_llenos(2)
-                messagebox.showwarning("NUEVO TOTAL",f'total: {HASHTABLE_GLOBAL.total()}')
-                fr.config(text = f'total: {HASHTABLE_GLOBAL.total()}')
+                messagebox.showwarning("NUEVO TOTAL",f'total: {HASHTABLE_GLOBAL.total()}\n TAMAÑO DE TABLA HASH: {HASHTABLE_GLOBAL.tamaño}\n TAMAÑO DEL CARRITO: {HASHTABLE_GLOBAL.ocupacion}\n PORCENTAJE DE OCUPACION: {HASHTABLE_GLOBAL.definir_porcentaje_ocupacion()}')
+                #fr.config(text = f'total: {HASHTABLE_GLOBAL.total()}')
                 return True
-
+        messagebox.showwarning("NUEVO TOTAL",f'total: {HASHTABLE_GLOBAL.total()}\n TAMAÑO DE TABLA HASH: {HASHTABLE_GLOBAL.tamaño}\n TAMAÑO DEL CARRITO: {HASHTABLE_GLOBAL.ocupacion}\n PORCENTAJE DE OCUPACION: {HASHTABLE_GLOBAL.definir_porcentaje_ocupacion()}')
         HASHTABLE_GLOBAL.prettytable_llenos(2)
 
-    malboro = Button(top,text="eliminar del carrito",command=eliminar_del_carrito).pack()
-    malbor = Button(top,text="COMPRAR",command=justpas).pack()
+    malboro = Button(second_frame,text="eliminar del carrito",command=eliminar_del_carrito).pack()
+    malbor = Button(second_frame,text="COMPRAR",command=justpas).pack()
 
 
 
@@ -536,7 +552,7 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
         #global f0
         total = HASHTABLE_GLOBAL.total()
         #f0.config(text=f'EL TOTAL ES: {total}')
-        messagebox.showinfo("TOTAL",f'SU TOTAL ES DE: {total}')
+        messagebox.showinfo("TOTAL",f'SU TOTAL ES DE: {total} \n TAMAÑO DE TABLA HASH: {HASHTABLE_GLOBAL.tamaño}\n TAMAÑO DEL CARRITO: {HASHTABLE_GLOBAL.ocupacion}\n PORCENTAJE DE OCUPACION: {HASHTABLE_GLOBAL.definir_porcentaje_ocupacion()}')
     
 
     for c in stienda :
