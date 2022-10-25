@@ -67,8 +67,8 @@ class bloque:
             }
         }
         
-        with open(f'archivo_{self.index}.json', "w") as outfile:
-            json.dump(bloque, outfile)
+        with open(f'jsons/{datetime.now().strftime("%d-%m-%Y_%H_%M_%S")}_archivo_{self.index}.json', "w") as outfile:
+            json.dump(bloque, outfile,indent = 6)
         
         
         #print(json_object)

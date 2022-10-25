@@ -24,6 +24,7 @@ class blockchain:
             nuevo.work_hash('0')
             self.actual.next = nuevo
             self.actual = nuevo
+            self.index = self.index +1
             print(nuevo)
             return True
         
