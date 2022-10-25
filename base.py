@@ -418,6 +418,21 @@ def jug2():
     inge = Button(top,text="ver tablero jugador 2 y disparos jugador 2",command=ver3).pack()
     #ing = Button(top,text="ver tablero jugador 1 y disparos jugador 2",command=ver4).pack()
 
+def carrito():
+    varints_carrito = []
+    checkbutons_carrito= []
+    global HASHTABLE_GLOBAL
+    top = Toplevel()
+    f = Label(top,text="CARRITO").pack()
+    cosas_array = HASHTABLE_GLOBAL.toArray()
+    for n in cosas_array:
+        new = IntVar()
+        varints_carrito.append(new)
+        checkbutons_carrito.append(Checkbutton(top, text=f'{n.nombre}\n{n.precio}',variable=new, onvalue=1, offvalue=0))
+
+
+
+
 
 
 def ver6():#VER MI TABLERO Y SUS DISPAROS
@@ -479,7 +494,7 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
     for n in checkbutons:
         n.pack()
     vtot = Button(top,text="VER TOTAL",command=vertotal).pack()
-    malboro = Button(top,text="COMPRAR",command=comprar).pack()
+    malboro = Button(top,text="VER CARRITO",command=carrito).pack()
     #sb = Scrollbar(top)
 
 

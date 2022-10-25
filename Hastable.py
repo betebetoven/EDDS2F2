@@ -176,6 +176,11 @@ class jacinto():
                 x.append(k.value)
             k = k.Next
         return x
+    def eliminar(self,nombre):
+        k = self.head
+        while k.value== "" or k.value.nombre!=nombre:
+            k=k.Next
+        k.value = ""
 
 """     
 pedro = jacinto()

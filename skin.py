@@ -28,6 +28,7 @@ pedro.prettytable_llenos(2)
 print(pedro.total())
 for n in pedro.toArray():
     print(str(n))
-
-
+pedro.eliminar("betebetoven")
+pedro.prettytable(2)
+pedro.prettytable_llenos(2)
 
