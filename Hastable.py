@@ -181,6 +181,7 @@ class jacinto():
         while k.value== "" or k.value.nombre!=nombre:
             k=k.Next
         k.value = ""
+        self.ocupacion = self.ocupacion -1
 
 """     
 pedro = jacinto()

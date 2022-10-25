@@ -3,6 +3,7 @@
 
 
 
+from ast import Lambda, main
 from glob import glob
 import threading as th
 from tkinter import *
@@ -24,6 +25,7 @@ from Hastable import jacinto
 from sha256 import shasha
 from skin import skin
 from adress import direccion
+from tkinter import ttk
 
 
 from PIL import ImageTk,Image
@@ -38,6 +40,9 @@ base_url = "http://3.88.228.81:8080/"
 
 BLOCKCHAIN_GLOBAL = blockchain()
 HASHTABLE_GLOBAL = jacinto()
+ID_USUARIO_GLOBAL = 0
+ADDRESS_USUARIO_GLOBAL = ""
+
 FROM_GLOBAL = ""
 
 
@@ -61,6 +66,7 @@ def carga_masiva(entrada):
     ver5()
     print(data)
 def login(usuario, contraseña):
+
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
     data = res.text#convertimos la respuesta en dict
     messagebox.showinfo("LOGIN",data)
@@ -431,6 +437,8 @@ def carrito():
     checkbutons_carrito= []
     
     top = Toplevel()
+    #frame = VerticalScrolledFrame(top)
+    #frame.pack()
     f = Label(top,text="CARRITO").pack()
     fr = Label(top,text=f'total: {HASHTABLE_GLOBAL.total()}').pack()
     cosas_array = HASHTABLE_GLOBAL.toArray()
@@ -476,12 +484,30 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
     
     hashtable_auxiliar = jacinto()
     top = Toplevel()
-    f = Label(top,text="TIENDA").pack()
+    top.geometry("500x400")
+    mainframe = Frame(top)
+    mainframe.pack(fill=BOTH,expand=1)
+    my_canvas = Canvas(mainframe)
+    my_canvas.pack(side=LEFT,fill=BOTH,expand=1)
+    my_scrollbar = ttk.Scrollbar(mainframe,orient=VERTICAL,command=my_canvas.yview)
+    my_scrollbar.pack(side=RIGHT, fill=Y)
+    my_canvas.configure(yscrollcommand=my_scrollbar.set)
+    my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
+    second_frame = Frame(my_canvas)
+    my_canvas.create_window((0,0),window=second_frame,anchor="nw")
+
+
+
+
+
+
+
+    f = Label(second_frame,text="TIENDA").pack()
     global direccion
     f = open(direccion, "r")
     stienda =  json.loads(f.read())["articulos"]
     total = 0
-    f0 = Label(top,text=f'EL TOTAL ES: {total}').pack()
+    f0 = Label(second_frame,text=f'EL TOTAL ES: {total}').pack()
     #HASHTABLE_GLOBAL = jacinto()
     varints = []
     checkbutons =[]
@@ -523,12 +549,12 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
         varints.append(new)
         skis.append(skin(c["nombre"],int(c["precio"])))
         precios.append(int(c["precio"]))
-        checkbutons.append(Checkbutton(top, text=f'{c["id"]}\n{c["categoria"]}\n{c["precio"]}\n{c["nombre"]}',variable=new, onvalue=1, offvalue=0, command=agregahash))
+        checkbutons.append(Checkbutton(second_frame, text=f'{c["id"]}\n{c["categoria"]}\n{c["precio"]}\n{c["nombre"]}',variable=new, onvalue=1, offvalue=0, command=agregahash))
 
     for n in checkbutons:
         n.pack()
-    vtot = Button(top,text="VER TOTAL",command=vertotal).pack()
-    malboro = Button(top,text="VER CARRITO",command=carrito).pack()
+    vtot = Button(second_frame,text="VER TOTAL",command=vertotal).pack()
+    malboro = Button(second_frame,text="VER CARRITO",command=carrito).pack()
     #sb = Scrollbar(top)
 
 
