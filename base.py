@@ -66,7 +66,8 @@ def carga_masiva(entrada):
     ver5()
     print(data)
 def login(usuario, contraseña):
-
+    global ADDRESS_USUARIO_GLOBAL
+    ADDRESS_USUARIO_GLOBAL= direccion()
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
     data = res.text#convertimos la respuesta en dict
     messagebox.showinfo("LOGIN",data)

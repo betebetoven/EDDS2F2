@@ -346,9 +346,10 @@ void login_server(GloveHttpRequest &request, GloveHttpResponse& response)
         
           response << "{ "
                  << jsonkv("status", "ok") << ",\n"
-                 << jsonkv("CUENTA", cuenta->data["nick"].asString()) << ",\n"
-                 << jsonkv("CUENTA", cuenta->data["monedas"].asString()) << ",\n"
-                 << jsonkv("CUENTA", cuenta->data["edad"].asString()) << " }";
+                 << jsonkv("id", cuenta->data["id"].asString()) << ",\n"
+                 << jsonkv("nombre", cuenta->data["nick"].asString()) << ",\n"
+                 << jsonkv("monedas", cuenta->data["monedas"].asString()) << ",\n"
+                 << jsonkv("edad", cuenta->data["edad"].asString()) << " }";
 }
 
 
