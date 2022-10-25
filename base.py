@@ -463,7 +463,8 @@ def carrito():
     f = Label(second_frame,text="CARRITO").pack()
     fr = Label(second_frame,text=f'total: {HASHTABLE_GLOBAL.total()}').pack()
     cosas_array = HASHTABLE_GLOBAL.toArray()
-    HASHTABLE_GLOBAL.prettytable_llenos(2)
+    global ID_USUARIO_GLOBAL
+    HASHTABLE_GLOBAL.prettytable_llenos(ID_USUARIO_GLOBAL)
     for n in HASHTABLE_GLOBAL.toArray():
         print(n)
     for n in cosas_array:
@@ -480,12 +481,12 @@ def carrito():
                 cosas_array.remove(cosas_array[n])
                 varints_carrito.remove(varints_carrito[n])
                 checkbutons_carrito.remove(checkbutons_carrito[n])
-                HASHTABLE_GLOBAL.prettytable_llenos(2)
+                HASHTABLE_GLOBAL.prettytable_llenos(ID_USUARIO_GLOBAL)
                 messagebox.showwarning("NUEVO TOTAL",f'total: {HASHTABLE_GLOBAL.total()}\n TAMAÑO DE TABLA HASH: {HASHTABLE_GLOBAL.tamaño}\n TAMAÑO DEL CARRITO: {HASHTABLE_GLOBAL.ocupacion}\n PORCENTAJE DE OCUPACION: {HASHTABLE_GLOBAL.definir_porcentaje_ocupacion()}')
                 #fr.config(text = f'total: {HASHTABLE_GLOBAL.total()}')
                 return True
         messagebox.showwarning("NUEVO TOTAL",f'total: {HASHTABLE_GLOBAL.total()}\n TAMAÑO DE TABLA HASH: {HASHTABLE_GLOBAL.tamaño}\n TAMAÑO DEL CARRITO: {HASHTABLE_GLOBAL.ocupacion}\n PORCENTAJE DE OCUPACION: {HASHTABLE_GLOBAL.definir_porcentaje_ocupacion()}')
-        HASHTABLE_GLOBAL.prettytable_llenos(2)
+        HASHTABLE_GLOBAL.prettytable_llenos(ID_USUARIO_GLOBAL)
 
     malboro = Button(second_frame,text="eliminar del carrito",command=eliminar_del_carrito).pack()
     malbor = Button(second_frame,text="COMPRAR",command=justpas).pack()
@@ -502,6 +503,7 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
     global skis
     global precios
     global HASHTABLE_GLOBAL
+    global ID_USUARIO_GLOBAL
     
     hashtable_auxiliar = jacinto()
     top = Toplevel()
@@ -544,9 +546,9 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
         
         for n in range(len(varints)):
             if (varints[n].get() == 1):
-                HASHTABLE_GLOBAL.agrega_inicial(2,skis[n])
+                HASHTABLE_GLOBAL.agrega_inicial(ID_USUARIO_GLOBAL,skis[n])
         settotal()
-        HASHTABLE_GLOBAL.prettytable_llenos(2)
+        HASHTABLE_GLOBAL.prettytable_llenos(ID_USUARIO_GLOBAL)
         
         #HASHTABLE_GLOBAL = new_has
         
