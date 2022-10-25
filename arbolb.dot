@@ -1,74 +1,246 @@
 digraph G {
 node[shape=record]
 		//Agregar Nodos Rama
-R0x7fc8d002eed0[label="<C1>|-805114160 
- yhealks5|<C2>|-805083760 
- fmahere|<C3>|-805053360 
- NIETZSCHE|<C4>"];
-R0x7fc8d002e890[label="<C1>|-805115760 
- colosho|<C2>|-805114960 
- dgatheridge2|<C3>"];
-R0x7fc8d0024f70[label="-805154960 
- betebetoven|-805154160 
- sofiaruano"];
-R0x7fc8d00271d0[label="-805146160 
- sdobble0|-805145360 
- shattersley1"];
-R0x7fc8d0029430[label="-805137360 
- braggatt3|-805136560 
- ramdohr4"];
-R0x7fc8d0035f50[label="<C1>|-805085360 
- fdrayson8|<C2>|-805084560 
+R0x7fd3ec05bec0[label="<C1>|-335167808 
+ NIETZSCHE|<C2>"];
+R0x7fd3ec05b880[label="<C1>|-335169408 
+ yhealks5|<C2>|-335168608 
+ fmahere|<C3>"];
+R0x7fd3ec0845d0[label="<C1>|-335002160 
+ kwoodstockc|<C2>|-335001360 
+ ssummerson9|<C3>"];
+R0x7fd3ec016870[label="-335452048 
+ betebetoven|-335450448 
+ sofiaruano|-335255360 
+ alearmouthb|-335254560 
+ fdrayson8"];
+R0x7fd3ec047220[label="-335252960 
+ hajeand|-335252160 
+ fmahere"];
+R0x7fd3ec04be80[label="-335233408 
+ ddowsinga|-335232608 
+ alearmouthb"];
+R0x7fd3ec035f50[label="<C1>|-335323312 
+ fdrayson8|<C2>|-335322512 
  alearmouthb|<C3>"];
-R0x7fc8d002b690[label="-805128560 
- mparvin6|-805127760 
+R0x7fd3ec02b690[label="-335366512 
+ mparvin6|-335365712 
  dsuckling7"];
-R0x7fc8d002d8f0[label="-805119760 
- ssummerson9|-805118960 
+R0x7fd3ec02d8f0[label="-335357712 
+ ssummerson9|-335356912 
  ddowsinga"];
-R0x7fc8d0030af0[label="-805106960 
- kwoodstockc|-805106160 
+R0x7fd3ec030af0[label="-335344912 
+ kwoodstockc|-335344112 
  hajeand"];
-R0x7fc8d003d610[label="<C1>|-805054960 
- ALLBENIZ|<C2>|-805054160 
+R0x7fd3ec03d610[label="<C1>|-335292912 
+ ALLBENIZ|<C2>|-335292112 
  PLATON|<C3>"];
-R0x7fc8d0032d50[label="-805098160 
- cmcturkf|-805097360 
+R0x7fd3ec032d50[label="-335336112 
+ cmcturkf|-335335312 
  tommanneyg"];
-R0x7fc8d0034fb0[label="-805089360 
- GOETHE|-805088560 
+R0x7fd3ec034fb0[label="-335327312 
+ GOETHE|-335326512 
  ARISTOTELES"];
-R0x7fc8d00381b0[label="-805076560 
- BEAUVUOIR|-805075760 
+R0x7fd3ec0381b0[label="-335314512 
+ BEAUVUOIR|-335313712 
  MAYER"];
-R0x7fc8d003df70[label="<C1>|-805052560 
- KUNDERA|<C2>|-805051760 
- DIDEROT|<C3>"];
-R0x7fc8d003a410[label="-805067760 
- HEGEL|-805066960 
+R0x7fd3ec05c1e0[label="<C1>|-335167008 
+ bga|<C2>|-335166208 
+ BEAUVUOIR|<C3>|-335086384 
+ CAMUS|<C4>"];
+R0x7fd3ec041aa0[label="<C1>|-335275360 
+ sdobble0|<C2>|-335274560 
+ braggatt3|<C3>"];
+R0x7fd3ec07d350[label="-335031472 
+ DIDEROT|-335030672 
+ VOLTAIRE"];
+R0x7fd3ec07f5b0[label="-335022672 
+ shattersley1|-335021872 
+ dgatheridge2"];
+R0x7fd3ec040e20[label="-335278560 
+ yhealks5|-335020272 
+ ramdohr4|-335000464 
+ cmcturkf|-334998864 
+ tommanneyg|-334997264 
+ ALLBENIZ"];
+R0x7fd3ec05a8e0[label="<C1>|-335173408 
+ cmcturkf|<C2>|-335172608 
+ GOETHE|<C3>"];
+R0x7fd3ec04f9e0[label="-335218208 
+ kwoodstockc|-335217408 
+ hajeand"];
+R0x7fd3ec051c40[label="-335209408 
+ tommanneyg|-335208608 
+ ALLBENIZ"];
+R0x7fd3ec055480[label="-335195008 
+ ARISTOTELES|-335194208 
+ PLATON"];
+R0x7fd3ec06f690[label="<C1>|-335087984 
+ FRANKIE|<C2>|-335087184 
+ MONTESQUI|<C3>|-335047536 
+ dgatheridge2|<C4>"];
+R0x7fd3ec061970[label="-335144592 
+ colosho|-335143792 
+ betebetoven|-335141792 
+ dgatheridge2|-335140192 
+ braggatt3|-335138592 
+ ramdohr4"];
+R0x7fd3ec059940[label="-335177408 
+ KUNDERA|-335176608 
+ BAUDELAIRE"];
+R0x7fd3ec078e30[label="-335049168 
+ colosho|-335048336 
+ betebetoven"];
+R0x7fd3ec0797b0[label="-335046736 
+ braggatt3|-335045936 
+ ramdohr4"];
+R0x7fd3ec06fff0[label="<C1>|-335085584 
+ colosho|<C2>|-335084784 
+ HEGEL|<C3>|-335077584 
+ MONTESQUI|<C4>|-335062928 
+ ssummerson9|<C5>|-335040336 
+ mparvin6|<C6>|-335029872 
+ sdobble0|<C7>|-335021072 
+ braggatt3|<C8>|-334994160 
+ cmcturkf|<C9>|-334985584 
+ GOETHE|<C10>|-334971984 
+ MAYER|<C11>|-334961584 
+ BAUDELAIRE|<C12>|-334921840 
+ fdrayson8|<C13>|-334913040 
+ alearmouthb|<C14>|-334891216 
+ fmahere|<C15>|-334874416 
+ ARISTOTELES|<C16>|-334862416 
+ KUNDERA|<C17>|-334856112 
+ shattersley1|<C18>|-334842624 
+ dgatheridge2|<C19>|-334809984 
+ kwoodstockc|<C20>|-334780224 
+ ALLBENIZ|<C21>"];
+R0x7fd3ec0ab750[label="-334842032 
+ VOLTAIRE|-334841232 
+ betebetoven"];
+R0x7fd3ec06e6f0[label="-335091984 
+ PLATON|-335091184 
+ MAYER"];
+R0x7fd3ec0718f0[label="-335079184 
+ KUNDERA|-335078384 
+ BAUDELAIRE"];
+R0x7fd3ec075230[label="-335064528 
+ dsuckling7|-335063728 
+ fdrayson8"];
+R0x7fd3ec075b90[label="-335062128 
+ shattersley1|-335061328 
+ yhealks5|-335060432 
+ ddowsinga"];
+R0x7fd3ec07b3d0[label="-335039536 
+ DIDEROT|-335038736 
+ VOLTAIRE|-335037840 
+ dsuckling7"];
+R0x7fd3ec07f5b0[label="-335022672 
+ shattersley1|-335021872 
+ dgatheridge2"];
+R0x7fd3ec085ed0[label="-334995760 
+ yhealks5|-334994960 
+ ramdohr4"];
+R0x7fd3ec088050[label="-334987184 
+ tommanneyg|-334986384 
+ ALLBENIZ"];
+R0x7fd3ec08b570[label="-334973584 
+ ARISTOTELES|-334972784 
+ PLATON"];
+R0x7fd3ec08de10[label="-334963184 
+ FRANKIE|-334962384 
+ KUNDERA"];
+R0x7fd3ec08fad0[label="-334955824 
+ betebetoven|-334954224 
+ sofiaruano|-334946528 
+ shattersley1|-334938800 
+ ramdohr4|-334937200 
+ yhealks5|-334934000 
+ dsuckling7|-334929200 
+ ddowsinga|-334923440 
+ DIDEROT|-334922640 
+ VOLTAIRE"];
+R0x7fd3ec099bb0[label="-334914640 
+ ssummerson9|-334913840 
+ ddowsinga"];
+R0x7fd3ec09f0f0[label="-334892816 
+ kwoodstockc|-334892016 
+ hajeand"];
+R0x7fd3ec0a3290[label="-334876016 
+ tommanneyg|-334875216 
+ ALLBENIZ"];
+R0x7fd3ec0a6170[label="-334864016 
+ PLATON|-334863216 
  FRANKIE"];
-R0x7fc8d003c670[label="-805058960 
- BAUDELAIRE|-805058160 
- MONTESQUI"];
-R0x7fc8d003cfd0[label="-805056560 
- VOLTAIRE|-805055760 
- CAMUS|-805050864 
- bga"];
+R0x7fd3ec092500[label="-334945024 
+ betebetoven|-334856912 
+ sofiaruano"];
+R0x7fd3ec0aaec0[label="-334844224 
+ DIDEROT|-334843424 
+ VOLTAIRE"];
+R0x7fd3ec0abdf0[label="-334840336 
+ sofiaruano|-334811584 
+ ramdohr4|-334810784 
+ yhealks5"];
+R0x7fd3ec0ba280[label="-334781824 
+ hajeand|-334781024 
+ tommanneyg"];
+R0x7fd3ec0babe0[label="-334779424 
+ PLATON|-334778624 
+ FRANKIE|-334772928 
+ DIDEROT|-334771328 
+ VOLTAIRE|-334743568 
+ betebetoven|-334736752 
+ hajeand|-334731952 
+ tommanneyg"];
 		//Agregar conexiones
-R0x7fc8d002eed0:C1->R0x7fc8d002e890;
-R0x7fc8d002e890:C1->R0x7fc8d0024f70;
-R0x7fc8d002e890:C2->R0x7fc8d00271d0;
-R0x7fc8d002e890:C3->R0x7fc8d0029430;
-R0x7fc8d002eed0:C2->R0x7fc8d0035f50;
-R0x7fc8d0035f50:C1->R0x7fc8d002b690;
-R0x7fc8d0035f50:C2->R0x7fc8d002d8f0;
-R0x7fc8d0035f50:C3->R0x7fc8d0030af0;
-R0x7fc8d002eed0:C3->R0x7fc8d003d610;
-R0x7fc8d003d610:C1->R0x7fc8d0032d50;
-R0x7fc8d003d610:C2->R0x7fc8d0034fb0;
-R0x7fc8d003d610:C3->R0x7fc8d00381b0;
-R0x7fc8d002eed0:C4->R0x7fc8d003df70;
-R0x7fc8d003df70:C1->R0x7fc8d003a410;
-R0x7fc8d003df70:C2->R0x7fc8d003c670;
-R0x7fc8d003df70:C3->R0x7fc8d003cfd0;
+R0x7fd3ec05bec0:C1->R0x7fd3ec05b880;
+R0x7fd3ec05b880:C1->R0x7fd3ec0845d0;
+R0x7fd3ec0845d0:C1->R0x7fd3ec016870;
+R0x7fd3ec0845d0:C2->R0x7fd3ec047220;
+R0x7fd3ec0845d0:C3->R0x7fd3ec04be80;
+R0x7fd3ec05b880:C2->R0x7fd3ec035f50;
+R0x7fd3ec035f50:C1->R0x7fd3ec02b690;
+R0x7fd3ec035f50:C2->R0x7fd3ec02d8f0;
+R0x7fd3ec035f50:C3->R0x7fd3ec030af0;
+R0x7fd3ec05b880:C3->R0x7fd3ec03d610;
+R0x7fd3ec03d610:C1->R0x7fd3ec032d50;
+R0x7fd3ec03d610:C2->R0x7fd3ec034fb0;
+R0x7fd3ec03d610:C3->R0x7fd3ec0381b0;
+R0x7fd3ec05bec0:C2->R0x7fd3ec05c1e0;
+R0x7fd3ec05c1e0:C1->R0x7fd3ec041aa0;
+R0x7fd3ec041aa0:C1->R0x7fd3ec07d350;
+R0x7fd3ec041aa0:C2->R0x7fd3ec07f5b0;
+R0x7fd3ec041aa0:C3->R0x7fd3ec040e20;
+R0x7fd3ec05c1e0:C2->R0x7fd3ec05a8e0;
+R0x7fd3ec05a8e0:C1->R0x7fd3ec04f9e0;
+R0x7fd3ec05a8e0:C2->R0x7fd3ec051c40;
+R0x7fd3ec05a8e0:C3->R0x7fd3ec055480;
+R0x7fd3ec05c1e0:C3->R0x7fd3ec06f690;
+R0x7fd3ec06f690:C1->R0x7fd3ec061970;
+R0x7fd3ec06f690:C2->R0x7fd3ec059940;
+R0x7fd3ec06f690:C3->R0x7fd3ec078e30;
+R0x7fd3ec06f690:C4->R0x7fd3ec0797b0;
+R0x7fd3ec05c1e0:C4->R0x7fd3ec06fff0;
+R0x7fd3ec06fff0:C1->R0x7fd3ec0ab750;
+R0x7fd3ec06fff0:C2->R0x7fd3ec06e6f0;
+R0x7fd3ec06fff0:C3->R0x7fd3ec0718f0;
+R0x7fd3ec06fff0:C4->R0x7fd3ec075230;
+R0x7fd3ec06fff0:C5->R0x7fd3ec075b90;
+R0x7fd3ec06fff0:C6->R0x7fd3ec07b3d0;
+R0x7fd3ec06fff0:C7->R0x7fd3ec07f5b0;
+R0x7fd3ec06fff0:C8->R0x7fd3ec085ed0;
+R0x7fd3ec06fff0:C9->R0x7fd3ec088050;
+R0x7fd3ec06fff0:C10->R0x7fd3ec08b570;
+R0x7fd3ec06fff0:C11->R0x7fd3ec08de10;
+R0x7fd3ec06fff0:C12->R0x7fd3ec08fad0;
+R0x7fd3ec06fff0:C13->R0x7fd3ec099bb0;
+R0x7fd3ec06fff0:C14->R0x7fd3ec09f0f0;
+R0x7fd3ec06fff0:C15->R0x7fd3ec0a3290;
+R0x7fd3ec06fff0:C16->R0x7fd3ec0a6170;
+R0x7fd3ec06fff0:C17->R0x7fd3ec092500;
+R0x7fd3ec06fff0:C18->R0x7fd3ec0aaec0;
+R0x7fd3ec06fff0:C19->R0x7fd3ec0abdf0;
+R0x7fd3ec06fff0:C20->R0x7fd3ec0ba280;
+R0x7fd3ec06fff0:C21->R0x7fd3ec0babe0;
 }

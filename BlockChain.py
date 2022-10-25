@@ -43,6 +43,7 @@ nodo2 = mk.merkle(t)
 
 blo = blockchain()
 
+
 blo.agrega_alv(prueba,nodo2)
 blo.agrega_alv(prueba,nodo2)
 

@@ -3,6 +3,7 @@
 
 
 
+from glob import glob
 import threading as th
 from tkinter import *
 import tkinter
@@ -418,17 +419,48 @@ def jug2():
     inge = Button(top,text="ver tablero jugador 2 y disparos jugador 2",command=ver3).pack()
     #ing = Button(top,text="ver tablero jugador 1 y disparos jugador 2",command=ver4).pack()
 
+def justpas():
+    pass
+
 def carrito():
+    global HASHTABLE_GLOBAL
+    global varints_carrito
+    global checkbutons_carrito
+    global fr
     varints_carrito = []
     checkbutons_carrito= []
-    global HASHTABLE_GLOBAL
+    
     top = Toplevel()
     f = Label(top,text="CARRITO").pack()
+    fr = Label(top,text=f'total: {HASHTABLE_GLOBAL.total()}').pack()
     cosas_array = HASHTABLE_GLOBAL.toArray()
+    HASHTABLE_GLOBAL.prettytable_llenos(2)
+    for n in HASHTABLE_GLOBAL.toArray():
+        print(n)
     for n in cosas_array:
         new = IntVar()
         varints_carrito.append(new)
-        checkbutons_carrito.append(Checkbutton(top, text=f'{n.nombre}\n{n.precio}',variable=new, onvalue=1, offvalue=0))
+        checkbutons_carrito.append(Checkbutton(top, text=f'{n.nombre}\n{n.precio}',variable=new, onvalue=1, offvalue=0, command=justpas))
+    for n in checkbutons_carrito:
+        n.pack()
+    def eliminar_del_carrito():
+        for n in range(len(varints_carrito)):
+            if (varints_carrito[n].get() == 1):
+                HASHTABLE_GLOBAL.eliminar(cosas_array[n].nombre)
+                checkbutons_carrito[n].destroy()
+                cosas_array.remove(cosas_array[n])
+                varints_carrito.remove(varints_carrito[n])
+                checkbutons_carrito.remove(checkbutons_carrito[n])
+                HASHTABLE_GLOBAL.prettytable_llenos(2)
+                messagebox.showwarning("NUEVO TOTAL",f'total: {HASHTABLE_GLOBAL.total()}')
+                fr.config(text = f'total: {HASHTABLE_GLOBAL.total()}')
+                return True
+
+        HASHTABLE_GLOBAL.prettytable_llenos(2)
+
+    malboro = Button(top,text="eliminar del carrito",command=eliminar_del_carrito).pack()
+    malbor = Button(top,text="COMPRAR",command=justpas).pack()
+
 
 
 
@@ -441,6 +473,7 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
     global skis
     global precios
     global HASHTABLE_GLOBAL
+    
     hashtable_auxiliar = jacinto()
     top = Toplevel()
     f = Label(top,text="TIENDA").pack()
@@ -449,7 +482,7 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
     stienda =  json.loads(f.read())["articulos"]
     total = 0
     f0 = Label(top,text=f'EL TOTAL ES: {total}').pack()
-    HASHTABLE_GLOBAL = jacinto()
+    #HASHTABLE_GLOBAL = jacinto()
     varints = []
     checkbutons =[]
     skis = []
@@ -460,13 +493,14 @@ def ver6():#VER MI TABLERO Y SUS DISPAROS
     def comprar():
         pass
     def vertotal():
+        HASHTABLE_GLOBAL.reinicio()
         
         for n in range(len(varints)):
             if (varints[n].get() == 1):
                 HASHTABLE_GLOBAL.agrega_inicial(2,skis[n])
         settotal()
         HASHTABLE_GLOBAL.prettytable_llenos(2)
-        HASHTABLE_GLOBAL.reinicio()
+        
         #HASHTABLE_GLOBAL = new_has
         
         
