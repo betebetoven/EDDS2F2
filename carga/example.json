@@ -1,66 +1,77 @@
 {
     "usuarios":[
     {
+    "id": 1,
     "nick":"betebetoven",
     "password":"jaja",
     "monedas":"100",
     "edad":"32"
     },
     {
+    "id": 1,
     "nick":"sofiaruano",
     "password":"Blaancamagy",
     "monedas":"10000",
     "edad":"22"
     },
     {
+    "id": 1,
     "nick":"colosho",
     "password":"colosho",
     "monedas":"0",
     "edad":"2"
     },
         {
+            "id": 1,
             "nick": "sdobble0",
             "password": "RrQk5kx",
             "monedas": "2311",
             "edad": "7"
         },
         {
+            "id": 1,
             "nick": "shattersley1",
             "password": "WWS4Z7pD4g4v",
             "monedas": "273",
             "edad": "9"
         },
         {
+            "id": 1,
             "nick": "dgatheridge2",
             "password": "Q8H0gy4Q",
             "monedas": "3",
             "edad": "3"
         },
         {
+            "id": 1,
             "nick": "braggatt3",
             "password": "khgOuAZ",
             "monedas": "41",
             "edad": "30"
         },
         {
+            "id": 1,
             "nick": "ramdohr4",
             "password": "lVJ9JKcWnK",
             "monedas": "9595",
             "edad": "80"
         },
         {
+            "id": 1,
             "nick": "yhealks5",
             "password": "Lwt7PcZ5D6o",
             "monedas": "330",
             "edad": "7"
         },
         {
+            "id": 1,
             "nick": "mparvin6",
             "password": "UOj7xyHhm",
             "monedas": "9",
             "edad": "60"
         },
         {
+            "id": 1,
             "nick": "dsuckling7",
             "password": "ipvLuwHvRA",
             "monedas": "65",

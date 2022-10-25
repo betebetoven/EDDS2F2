@@ -95,6 +95,12 @@ class listaenlazada:
                     self.general += f'\n{str(id(aux2))}-> {str(id(aux2.Der))}'
                 aux2 = aux2.Der
             aux = aux.Next
+    def showsimple(self):
+        k = self.head
+        while k!= None:
+            print(str(k.value))
+            k = k.Next
+
     def rank(self):
         n = self.head
         while n!=None:

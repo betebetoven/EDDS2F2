@@ -20,5 +20,11 @@ class direccion_from:
         print(f'Adress: {self.acct.address}') 
         self.dir = str(self.acct.address)
         print(self.dir)
+    def __str__(self) -> str:
+        sh = self.dir
+        return sh
+    def getPriv(self):
+        return str(self.private_key)
+
 
 pedro = direccion_from()

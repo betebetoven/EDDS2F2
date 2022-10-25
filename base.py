@@ -15,6 +15,7 @@ import json
 from tkinter.filedialog import askopenfilename
 import random
 import os
+from LL import listaenlazada
 from matriz import matriz
 from matriz import par
 import time
@@ -26,6 +27,8 @@ from sha256 import shasha
 from skin import skin
 from adress import direccion_from
 from tkinter import ttk
+from transaccion import trans
+from transaccion import trans
 
 
 from PIL import ImageTk,Image
@@ -42,7 +45,7 @@ BLOCKCHAIN_GLOBAL = blockchain()
 HASHTABLE_GLOBAL = jacinto()
 ID_USUARIO_GLOBAL = 0
 ADDRESS_USUARIO_GLOBAL = direccion_from()
-
+TRANSACCIONES_GLOBALES=listaenlazada()
 FROM_GLOBAL = ""
 
 
@@ -72,6 +75,7 @@ def login(usuario, contraseña):
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
     data = res.text#convertimos la respuesta en dict
     messagebox.showinfo("LOGIN",data)
+    messagebox.showinfo("CLAVE PRIVADA",str(ADDRESS_USUARIO_GLOBAL.getPriv()))
     aDict = json.loads(data)
     ID_USUARIO_GLOBAL = int(aDict["id"])
     messagebox.showerror("ala verga",f'el id es_{ID_USUARIO_GLOBAL}')
@@ -435,6 +439,8 @@ def justpas():
 
 def carrito():
     global HASHTABLE_GLOBAL
+    global ADDRESS_USUARIO_GLOBAL
+    global TRANSACCIONES_GLOBALES
     global varints_carrito
     global checkbutons_carrito
     global fr
@@ -488,8 +494,31 @@ def carrito():
         messagebox.showwarning("NUEVO TOTAL",f'total: {HASHTABLE_GLOBAL.total()}\n TAMAÑO DE TABLA HASH: {HASHTABLE_GLOBAL.tamaño}\n TAMAÑO DEL CARRITO: {HASHTABLE_GLOBAL.ocupacion}\n PORCENTAJE DE OCUPACION: {HASHTABLE_GLOBAL.definir_porcentaje_ocupacion()}')
         HASHTABLE_GLOBAL.prettytable_llenos(ID_USUARIO_GLOBAL)
 
+
+    def comprarv():
+        global TRANSACCIONES_GLOBALES
+        top = Toplevel()
+        f = Label(top,text="INGRESAR CLAVE PRIVADA").pack()
+        username = StringVar(top)
+        us = Entry(top,textvariable=username).pack()
+        
+        def verificar():
+            bandera = False
+            if str(username.get()) == str(ADDRESS_USUARIO_GLOBAL.getPriv()):
+                messagebox.showinfo("c","compra realiza con exito")
+                bandera = True
+            if bandera == True:
+                TRANSACCIONES_GLOBALES.agrega_simple(trans(str(ADDRESS_USUARIO_GLOBAL.dir),HASHTABLE_GLOBAL.toArray(),HASHTABLE_GLOBAL.total()))
+                TRANSACCIONES_GLOBALES.showsimple()
+
+
+        malboro = Button(top,text="verificar compra",command=verificar).pack()
+
+        
+
+
     malboro = Button(second_frame,text="eliminar del carrito",command=eliminar_del_carrito).pack()
-    malbor = Button(second_frame,text="COMPRAR",command=justpas).pack()
+    malbor = Button(second_frame,text="COMPRAR",command=comprarv).pack()
 
 
 
