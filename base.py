@@ -24,7 +24,7 @@ from merkletree import MLKjunior
 from Hastable import jacinto
 from sha256 import shasha
 from skin import skin
-from adress import direccion
+from adress import direccion_from
 from tkinter import ttk
 
 
@@ -41,7 +41,7 @@ base_url = "http://3.88.228.81:8080/"
 BLOCKCHAIN_GLOBAL = blockchain()
 HASHTABLE_GLOBAL = jacinto()
 ID_USUARIO_GLOBAL = 0
-ADDRESS_USUARIO_GLOBAL = ""
+ADDRESS_USUARIO_GLOBAL = direccion_from()
 
 FROM_GLOBAL = ""
 
@@ -67,10 +67,14 @@ def carga_masiva(entrada):
     print(data)
 def login(usuario, contraseña):
     global ADDRESS_USUARIO_GLOBAL
-    ADDRESS_USUARIO_GLOBAL= direccion()
+    global ID_USUARIO_GLOBAL
+    ADDRESS_USUARIO_GLOBAL.new()
     res = requests.post(f'{base_url}/Login/{usuario},{contraseña}')
     data = res.text#convertimos la respuesta en dict
     messagebox.showinfo("LOGIN",data)
+    aDict = json.loads(data)
+    ID_USUARIO_GLOBAL = int(aDict["id"])
+    messagebox.showerror("ala verga",f'el id es_{ID_USUARIO_GLOBAL}')
     
     print(data)
 def editN(nombre):
