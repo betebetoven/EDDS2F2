@@ -665,7 +665,8 @@ def display(msg):
     global TRANSACCIONES_GLOBALES
     global MERKLE_ROOT_GLOBAL
     print(msg + ' ' + time.strftime('%H:%M:%S')) 
-    BLOCKCHAIN_GLOBAL.agrega_alv(TRANSACCIONES_GLOBALES,MERKLE_ROOT_GLOBAL) 
+    if MERKLE_ROOT_GLOBAL != None:
+        BLOCKCHAIN_GLOBAL.agrega_alv(TRANSACCIONES_GLOBALES,MERKLE_ROOT_GLOBAL) 
     
     
   
