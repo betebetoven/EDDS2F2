@@ -673,8 +673,46 @@ def display(msg):
 ##Basic timer  
 
 def run_once():  
+
     #global BLOCKCHAIN_GLOBAL
     #display('run_once:')  
+    dir_path = r'jsons\\'
+
+# list file and directories
+    res = os.listdir(dir_path)
+    #print(res)
+    cont = 0
+   # shas =""
+    
+    if len(res)!=0:
+        for n in res:
+            shas =[]
+            skis = ""
+            pedro = shasha()
+            with open(f'jsons/{n}') as json_file:
+                data = json.load(json_file)
+                print('\n\n___________')
+                print(data)
+                merklito = MLKjunior()
+                
+                print(data["data"]['transacciones'])
+                for n in data["data"]['transacciones']:
+                    for k in n['skins']:
+                        skis+=k
+                    shas.append(str(pedro.generate_hash(f'{str(n["from"])}{str(skis)}').hex()))
+                    print(f'{str(n["from"])}{str(skis)}')
+                    skis = ""
+                nodito = merklito.merkle(shas)
+                print(nodito.value)
+                if(data["data"]["merkle_root"]==str(nodito.value)):
+                    messagebox.showinfo("aprobado",f'INFORMACION EN INDEX {cont} INTACTA')
+                else:
+                    messagebox.showerror("denegado",f'INFORMACION EN INDEX {cont} ALTERADA')
+                
+
+
+                print('\n\n___________')
+                cont = cont +1
     t=th.Timer(600,display,['Timeout:'])  
     t.start()#Here run is called  
 run_once()  
