@@ -704,7 +704,9 @@ def run_once():
                     skis = ""
                 nodito = merklito.merkle(shas)
                 print(nodito.value)
-                if(data["data"]["merkle_root"]==str(nodito.value)):
+                #SHA256(INDEX+TIMESTAMP+PREVIOUSHASH+ROOTMERKLE+NONCE
+                selfhash = str(pedro.generate_hash(f'{data["index"]}{data["timestamp"]}{data["data"]["hash_prev"]}{nodito.value}{data["nonce"]}').hex())
+                if(data["data"]["merkle_root"]==str(nodito.value) and selfhash == data["data"]["self_hash"]):
                     messagebox.showinfo("aprobado",f'INFORMACION EN INDEX {cont} INTACTA')
                 else:
                     messagebox.showerror("denegado",f'INFORMACION EN INDEX {cont} ALTERADA')
