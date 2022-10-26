@@ -2,7 +2,7 @@
 
 from nodoLL import nodito
 from prettytable import PrettyTable
-
+import os
 
 class jacinto():
     def __init__(self):
@@ -158,6 +158,16 @@ class jacinto():
             if k.value != "":
                 x.add_row([n,id ,str(k.value)])
             k = k.Next
+        F = x.get_html_string()
+        graphvizx = f'digraph {"{"} \n node[shape=none fontname=Helvetica]\n n1 [label = < {F}>]{"}"}'
+        graphvizx = f'<!DOCTYPE html>\n<html>\n<title>CARRITO</title>\n<head>\n</head>\n<body>\n<h1>CARRITO</h1>\n<div>{F}</div>\n</body>\n</html>'
+        #f = open(f'CARRITO.dot', "w")
+        #f.write(graphvizx)
+        #f.close()
+        #os.system(f'dot -Tpng CARRITO.dot -o CARRITO.png')
+        file_html = open("CARRITO.html", "w")
+        file_html.write(graphvizx)
+        file_html.close()
         print(x)
     def total(self):
         k = self.head

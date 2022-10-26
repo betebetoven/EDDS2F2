@@ -1,0 +1,38 @@
+digraph { 
+ node[shape=none fontname=Helvetica]
+ n1 [label = < <table>
+    <thead>
+        <tr>
+            <th>index</th>
+            <th>id</th>
+            <th>value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>31</td>
+            <td>Tanner</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>31</td>
+            <td>Clemons</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>31</td>
+            <td>Goodwin</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>31</td>
+            <td>Fox</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>31</td>
+            <td>Montoya</td>
+        </tr>
+    </tbody>
+</table>>]}
