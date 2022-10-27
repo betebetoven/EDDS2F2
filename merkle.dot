@@ -7,5 +7,7 @@ digraph G
         node[color = "#31CEF0"]
         rankdir=BT;
 
-"2df6880"[fillcolor="pink"] 
+"2df6880" -> "0a63f11"
+"5ac4dab" -> "0a63f11"
+"0a63f11"[fillcolor="pink"] 
 }

@@ -215,6 +215,11 @@ def ver_blockchain():
     global com
     com = ImageTk.PhotoImage(Image.open('BLOCKCHAIN.png').resize((400,400)))
     my_label = Label(top, image=com).pack(side = LEFT, fill = Y)
+def ver_merkle():
+    top = Toplevel()
+    global com
+    com = ImageTk.PhotoImage(Image.open('merkle.png').resize((400,400)))
+    my_label = Label(top, image=com).pack(side = LEFT, fill = Y)
 
 def admin():
     global topito
@@ -225,6 +230,7 @@ def admin():
         root.destroy()
     inge_nomas = Button(topito,text="CREAR BLOQUE",command=hacer_display).pack()
     inge_nom = Button(topito,text="VER BLOCKCHAIN",command=ver_blockchain).pack()
+    inge_nomina = Button(topito,text="VER MERKLE",command=ver_merkle).pack()
     inge_nomnom = Button(topito,text="CREAR BLOQUE Y SALIR",command=sale).pack()
     
 
