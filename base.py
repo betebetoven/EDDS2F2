@@ -3,8 +3,7 @@
 
 
 
-from ast import Lambda, main
-from glob import glob
+
 import threading as th
 from tkinter import *
 import tkinter
@@ -208,6 +207,8 @@ def hacer_display():
 def salir():
     hacer_display()
     messagebox.showwarning("salida","CREANDO ULTIMO BLOQUE ANTES DE SALIR")
+    #exit(0)
+    
 
 def ver_blockchain():
     top = Toplevel()
@@ -216,10 +217,15 @@ def ver_blockchain():
     my_label = Label(top, image=com).pack(side = LEFT, fill = Y)
 
 def admin():
-    top = Toplevel()
-    inge_nomas = Button(top,text="CREAR BLOQUE",command=hacer_display).pack()
-    inge_nom = Button(top,text="VER BLOCKCHAIN",command=ver_blockchain).pack()
-    inge_nomnom = Button(top,text="CREAR BLOQUE Y SALIR",command=salir).pack()
+    global topito
+    topito = Toplevel()
+    def sale():
+        salir()
+        
+        root.destroy()
+    inge_nomas = Button(topito,text="CREAR BLOQUE",command=hacer_display).pack()
+    inge_nom = Button(topito,text="VER BLOCKCHAIN",command=ver_blockchain).pack()
+    inge_nomnom = Button(topito,text="CREAR BLOQUE Y SALIR",command=sale).pack()
     
 
 
