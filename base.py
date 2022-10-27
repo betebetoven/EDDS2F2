@@ -745,33 +745,6 @@ def run_once():
                 #SHA256(INDEX+TIMESTAMP+PREVIOUSHASH+ROOTMERKLE+NONCE
                 selfhash = str(pedro.generate_hash(f'{data["index"]}{data["timestamp"]}{data["data"]["hash_prev"]}{nodito.value}{data["nonce"]}').hex())
                 #AHORA TIENE QUE AGRAGAR TODO OTRA VEZ
-                #TIENE QUE VOLVER A METER TODO EN EL CARRITO
-                #DESPUES DE ESO GENERAR EL ARBOL MERKLE
-                #LO TIENQ UE IR METIENDO TODO A LOS GLOBALES DE PRIMERO 
-                #PASO A PASO PARA QUE LO HAGA PARA CADA BLOQUE
-                #TIENE QUE VERSE ASI
-                #skis.append(skin(c["nombre"],int(c["precio"])))
-                #HASHTABLE_GLOBAL.agrega_inicial(ID_USUARIO_GLOBAL,skis[n])
-                #TRANSACCIONES_GLOBALES.agrega_simple(trans(str(ADDRESS_USUARIO_GLOBAL.dir),HASHTABLE_GLOBAL.toArray(),HASHTABLE_GLOBAL.total()))
-                #HASHTABLE_GLOBAL.reinicio()
-                #hasharray=[]
-                #k = TRANSACCIONES_GLOBALES.head
-                #while k != None:
-                    #hasharray.append(k.value.sha())
-                    #k =k.Next
-                #MERKLE_ROOT_GLOBAL =  MLKJUNIOR_GLOBAL.merkle(hasharray)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 if(data["data"]["merkle_root"]==str(nodito.value) and selfhash == data["data"]["self_hash"]):

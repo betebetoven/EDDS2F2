@@ -3,6 +3,8 @@ from merkletree import MLKjunior
 from bloqueBC import bloque
 import os
 import json
+from sha256 import shasha
+from tkinter import messagebox
 
 class blockchain:
     def __init__(self):
@@ -54,6 +56,45 @@ class blockchain:
             while k.Next != None:
                 general+=f'\n{k.value}->{k.Next.value}'
                 k=k.Next
+###################################################################
+            for n in res:
+                cont = 0
+                shas =[]
+                skis = ""
+                pedro = shasha()
+                with open(f'jsons/{n}') as json_file:
+                    data = json.load(json_file)
+                    merklito = MLKjunior()
+                    
+                    
+                    
+                    for n in data["data"]['transacciones']: 
+                        for k in n['skins']:
+                            skis+=k
+                        shas.append(str(pedro.generate_hash(f'{str(n["from"])}{str(skis)}').hex()))
+                        skis = ""
+                    nodito = merklito.merkle(shas)
+                    selfhash = str(pedro.generate_hash(f'{data["index"]}{data["timestamp"]}{data["data"]["hash_prev"]}{nodito.value}{data["nonce"]}').hex())
+                    if(data["data"]["merkle_root"]==str(nodito.value) and selfhash == data["data"]["self_hash"]):
+                        general+=f'\n\"index:   {data["index"]}\ntimestamp: {str(data["timestamp"])}\nnonce:    {str(data["nonce"])}\nhash:  {str(data["data"]["self_hash"])}\nhashanterior: {str(data["data"]["hash_prev"])}\"[fillcolor=\"lightblue\"]'
+                        #messagebox.showinfo("aprobado",f'INFORMACION EN INDEX {cont} INTACTA')
+                    else:
+                        general+=f'\n\"index:   {data["index"]}\ntimestamp: {str(data["timestamp"])}\nnonce:    {str(data["nonce"])}\nhash:  {str(data["data"]["self_hash"])}\nhashanterior: {str(data["data"]["hash_prev"])}\"[fillcolor=\"pink\"]'
+                        #messagebox.showerror("denegado",f'INFORMACION EN INDEX {cont} ALTERADA')    
+                    cont = cont+1
+            
+
+
+
+
+
+
+
+
+
+
+
+#########################################################3
             general+="\n}"
             f = open(f'BLOCKCHAIN.dot', "w")
             f.write(general)
