@@ -19,7 +19,7 @@ class blockchain:
     def agrega_alv(self,trans,raiz,opcional):
         if self.index == 0:
             nuevo = bloque(self.index,trans,"-1",raiz)
-            nuevo.work_hash('0')
+            nuevo.work_hash('00')
             self.Head = nuevo
             self.actual = self.Head
             self.index = self.index +1
@@ -27,7 +27,7 @@ class blockchain:
             return True
         elif self.index != 0 and self.Head!= None:
             nuevo = bloque(self.index,trans,str(self.actual.hash),raiz)
-            nuevo.work_hash('0')
+            nuevo.work_hash('00')
             self.actual.next = nuevo
             self.actual = nuevo
             self.index = self.index +1
@@ -35,7 +35,7 @@ class blockchain:
             return True
         elif self.index != 0 and self.Head== None:
             nuevo = bloque(self.index,trans,str(opcional),raiz)
-            nuevo.work_hash('0')
+            nuevo.work_hash('00')
             self.Head = nuevo
             self.actual = self.Head
             self.index = self.index +1
@@ -106,7 +106,7 @@ class blockchain:
     def agrega_sinimprimir(self,trans,raiz):
         if self.Head == None:
             nuevo = bloque(self.index,trans,"-1",raiz)
-            nuevo.work_hash('0')
+            nuevo.work_hash('00')
             self.Head = nuevo
             self.actual = self.Head
             self.index = self.index +1
@@ -114,7 +114,7 @@ class blockchain:
             return True
         else:
             nuevo = bloque(self.index,trans,self.primerizo,raiz)
-            nuevo.work_hash('0')
+            nuevo.work_hash('00')
             self.actual.next = nuevo
             self.actual = nuevo
             self.index = self.index +1

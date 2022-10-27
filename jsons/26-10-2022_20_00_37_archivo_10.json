@@ -1,0 +1,47 @@
+{
+      "index": 10,
+      "timestamp": "26-10-2022::20:00:37",
+      "nonce": 573,
+      "data": {
+            "hash_prev": "006ad1e80d855fc1a5f4a34bb1fd7a69cb8f43a80d7b78858494cdd614b13899",
+            "merkle_root": "ca62a336fcd9f7555a7c82e25c8979dea6026a6c03d4abb45cbc5d3b6366da28",
+            "self_hash": "00d5f60fd69404d0f0b7f849e975570ca8bd6927ff6f5ba6317ec0a0f7831183",
+            "transacciones": [
+                  {
+                        "from": "0xf0656BeD2c851211c2A56781241dffe80ba606fD",
+                        "skins": [
+                              "Tanner",
+                              "Clemons",
+                              "Goodwin"
+                        ]
+                  },
+                  {
+                        "from": "0xf0656BeD2c851211c2A56781241dffe80ba606fD",
+                        "skins": [
+                              "Fitzpatrick",
+                              "Mccarthy",
+                              "Walls",
+                              "Orr"
+                        ]
+                  },
+                  {
+                        "from": "0xB1cEADf35e750dfe274942EdB80E5c20fD4Eae53",
+                        "skins": [
+                              "Tanner"
+                        ]
+                  },
+                  {
+                        "from": "0xB1cEADf35e750dfe274942EdB80E5c20fD4Eae53",
+                        "skins": [
+                              "Clay",
+                              "Henson",
+                              "Knowles",
+                              "Rowland",
+                              "Dickson",
+                              "Conway",
+                              "Case"
+                        ]
+                  }
+            ]
+      }
+}

@@ -78,6 +78,33 @@ timestamp: 26-10-2022::19:48:16
 nonce:    26
 hash:  03d9d305586c7a6934fceb1d28f20746d188b41c0ccfc25bdd45b0942097448d
 hashanterior: 000d8ffeedbb1204fb3a1b18fddd2f82872aa65d73f89d2d48ae5613f0c0fa36"
+"index:   8
+timestamp: 26-10-2022::19:48:16
+nonce:    26
+hash:  03d9d305586c7a6934fceb1d28f20746d188b41c0ccfc25bdd45b0942097448d
+hashanterior: 000d8ffeedbb1204fb3a1b18fddd2f82872aa65d73f89d2d48ae5613f0c0fa36"->"index:   9
+timestamp: 26-10-2022::19:59:51
+nonce:    631
+hash:  006ad1e80d855fc1a5f4a34bb1fd7a69cb8f43a80d7b78858494cdd614b13899
+hashanterior: 03d9d305586c7a6934fceb1d28f20746d188b41c0ccfc25bdd45b0942097448d"
+"index:   9
+timestamp: 26-10-2022::19:59:51
+nonce:    631
+hash:  006ad1e80d855fc1a5f4a34bb1fd7a69cb8f43a80d7b78858494cdd614b13899
+hashanterior: 03d9d305586c7a6934fceb1d28f20746d188b41c0ccfc25bdd45b0942097448d"->"index:   10
+timestamp: 26-10-2022::20:00:37
+nonce:    573
+hash:  00d5f60fd69404d0f0b7f849e975570ca8bd6927ff6f5ba6317ec0a0f7831183
+hashanterior: 006ad1e80d855fc1a5f4a34bb1fd7a69cb8f43a80d7b78858494cdd614b13899"
+"index:   10
+timestamp: 26-10-2022::20:00:37
+nonce:    573
+hash:  00d5f60fd69404d0f0b7f849e975570ca8bd6927ff6f5ba6317ec0a0f7831183
+hashanterior: 006ad1e80d855fc1a5f4a34bb1fd7a69cb8f43a80d7b78858494cdd614b13899"->"index:   11
+timestamp: 26-10-2022::20:01:23
+nonce:    61
+hash:  00ce292fb6b651304c012f3b1431207c436829a4ec36ebf1fa31ff3284960f5e
+hashanterior: 00d5f60fd69404d0f0b7f849e975570ca8bd6927ff6f5ba6317ec0a0f7831183"
 "index:   0
 timestamp: 26-10-2022::18:47:11
 nonce:    50
@@ -123,4 +150,19 @@ timestamp: 26-10-2022::19:48:16
 nonce:    26
 hash:  03d9d305586c7a6934fceb1d28f20746d188b41c0ccfc25bdd45b0942097448d
 hashanterior: 000d8ffeedbb1204fb3a1b18fddd2f82872aa65d73f89d2d48ae5613f0c0fa36"[fillcolor="lightblue"]
+"index:   9
+timestamp: 26-10-2022::19:59:51
+nonce:    631
+hash:  006ad1e80d855fc1a5f4a34bb1fd7a69cb8f43a80d7b78858494cdd614b13899
+hashanterior: 03d9d305586c7a6934fceb1d28f20746d188b41c0ccfc25bdd45b0942097448d"[fillcolor="lightblue"]
+"index:   10
+timestamp: 26-10-2022::20:00:37
+nonce:    573
+hash:  00d5f60fd69404d0f0b7f849e975570ca8bd6927ff6f5ba6317ec0a0f7831183
+hashanterior: 006ad1e80d855fc1a5f4a34bb1fd7a69cb8f43a80d7b78858494cdd614b13899"[fillcolor="lightblue"]
+"index:   11
+timestamp: 26-10-2022::20:01:23
+nonce:    61
+hash:  00ce292fb6b651304c012f3b1431207c436829a4ec36ebf1fa31ff3284960f5e
+hashanterior: 00d5f60fd69404d0f0b7f849e975570ca8bd6927ff6f5ba6317ec0a0f7831183"[fillcolor="lightblue"]
 }

@@ -5,13 +5,13 @@ R0x7f9edc03c540[label="<C1>|-603732672
  b|<C2>|-603661808 
  Pam8878|<C3>|-603651600 
  Long5198|<C4>"];
-R0x7f9edc033fd0[label="-603766832 
- 2|-603765904 
- Silva5379|-603764880 
- Pam8878|-603763024 
- Scott4859|-603761168 
- Bell4469"];
-R0x7f9edc04d2d0[label="-603663664 
+R0x7f9edc013c80[label="-603898752 
+ Ladonna861|-603897824 
+ Spence5777"];
+R0x7f9edc048f80[label="-603680896 
+ 2|-603678976 
+ Silva5379|-603673408 
+ Isabelle7888|-603663664 
  Gillespie2277|-603662736 
  Isabelle7888"];
 R0x7f9edc04fab0[label="-603653456 
@@ -21,8 +21,8 @@ R0x7f9edc050590[label="-603650672
  Ladonna861|-603649744 
  Spence5777"];
 		//Agregar conexiones
-R0x7f9edc03c540:C1->R0x7f9edc033fd0;
-R0x7f9edc03c540:C2->R0x7f9edc04d2d0;
+R0x7f9edc03c540:C1->R0x7f9edc013c80;
+R0x7f9edc03c540:C2->R0x7f9edc048f80;
 R0x7f9edc03c540:C3->R0x7f9edc04fab0;
 R0x7f9edc03c540:C4->R0x7f9edc050590;
 }

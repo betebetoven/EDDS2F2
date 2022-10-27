@@ -669,7 +669,7 @@ def display(msg):
     print(msg + ' ' + time.strftime('%H:%M:%S')) 
     if MERKLE_ROOT_GLOBAL != None:
         BLOCKCHAIN_GLOBAL.agrega_alv(TRANSACCIONES_GLOBALES,MERKLE_ROOT_GLOBAL,PREV_DEL_JSON) 
-        time.sleep(1)
+        time.sleep(5)
         BLOCKCHAIN_GLOBAL.graphviz()
     
     
