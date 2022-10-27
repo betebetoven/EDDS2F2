@@ -1,14 +1,31 @@
 digraph G {
 node[shape=record]
 		//Agregar Nodos Rama
-R0x7f9edc03c540[label="<C1>|-603732672 
- b|<C2>|-603661808 
- Pam8878|<C3>|-603651600 
- Long5198|<C4>"];
-R0x7f9edc013c80[label="-603898752 
- Ladonna861|-603897824 
+R0x7f9ed404bdc0[label="<C1>|-737886784 
+ b|<C2>"];
+R0x7f9ed404b680[label="<C1>|-737888640 
+ Gillespie2277|<C2>|-737887712 
+ Silva5379|<C3>"];
+R0x7f9ed403b7d0[label="-737953840 
+ 2|-737952912 
+ b"];
+R0x7f9ed403c2b0[label="-737951056 
+ Spence5777|-737950128 
+ 2"];
+R0x7f9edc002e80[label="-603967872 
+ Ladonna861|-603966944 
  Spence5777"];
-R0x7f9edc048f80[label="-603680896 
+R0x7f9ed404c160[label="<C1>|-737885856 
+ Pam8878|<C2>|-737884928 
+ Long5198|<C3>|-737874720 
+ Bell4469|<C4>"];
+R0x7f9edc0454e0[label="-603695904 
+ Gillespie2277|-603694048 
+ Isabelle7888|-603690336 
+ Scott4859|-603688480 
+ Bell4469|-603686624 
+ Long5198|-603684768 
+ Ladonna861|-603680896 
  2|-603678976 
  Silva5379|-603673408 
  Isabelle7888|-603663664 
@@ -17,12 +34,20 @@ R0x7f9edc048f80[label="-603680896
 R0x7f9edc04fab0[label="-603653456 
  Scott4859|-603652528 
  Bell4469"];
-R0x7f9edc050590[label="-603650672 
- Ladonna861|-603649744 
+R0x7f9ed404e5a0[label="-737876576 
+ Isabelle7888|-737875648 
+ Scott4859"];
+R0x7f9ed404f080[label="-737873792 
+ Ladonna861|-737872864 
  Spence5777"];
 		//Agregar conexiones
-R0x7f9edc03c540:C1->R0x7f9edc013c80;
-R0x7f9edc03c540:C2->R0x7f9edc048f80;
-R0x7f9edc03c540:C3->R0x7f9edc04fab0;
-R0x7f9edc03c540:C4->R0x7f9edc050590;
+R0x7f9ed404bdc0:C1->R0x7f9ed404b680;
+R0x7f9ed404b680:C1->R0x7f9ed403b7d0;
+R0x7f9ed404b680:C2->R0x7f9ed403c2b0;
+R0x7f9ed404b680:C3->R0x7f9edc002e80;
+R0x7f9ed404bdc0:C2->R0x7f9ed404c160;
+R0x7f9ed404c160:C1->R0x7f9edc0454e0;
+R0x7f9ed404c160:C2->R0x7f9edc04fab0;
+R0x7f9ed404c160:C3->R0x7f9ed404e5a0;
+R0x7f9ed404c160:C4->R0x7f9ed404f080;
 }

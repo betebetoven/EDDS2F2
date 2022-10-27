@@ -1,0 +1,64 @@
+{
+      "index": 17,
+      "timestamp": "26-10-2022::20:15:10",
+      "nonce": 191,
+      "data": {
+            "hash_prev": "00525304e9617c3edd69329aace620cf755f24ec47b4369b66089632d8d8c52c",
+            "merkle_root": "e0cfc7343ea38a4a6e2be825dbf5b89c8637594811e5fe15634a9387aeecf41a",
+            "self_hash": "00a69559d8d4cfc3fc71c8b581fe59b77d8e5224ef3b72e642e8a6be298ef2b7",
+            "transacciones": [
+                  {
+                        "from": "0xf0656BeD2c851211c2A56781241dffe80ba606fD",
+                        "skins": [
+                              "Tanner",
+                              "Clemons",
+                              "Goodwin"
+                        ]
+                  },
+                  {
+                        "from": "0xf0656BeD2c851211c2A56781241dffe80ba606fD",
+                        "skins": [
+                              "Fitzpatrick",
+                              "Mccarthy",
+                              "Walls",
+                              "Orr"
+                        ]
+                  },
+                  {
+                        "from": "0xB1cEADf35e750dfe274942EdB80E5c20fD4Eae53",
+                        "skins": [
+                              "Tanner"
+                        ]
+                  },
+                  {
+                        "from": "0xB1cEADf35e750dfe274942EdB80E5c20fD4Eae53",
+                        "skins": [
+                              "Case",
+                              "Henson",
+                              "Knowles",
+                              "Rowland",
+                              "Dickson",
+                              "Conway",
+                              "Clay"
+                        ]
+                  },
+                  {
+                        "from": "0xf8438FE9328F7Cb3025Ec5b8E9f4C8Bd75f9a37b",
+                        "skins": [
+                              "Tanner",
+                              "Clemons",
+                              "Montoya",
+                              "Goodwin",
+                              "Fox"
+                        ]
+                  },
+                  {
+                        "from": "0xf8438FE9328F7Cb3025Ec5b8E9f4C8Bd75f9a37b",
+                        "skins": [
+                              "Walls",
+                              "Montoya"
+                        ]
+                  }
+            ]
+      }
+}

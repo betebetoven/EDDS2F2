@@ -167,6 +167,22 @@ def ver5():#VER MI TABLERO Y SUS DISPAROS
     compu = ImageTk.PhotoImage(Image.open('arbolb.png').resize((1200,700)))
     my_label = Label(top, image=compu).pack()
 #ACA VA VER MI ABLERO Y SUS DISPAROS, ES LO MISMOS SOLO CAMBIA EL NOMBRE DE LA FOTO
+#ver jugadas del ganador
+def ver_nalgas():#VER MI TABLERO Y MIS DISPAROS
+    global compu
+    global disp_jug
+    global uwu
+    top = Toplevel()
+    f = Label(top,text="LISTA ADYACENCIA Y GRAFO").pack(side = LEFT, fill = Y)
+    compu = ImageTk.PhotoImage(Image.open('grafo.png').resize((400,400)))
+    my_label = Label(top, image=compu).pack(side = LEFT, fill = Y)
+    disp_jug = ImageTk.PhotoImage(Image.open('SUB_grafo.png').resize((400,400)))
+    my_label2 = Label(top, image=disp_jug).pack(side = LEFT, fill = Y)
+
+
+
+
+
 def logo():
     global username
     global password
@@ -283,6 +299,10 @@ def dispara(mo,mh,x,y):
                     messagebox.showinfo("HUNDISTE",f'HUNDISTE A UN {str(n["nombre"])}')
                     mo.inv.remove(n)
                     messagebox.showinfo("info",f'HUNDISTE A UN {str(mo.inv)}')
+                    if len(mo.inv)==0:
+                        messagebox.showinfo("info",f'GANASTE')
+                        ver_nalgas()
+
 
 
 
@@ -440,7 +460,7 @@ def jug2():
         tablero_disparos_jugador_global.grapvzix("disp_jug")
         tablero_jugador_global.grapvzix("mitablero")
         tablero_disparos_computadora_global.grapvzix("disp_compu")
-        tablero_disparos_computadora_global.grafo.graphvix('grafo2')
+        tablero_disparos_computadora_global.grafo.graphvix('grafo')
         print(f' DISPARO: {ddx.get()},{ddy.get()}')
 
     
@@ -770,7 +790,7 @@ class RepeatTimer(th.Timer):
             self.function(*self.args,**self.kwargs)  
             print(' ')  
 ##We are now creating a thread timer and controling it  
-timer = RepeatTimer(40,display,['Repeating'])  
+timer = RepeatTimer(60,display,['Repeating'])  
 timer.start() #recalling run  
 print('Threading started')  
 mainloop()
