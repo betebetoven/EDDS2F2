@@ -1,0 +1,20 @@
+{
+      "index": 10,
+      "timestamp": "26-10-2022::23:09:10",
+      "nonce": 51,
+      "data": {
+            "hash_prev": "00b7aaadf0b6a3ada4972ebb4fcede71a40531d2f34f2298856d8dfbe3015fbd",
+            "merkle_root": "2df68809cce1ef29f2f41938296eb0e64a178910fdf80e75239f8318b8156237",
+            "self_hash": "003f5cd7435eac5028b802a452c679c5c88725c610e1acd60c0e91472e1e8d77",
+            "transacciones": [
+                  {
+                        "from": "0xf0656BeD2c851211c2A56781241dffe80ba606fD",
+                        "skins": [
+                              "Clemons",
+                              "Tanne",
+                              "Goodwin"
+                        ]
+                  }
+            ]
+      }
+}

@@ -1,5 +1,6 @@
 
 
+
 from nodoLL import nodito
 from prettytable import PrettyTable
 import os
@@ -151,20 +152,23 @@ class jacinto():
             k = k.Next
         print(x)
     def prettytable_llenos(self,id):
+        graphvizx_dot = f'digraph G {"{"}\n a0 [shape= hexagon label=<\n<TABLE>\n<TR>\n<TD >"index"</TD>\n<TD >"id"</TD>\n<TD >"value"</TD>\n</TR>'
         x = PrettyTable()
         x.field_names = ["index", "id", "value"]
         k = self.head
         for n in range(self.tamaño):
             if k.value != "":
                 x.add_row([n,id ,str(k.value)])
+                graphvizx_dot+=f'<TR>\n<TD >"{n}"</TD>\n<TD >"{id}"</TD>\n<TD >"{str(k.value)}"</TD>\n</TR>'
             k = k.Next
         F = x.get_html_string()
-        graphvizx = f'digraph {"{"} \n node[shape=none fontname=Helvetica]\n n1 [label = < {F}>]{"}"}'
+        graphvizx_dot+=f'</TABLE>>];{"}"}'
         graphvizx = f'<!DOCTYPE html>\n<html>\n<title>CARRITO</title>\n<head>\n</head>\n<body>\n<h1>CARRITO</h1>\n<div>{F}</div>\n</body>\n</html>'
-        #f = open(f'CARRITO.dot', "w")
-        #f.write(graphvizx)
-        #f.close()
-        #os.system(f'dot -Tpng CARRITO.dot -o CARRITO.png')
+        
+        f = open(f'CARRITO.dot', "w")
+        f.write(graphvizx_dot)
+        f.close()
+        os.system(f'dot -Tpng CARRITO.dot -o CARRITO.png')
         file_html = open("CARRITO.html", "w")
         file_html.write(graphvizx)
         file_html.close()

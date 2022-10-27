@@ -29,7 +29,8 @@ from adress import direccion_from
 from tkinter import ttk
 from transaccion import trans
 from transaccion import trans
-
+from tkhtmlview import HTMLLabel, HTMLText, RenderHTML
+import webbrowser
 
 from PIL import ImageTk,Image
 
@@ -179,6 +180,30 @@ def ver_nalgas():#VER MI TABLERO Y MIS DISPAROS
     disp_jug = ImageTk.PhotoImage(Image.open('SUB_grafo.png').resize((400,400)))
     my_label2 = Label(top, image=disp_jug).pack(side = LEFT, fill = Y)
 
+def ver_carrito_html():
+    global compuR
+    lines = ""
+    top = Toplevel()
+    
+    with open('CARRITO.html') as f:
+        lines = f.readlines()
+    print(lines)
+    generalito = "\\\n"
+    lines.pop(0)
+    for n in lines:
+        generalito+=f'{n[:-1]}\\ \n'
+
+    #print(generalito)
+    #my_label = HTMLLabel(top, html=generalito)
+    #my_label.pack(pady=20)
+    #html_label = HTMLText(top, html=RenderHTML('CARRITO.html'))
+    #html_label.pack(fill="both", expand=True)
+    #html_label.fit_height()
+    filename = 'file:///'+os.getcwd()+'/' + 'CARRITO.html'
+    webbrowser.open_new_tab(filename)
+    compuR = ImageTk.PhotoImage(Image.open('CARRITO.png').resize((400,400)))
+    my_label = Label(top, image=compuR).pack(side = LEFT, fill = Y)
+    
 
 
 
@@ -560,7 +585,7 @@ def carrito():
 
         
 
-
+    maltercio = Button(second_frame,text="ver carrito graficado",command=ver_carrito_html).pack()
     malboro = Button(second_frame,text="eliminar del carrito",command=eliminar_del_carrito).pack()
     malbor = Button(second_frame,text="COMPRAR",command=comprarv).pack()
 

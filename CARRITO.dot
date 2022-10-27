@@ -1,38 +1,48 @@
-digraph { 
- node[shape=none fontname=Helvetica]
- n1 [label = < <table>
-    <thead>
-        <tr>
-            <th>index</th>
-            <th>id</th>
-            <th>value</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>31</td>
-            <td>Tanner</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>31</td>
-            <td>Clemons</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>31</td>
-            <td>Goodwin</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>31</td>
-            <td>Fox</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>31</td>
-            <td>Montoya</td>
-        </tr>
-    </tbody>
-</table>>]}
+digraph G {
+ a0 [shape= hexagon label=<
+<TABLE>
+<TR>
+<TD >"index"</TD>
+<TD >"id"</TD>
+<TD >"value"</TD>
+</TR><TR>
+<TD >"0"</TD>
+<TD >"31"</TD>
+<TD >"Mcdowell"</TD>
+</TR><TR>
+<TD >"1"</TD>
+<TD >"31"</TD>
+<TD >"Tanner"</TD>
+</TR><TR>
+<TD >"2"</TD>
+<TD >"31"</TD>
+<TD >"Clemons"</TD>
+</TR><TR>
+<TD >"4"</TD>
+<TD >"31"</TD>
+<TD >"Bird"</TD>
+</TR><TR>
+<TD >"5"</TD>
+<TD >"31"</TD>
+<TD >"Jacobson"</TD>
+</TR><TR>
+<TD >"6"</TD>
+<TD >"31"</TD>
+<TD >"Dorsey"</TD>
+</TR><TR>
+<TD >"7"</TD>
+<TD >"31"</TD>
+<TD >"Glover"</TD>
+</TR><TR>
+<TD >"8"</TD>
+<TD >"31"</TD>
+<TD >"Goodwin"</TD>
+</TR><TR>
+<TD >"10"</TD>
+<TD >"31"</TD>
+<TD >"Mclaughlin"</TD>
+</TR><TR>
+<TD >"11"</TD>
+<TD >"31"</TD>
+<TD >"Fox"</TD>
+</TR></TABLE>>];}
