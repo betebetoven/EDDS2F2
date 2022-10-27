@@ -96,6 +96,24 @@ timestamp: 26-10-2022::23:09:10
 nonce:    51
 hash:  003f5cd7435eac5028b802a452c679c5c88725c610e1acd60c0e91472e1e8d77
 hashanterior: 00b7aaadf0b6a3ada4972ebb4fcede71a40531d2f34f2298856d8dfbe3015fbd"
+"index:   10
+timestamp: 26-10-2022::23:09:10
+nonce:    51
+hash:  003f5cd7435eac5028b802a452c679c5c88725c610e1acd60c0e91472e1e8d77
+hashanterior: 00b7aaadf0b6a3ada4972ebb4fcede71a40531d2f34f2298856d8dfbe3015fbd"->"index:   11
+timestamp: 26-10-2022::23:26:10
+nonce:    51
+hash:  00c979c51d2e1e8f3afe8a68a36ade7d0342dac1057a87cf1e73a7a680dfe2ba
+hashanterior: 003f5cd7435eac5028b802a452c679c5c88725c610e1acd60c0e91472e1e8d77"
+"index:   11
+timestamp: 26-10-2022::23:26:10
+nonce:    51
+hash:  00c979c51d2e1e8f3afe8a68a36ade7d0342dac1057a87cf1e73a7a680dfe2ba
+hashanterior: 003f5cd7435eac5028b802a452c679c5c88725c610e1acd60c0e91472e1e8d77"->"index:   12
+timestamp: 26-10-2022::23:26:57
+nonce:    54
+hash:  00e3d0815597cdcf5f1ed30e776fed73a74e6f6197e1c717d75af98a36bd5acb
+hashanterior: 00c979c51d2e1e8f3afe8a68a36ade7d0342dac1057a87cf1e73a7a680dfe2ba"
 "index:   0
 timestamp: 26-10-2022::18:47:11
 nonce:    50
@@ -151,4 +169,14 @@ timestamp: 26-10-2022::23:09:10
 nonce:    51
 hash:  003f5cd7435eac5028b802a452c679c5c88725c610e1acd60c0e91472e1e8d77
 hashanterior: 00b7aaadf0b6a3ada4972ebb4fcede71a40531d2f34f2298856d8dfbe3015fbd"[fillcolor="lightblue"]
+"index:   11
+timestamp: 26-10-2022::23:26:10
+nonce:    51
+hash:  00c979c51d2e1e8f3afe8a68a36ade7d0342dac1057a87cf1e73a7a680dfe2ba
+hashanterior: 003f5cd7435eac5028b802a452c679c5c88725c610e1acd60c0e91472e1e8d77"[fillcolor="lightblue"]
+"index:   12
+timestamp: 26-10-2022::23:26:57
+nonce:    54
+hash:  00e3d0815597cdcf5f1ed30e776fed73a74e6f6197e1c717d75af98a36bd5acb
+hashanterior: 00c979c51d2e1e8f3afe8a68a36ade7d0342dac1057a87cf1e73a7a680dfe2ba"[fillcolor="lightblue"]
 }

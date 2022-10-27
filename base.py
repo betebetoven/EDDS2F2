@@ -203,8 +203,24 @@ def ver_carrito_html():
     webbrowser.open_new_tab(filename)
     compuR = ImageTk.PhotoImage(Image.open('CARRITO.png').resize((400,400)))
     my_label = Label(top, image=compuR).pack(side = LEFT, fill = Y)
-    
+def hacer_display():
+    display("hola")
+def salir():
+    hacer_display()
+    messagebox.showwarning("salida","CREANDO ULTIMO BLOQUE ANTES DE SALIR")
 
+def ver_blockchain():
+    top = Toplevel()
+    global com
+    com = ImageTk.PhotoImage(Image.open('BLOCKCHAIN.png').resize((400,400)))
+    my_label = Label(top, image=com).pack(side = LEFT, fill = Y)
+
+def admin():
+    top = Toplevel()
+    inge_nomas = Button(top,text="CREAR BLOQUE",command=hacer_display).pack()
+    inge_nom = Button(top,text="VER BLOCKCHAIN",command=ver_blockchain).pack()
+    inge_nomnom = Button(top,text="CREAR BLOQUE Y SALIR",command=salir).pack()
+    
 
 
 
@@ -226,6 +242,7 @@ def logo():
         print(f'usuario:{username.get()} y contraseña: {password.get()}')
         jugar()
     inge = Button(top,text="INGRESAR",command=ingr).pack()
+    inge_nomas = Button(top,text="INGRESAR COMO ADMINISTRADOR",command=admin).pack()
 
 def jugar():
     global dimension
