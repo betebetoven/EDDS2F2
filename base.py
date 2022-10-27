@@ -50,6 +50,8 @@ TRANSACCIONES_GLOBALES=listaenlazada()
 MERKLE_ROOT_GLOBAL =   None
 FROM_GLOBAL = ""
 PREV_DEL_JSON = ""
+ESTADISTICA_DE_JUGADORES = listaenlazada()
+
 
 
 
@@ -308,6 +310,24 @@ def jugar():
             for j in n["listacor"]:
                 jesus+= "\n"+str(j)
         messagebox.showinfo("1: ", jesus)
+    def ingr_metiendo_mano():
+        print(f'dimension:{dimension.get()} ')
+        global tablero_computadora_global
+        global tablero_disparos_computadora_global
+        global tablero_jugador_global
+        global tablero_disparos_jugador_global
+        tablero_computadora_global = matriz(int(dimension.get()))
+        tablero_computadora_global.para_compu()
+        tablero_disparos_computadora_global = matriz(int(dimension.get()))
+        tablero_jugador_global = matriz(int(dimension.get()))
+        #tablero_jugador_global.para_compu()#ESTO SOLO ES PARA AUTOMATIAR, CAMBIAR LAS MIERDAS DESPUES
+        tablero_disparos_jugador_global = matriz(int(dimension.get()))
+        jesus = ""
+        for n in tablero_jugador_global.inv:
+            jesus+= "\n"+str(n["nombre"])+" :"
+            for j in n["listacor"]:
+                jesus+= "\n"+str(j)
+        messagebox.showinfo("1: ", jesus)
 
     def ingr2():
         global tablero_computadora_global
@@ -329,6 +349,7 @@ def jugar():
     edit = Button(top,text="editar informacion",command=editar_informacion).pack()
     vt = Button(top,text="VER TIENDA",command=ver6).pack()
     g2 = Button(top,text="JUGAR DOS JUGADORES",command=jug2).pack()
+    gpi = Button(top,text="CREAR TABLERO MANUAL",command=ingr_metiendo_mano).pack()
 
 def contains(x,y,parv):
     cont = 0
