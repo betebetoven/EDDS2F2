@@ -18,8 +18,8 @@ class trans:
         for n in self.Array_skins:
             new_arr.append(str(n))
         data ={"from": self.From,
-                "skins":new_arr,
-                "total": self.total
+                "skins":new_arr
+                
         }
         return data
     def __str__(self) -> str:

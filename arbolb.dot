@@ -1,41 +1,28 @@
 digraph G {
 node[shape=record]
 		//Agregar Nodos Rama
-R0x7f32f808d840[label="<C1>|-133638080 
- Long5198|<C2>"];
-R0x7f32f808d100[label="<C1>|-133639936 
- b|<C2>|-133639008 
- Pam8878|<C3>"];
-R0x7f32f8007c50[label="-134185904 
- 2|-134184976 
- Silva5379|-134012464 
- Ladonna861|-134010608 
- Spence5777"];
-R0x7f32f8050d10[label="-133886704 
- Gillespie2277|-133885776 
+R0x7f9edc03c540[label="<C1>|-603732672 
+ b|<C2>|-603661808 
+ Pam8878|<C3>|-603651600 
+ Long5198|<C4>"];
+R0x7f9edc033fd0[label="-603766832 
+ 2|-603765904 
+ Silva5379|-603764880 
+ Pam8878|-603763024 
+ Scott4859|-603761168 
+ Bell4469"];
+R0x7f9edc04d2d0[label="-603663664 
+ Gillespie2277|-603662736 
  Isabelle7888"];
-R0x7f32f80534f0[label="-133876496 
- Scott4859|-133875568 
+R0x7f9edc04fab0[label="-603653456 
+ Scott4859|-603652528 
  Bell4469"];
-R0x7f32f808dbe0[label="<C1>|-133637152 
- 2|<C2>|-133636224 
- Isabelle7888|<C3>"];
-R0x7f32f8081390[label="-133688432 
- Ladonna861|-133687504 
+R0x7f9edc050590[label="-603650672 
+ Ladonna861|-603649744 
  Spence5777"];
-R0x7f32f808bee0[label="-133644576 
- Silva5379|-133643648 
- Gillespie2277"];
-R0x7f32f808c9c0[label="-133641792 
- Scott4859|-133640864 
- Bell4469"];
 		//Agregar conexiones
-R0x7f32f808d840:C1->R0x7f32f808d100;
-R0x7f32f808d100:C1->R0x7f32f8007c50;
-R0x7f32f808d100:C2->R0x7f32f8050d10;
-R0x7f32f808d100:C3->R0x7f32f80534f0;
-R0x7f32f808d840:C2->R0x7f32f808dbe0;
-R0x7f32f808dbe0:C1->R0x7f32f8081390;
-R0x7f32f808dbe0:C2->R0x7f32f808bee0;
-R0x7f32f808dbe0:C3->R0x7f32f808c9c0;
+R0x7f9edc03c540:C1->R0x7f9edc033fd0;
+R0x7f9edc03c540:C2->R0x7f9edc04d2d0;
+R0x7f9edc03c540:C3->R0x7f9edc04fab0;
+R0x7f9edc03c540:C4->R0x7f9edc050590;
 }

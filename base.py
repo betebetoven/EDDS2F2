@@ -49,6 +49,7 @@ ADDRESS_USUARIO_GLOBAL = direccion_from()
 TRANSACCIONES_GLOBALES=listaenlazada()
 MERKLE_ROOT_GLOBAL =   None
 FROM_GLOBAL = ""
+PREV_DEL_JSON = ""
 
 
 
@@ -664,15 +665,45 @@ def display(msg):
     global BLOCKCHAIN_GLOBAL
     global TRANSACCIONES_GLOBALES
     global MERKLE_ROOT_GLOBAL
+    global PREV_DEL_JSON
     print(msg + ' ' + time.strftime('%H:%M:%S')) 
     if MERKLE_ROOT_GLOBAL != None:
-        BLOCKCHAIN_GLOBAL.agrega_alv(TRANSACCIONES_GLOBALES,MERKLE_ROOT_GLOBAL) 
+        BLOCKCHAIN_GLOBAL.agrega_alv(TRANSACCIONES_GLOBALES,MERKLE_ROOT_GLOBAL,PREV_DEL_JSON) 
+        time.sleep(1)
+        BLOCKCHAIN_GLOBAL.graphviz()
     
     
   
 ##Basic timer  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def run_once():  
+    global HASHTABLE_GLOBAL
+    global TRANSACCIONES_GLOBALES
+    global MERKLE_ROOT_GLOBAL
+    global BLOCKCHAIN_GLOBAL
+    global PREV_DEL_JSON
+
 
     #global BLOCKCHAIN_GLOBAL
     #display('run_once:')  
@@ -694,18 +725,55 @@ def run_once():
                 print('\n\n___________')
                 print(data)
                 merklito = MLKjunior()
-                
+                TRANSACCIONES_GLOBALES.head = None
+                BLOCKCHAIN_GLOBAL.index = int(data["index"])+1
+                PREV_DEL_JSON = str(data["data"]['self_hash'])
                 print(data["data"]['transacciones'])
                 for n in data["data"]['transacciones']:
+                    
                     for k in n['skins']:
+                        HASHTABLE_GLOBAL.agrega_inicial("0",skin(str(k),0))
                         skis+=k
+                    TRANSACCIONES_GLOBALES.agrega_simple(trans(n["from"],HASHTABLE_GLOBAL.toArray(),HASHTABLE_GLOBAL.total()))
+                    HASHTABLE_GLOBAL.reinicio()
                     shas.append(str(pedro.generate_hash(f'{str(n["from"])}{str(skis)}').hex()))
                     print(f'{str(n["from"])}{str(skis)}')
                     skis = ""
+                    construye_MLK()
                 nodito = merklito.merkle(shas)
                 print(nodito.value)
                 #SHA256(INDEX+TIMESTAMP+PREVIOUSHASH+ROOTMERKLE+NONCE
                 selfhash = str(pedro.generate_hash(f'{data["index"]}{data["timestamp"]}{data["data"]["hash_prev"]}{nodito.value}{data["nonce"]}').hex())
+                #AHORA TIENE QUE AGRAGAR TODO OTRA VEZ
+                #TIENE QUE VOLVER A METER TODO EN EL CARRITO
+                #DESPUES DE ESO GENERAR EL ARBOL MERKLE
+                #LO TIENQ UE IR METIENDO TODO A LOS GLOBALES DE PRIMERO 
+                #PASO A PASO PARA QUE LO HAGA PARA CADA BLOQUE
+                #TIENE QUE VERSE ASI
+                #skis.append(skin(c["nombre"],int(c["precio"])))
+                #HASHTABLE_GLOBAL.agrega_inicial(ID_USUARIO_GLOBAL,skis[n])
+                #TRANSACCIONES_GLOBALES.agrega_simple(trans(str(ADDRESS_USUARIO_GLOBAL.dir),HASHTABLE_GLOBAL.toArray(),HASHTABLE_GLOBAL.total()))
+                #HASHTABLE_GLOBAL.reinicio()
+                #hasharray=[]
+                #k = TRANSACCIONES_GLOBALES.head
+                #while k != None:
+                    #hasharray.append(k.value.sha())
+                    #k =k.Next
+                #MERKLE_ROOT_GLOBAL =  MLKJUNIOR_GLOBAL.merkle(hasharray)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 if(data["data"]["merkle_root"]==str(nodito.value) and selfhash == data["data"]["self_hash"]):
                     messagebox.showinfo("aprobado",f'INFORMACION EN INDEX {cont} INTACTA')
                 else:

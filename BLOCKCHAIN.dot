@@ -1,0 +1,54 @@
+digraph G
+{label="expresion regular"
+        node[shape = hexagon]
+        node[style = filled]
+        node[fillcolor = "#EEEEE"]
+        node[color = "#EEEEE"]
+        node[color = "#31CEF0"]
+
+"index:   0
+timestamp: 26-10-2022::18:47:11
+nonce:    50
+hash:  044f67308b54f9cd9d15e4b479a9fea58d2341f431abf5388d51eb42980c25fc
+hashanterior: -1"->"index:   1
+timestamp: 26-10-2022::18:47:52
+nonce:    3
+hash:  05fffeadee9577637095e4b5628175bb88190b0270719ee8a40650184e2b6063
+hashanterior: 044f67308b54f9cd9d15e4b479a9fea58d2341f431abf5388d51eb42980c25fc"
+"index:   1
+timestamp: 26-10-2022::18:47:52
+nonce:    3
+hash:  05fffeadee9577637095e4b5628175bb88190b0270719ee8a40650184e2b6063
+hashanterior: 044f67308b54f9cd9d15e4b479a9fea58d2341f431abf5388d51eb42980c25fc"->"index:   2
+timestamp: 26-10-2022::18:49:07
+nonce:    8
+hash:  0350e214fa04954da30b98ef43668b37af4df1e1335a017426b4ab716e1e5362
+hashanterior: 05fffeadee9577637095e4b5628175bb88190b0270719ee8a40650184e2b6063"
+"index:   2
+timestamp: 26-10-2022::18:49:07
+nonce:    8
+hash:  0350e214fa04954da30b98ef43668b37af4df1e1335a017426b4ab716e1e5362
+hashanterior: 05fffeadee9577637095e4b5628175bb88190b0270719ee8a40650184e2b6063"->"index:   3
+timestamp: 26-10-2022::18:49:48
+nonce:    0
+hash:  05add1e05efee446a91a5eee963ddedf874da22352ee015f0412793baecfb1d2
+hashanterior: 0350e214fa04954da30b98ef43668b37af4df1e1335a017426b4ab716e1e5362"
+"index:   3
+timestamp: 26-10-2022::18:49:48
+nonce:    0
+hash:  05add1e05efee446a91a5eee963ddedf874da22352ee015f0412793baecfb1d2
+hashanterior: 0350e214fa04954da30b98ef43668b37af4df1e1335a017426b4ab716e1e5362"->"index:   4
+timestamp: 26-10-2022::18:57:25
+nonce:    77
+hash:  0da97713fa10f3e0f3fde3d2654181204b0e06f45b2d93fab764be2558999765
+hashanterior: 05add1e05efee446a91a5eee963ddedf874da22352ee015f0412793baecfb1d2"
+"index:   4
+timestamp: 26-10-2022::18:57:25
+nonce:    77
+hash:  0da97713fa10f3e0f3fde3d2654181204b0e06f45b2d93fab764be2558999765
+hashanterior: 05add1e05efee446a91a5eee963ddedf874da22352ee015f0412793baecfb1d2"->"index:   5
+timestamp: 26-10-2022::19:02:22
+nonce:    3
+hash:  01718d551f011325dd89a1363f336f5d0dacb47e45929d316aa56bfb39b1cfea
+hashanterior: 0da97713fa10f3e0f3fde3d2654181204b0e06f45b2d93fab764be2558999765"
+}
