@@ -2,23 +2,24 @@ digraph G {
 node[shape=record]
 		//Agregar Nodos Rama
 R0x7f9ed404bdc0[label="<C1>|-737886784 
- b|<C2>"];
+ b|<C2>|-737494992 
+ Bell4469|<C3>"];
 R0x7f9ed404b680[label="<C1>|-737888640 
  Gillespie2277|<C2>|-737887712 
  Silva5379|<C3>"];
-R0x7f9ed403b7d0[label="-737953840 
- 2|-737952912 
- b"];
+R0x7f9ed402a1f0[label="-738024976 
+ Long5198|-738024048 
+ Ladonna861|-738023024 
+ Spence5777"];
 R0x7f9ed403c2b0[label="-737951056 
  Spence5777|-737950128 
  2"];
 R0x7f9edc002e80[label="-603967872 
  Ladonna861|-603966944 
  Spence5777"];
-R0x7f9ed404c160[label="<C1>|-737885856 
- Pam8878|<C2>|-737884928 
- Long5198|<C3>|-737874720 
- Bell4469|<C4>"];
+R0x7f9ed40ab0f0[label="<C1>|-737496848 
+ Pam8878|<C2>|-737495920 
+ Long5198|<C3>"];
 R0x7f9edc0454e0[label="-603695904 
  Gillespie2277|-603694048 
  Isabelle7888|-603690336 
@@ -37,17 +38,32 @@ R0x7f9edc04fab0[label="-603653456
 R0x7f9ed404e5a0[label="-737876576 
  Isabelle7888|-737875648 
  Scott4859"];
-R0x7f9ed404f080[label="-737873792 
- Ladonna861|-737872864 
+R0x7f9ed40abbd0[label="<C1>|-737494064 
+ Silva5379|<C2>|-737493136 
+ Spence5777|<C3>"];
+R0x7f9ed407f380[label="-737676416 
+ Isabelle7888|-737672704 
+ Scott4859|-737665280 
+ Spence5777|-737645040 
+ Ladonna861|-737644112 
+ Spence5777"];
+R0x7f9ed40825e0[label="-737663520 
+ Isabelle7888|-737662592 
+ Scott4859"];
+R0x7f9ed40aa9b0[label="-737498704 
+ Ladonna861|-737497776 
  Spence5777"];
 		//Agregar conexiones
 R0x7f9ed404bdc0:C1->R0x7f9ed404b680;
-R0x7f9ed404b680:C1->R0x7f9ed403b7d0;
+R0x7f9ed404b680:C1->R0x7f9ed402a1f0;
 R0x7f9ed404b680:C2->R0x7f9ed403c2b0;
 R0x7f9ed404b680:C3->R0x7f9edc002e80;
-R0x7f9ed404bdc0:C2->R0x7f9ed404c160;
-R0x7f9ed404c160:C1->R0x7f9edc0454e0;
-R0x7f9ed404c160:C2->R0x7f9edc04fab0;
-R0x7f9ed404c160:C3->R0x7f9ed404e5a0;
-R0x7f9ed404c160:C4->R0x7f9ed404f080;
+R0x7f9ed404bdc0:C2->R0x7f9ed40ab0f0;
+R0x7f9ed40ab0f0:C1->R0x7f9edc0454e0;
+R0x7f9ed40ab0f0:C2->R0x7f9edc04fab0;
+R0x7f9ed40ab0f0:C3->R0x7f9ed404e5a0;
+R0x7f9ed404bdc0:C3->R0x7f9ed40abbd0;
+R0x7f9ed40abbd0:C1->R0x7f9ed407f380;
+R0x7f9ed40abbd0:C2->R0x7f9ed40825e0;
+R0x7f9ed40abbd0:C3->R0x7f9ed40aa9b0;
 }

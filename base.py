@@ -301,8 +301,8 @@ def dispara(mo,mh,x,y):
                     messagebox.showinfo("info",f'HUNDISTE A UN {str(mo.inv)}')
                     if len(mo.inv)==0:
                         messagebox.showinfo("info",f'GANASTE')
-                        ver_nalgas()
-
+                        return True
+        return False
 
 
 
@@ -311,6 +311,7 @@ def dispara(mo,mh,x,y):
         mh.ingresar(x,y,"missed")
         messagebox.showerror("DISPARO","FALLASTE")
         print("FALLASTE------------------------")
+        return False
     
 
 
@@ -442,7 +443,8 @@ def jug2():
     dy = Entry(top,textvariable=ddy).pack()
     def ingr():
         #dispara jugador 1
-        dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
+        gota = dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
+        
         #dispara a computadora
         #dispara(tablero_jugador_global,tablero_disparos_computadora_global,random.randint(0,9),random.randint(0,9))
         tablero_computadora_global.grapvzix("compu")
@@ -451,17 +453,21 @@ def jug2():
         tablero_disparos_computadora_global.grapvzix("disp_compu")
         tablero_disparos_jugador_global.grafo.graphvix('grafo')
         print(f' DISPARO: {ddx.get()},{ddy.get()}')
+        if gota:
+            ver_nalgas()
     def ingr2():
         #dispara jugador 2
         #dispara(tablero_computadora_global,tablero_disparos_jugador_global,int(ddx.get()),int(ddy.get()))
         #dispara a computadora
-        dispara(tablero_jugador_global,tablero_disparos_computadora_global,int(ddx.get()),int(ddy.get()))
+        gota = dispara(tablero_jugador_global,tablero_disparos_computadora_global,int(ddx.get()),int(ddy.get()))
         tablero_computadora_global.grapvzix("compu")
         tablero_disparos_jugador_global.grapvzix("disp_jug")
         tablero_jugador_global.grapvzix("mitablero")
         tablero_disparos_computadora_global.grapvzix("disp_compu")
         tablero_disparos_computadora_global.grafo.graphvix('grafo')
         print(f' DISPARO: {ddx.get()},{ddy.get()}')
+        if gota:
+            ver_nalgas()
 
     
     fire = Button(top,text="DISPARA Jugador 1",command=ingr).pack()
