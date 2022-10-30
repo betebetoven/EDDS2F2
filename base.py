@@ -373,7 +373,7 @@ def dispara(mo,mh,x,y):
                 if len(n["listacor"]) == 0:
                     messagebox.showinfo("HUNDISTE",f'HUNDISTE A UN {str(n["nombre"])}')
                     mo.inv.remove(n)
-                    messagebox.showinfo("info",f'HUNDISTE A UN {str(mo.inv)}')
+                    #messagebox.showinfo("info",f'HUNDISTE A UN {str(mo.inv)}')
                     if len(mo.inv)==0:
                         messagebox.showinfo("info",f'GANASTE')
                         return True
